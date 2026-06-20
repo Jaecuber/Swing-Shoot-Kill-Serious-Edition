@@ -3,7 +3,6 @@ package com.github.Jaecuber.swingShootKill;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;

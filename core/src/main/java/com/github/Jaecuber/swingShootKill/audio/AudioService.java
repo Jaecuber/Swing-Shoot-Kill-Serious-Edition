@@ -1,7 +1,6 @@
 package com.github.Jaecuber.swingShootKill.audio;
 
 import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.MathUtils;
 import com.github.Jaecuber.swingShootKill.asset.AssetService;
 import com.github.Jaecuber.swingShootKill.asset.MusicAsset;

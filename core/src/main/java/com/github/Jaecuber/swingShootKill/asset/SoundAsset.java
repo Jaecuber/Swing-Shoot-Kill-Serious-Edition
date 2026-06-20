@@ -8,8 +8,8 @@ public enum SoundAsset implements Asset<Sound>{
 
     private final AssetDescriptor<Sound> descriptor;
 
-    SoundAsset(String musicFile){
-        this.descriptor = new AssetDescriptor<>("audio/sfx/", Sound.class);
+    SoundAsset(String sfxFile){
+        this.descriptor = new AssetDescriptor<>("audio/sfx/" + sfxFile, Sound.class);
     }
 
     @Override
