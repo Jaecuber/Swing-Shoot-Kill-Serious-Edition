@@ -1,0 +1,19 @@
+package com.github.Jaecuber.swingShootKill.asset;
+
+import com.badlogic.gdx.assets.AssetDescriptor;
+import com.badlogic.gdx.audio.Sound;
+
+public enum SoundAsset implements Asset<Sound>{
+    Click("click.mp3"); //CHANGE LATER
+
+    private final AssetDescriptor<Sound> descriptor;
+
+    SoundAsset(String musicFile){
+        this.descriptor = new AssetDescriptor<>("audio/sfx/", Sound.class);
+    }
+
+    @Override
+    public AssetDescriptor<Sound> getDescriptor(){
+        return descriptor;
+    }
+}
