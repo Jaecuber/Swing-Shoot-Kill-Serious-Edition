@@ -4,7 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import com.github.Jaecuber.swingShootKill.Launcher;
 import com.github.Jaecuber.swingShootKill.asset.AssetService;
-import com.github.Jaecuber.swingShootKill.asset.MusicAsset;
+import com.github.Jaecuber.swingShootKill.asset.SkinAsset;
 import com.github.Jaecuber.swingShootKill.asset.SoundAsset;
 
 public class LoadingScreen extends ScreenAdapter{
@@ -22,6 +22,7 @@ public class LoadingScreen extends ScreenAdapter{
         for(SoundAsset sound : SoundAsset.values()){
             assetService.queue(sound);
         }
+        assetService.queue(SkinAsset.MENU_SCREEN);
     }
 
     @Override
@@ -36,6 +37,6 @@ public class LoadingScreen extends ScreenAdapter{
     }
 
     private void createScreens() {
-        
+        this.launcher.addScreen(new MenuScreen(this.launcher));
     }
 }

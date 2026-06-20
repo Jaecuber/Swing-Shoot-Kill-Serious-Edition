@@ -8,6 +8,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
@@ -17,6 +18,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.github.Jaecuber.swingShootKill.asset.AssetService;
 import com.github.Jaecuber.swingShootKill.audio.AudioService;
+import com.github.Jaecuber.swingShootKill.screens.LoadingScreen;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
 public class Launcher extends Game {
@@ -39,8 +41,12 @@ public class Launcher extends Game {
         this.inputMultiplexer = new InputMultiplexer();
         this.batch = new SpriteBatch();
         this.camera = new OrthographicCamera();
-        this.viewport = new FitViewport(WORLD_HEIGHT, UNIT_SCALE, camera);
+        this.viewport = new FitViewport(WORLD_WIDTH, WORLD_HEIGHT, camera);
+        this.assetService = new AssetService(new InternalFileHandleResolver());
         this.audioService = new AudioService(this.assetService);
+
+        addScreen(new LoadingScreen(this, assetService));
+        setScreen(LoadingScreen.class);
     }
 
     @Override
