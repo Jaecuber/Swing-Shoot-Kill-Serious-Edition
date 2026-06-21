@@ -1,0 +1,54 @@
+
+skin.png
+size: 2048, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+awesomeCavePixelArt
+  rotate: false
+  xy: 1, 45
+  size: 1280, 720
+  orig: 1280, 720
+  offset: 0, 0
+  index: -1
+menuBkg
+  rotate: false
+  xy: 1, 767
+  size: 1920, 1152
+  orig: 1920, 1152
+  offset: 0, 0
+  index: -1
+
+skin2.png
+size: 1024, 1024
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+SwingShootKillLogo
+  rotate: false
+  xy: 1, 649
+  size: 768, 360
+  orig: 768, 360
+  offset: 0, 0
+  index: -1
+charIcon
+  rotate: false
+  xy: 771, 769
+  size: 240, 240
+  orig: 240, 240
+  offset: 0, 0
+  index: -1
+playButton
+  rotate: false
+  xy: 1, 487
+  size: 384, 160
+  orig: 384, 160
+  offset: 0, 0
+  index: -1
+quitButton
+  rotate: false
+  xy: 1, 325
+  size: 384, 160
+  orig: 384, 160
+  offset: 0, 0
+  index: -1

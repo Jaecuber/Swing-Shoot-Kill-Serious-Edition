@@ -6,7 +6,6 @@ public class MenuViewModel extends ViewModel{
 
     public MenuViewModel(Launcher launcher) {
         super(launcher);
-        
     }
 
 }

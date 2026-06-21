@@ -4,7 +4,7 @@ import com.badlogic.gdx.assets.AssetDescriptor;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 public enum SkinAsset implements Asset<Skin>{
-    MENU_SCREEN("menuScreen.json");
+    MENU_SCREEN("skin.json");
 
     private final AssetDescriptor<Skin> descriptor;
 
