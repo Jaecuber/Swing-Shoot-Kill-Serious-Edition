@@ -29,7 +29,8 @@ public class MenuView extends View<MenuViewModel>{
     protected void setupUI() {
         menuTable = new Table();
         menuTable.setBackground(skin.getDrawable("menuBkg"));
-        menuTable.padLeft(100.0f);
+        menuTable.padLeft(25.0f);
+        menuTable.padBottom(200.0f);
         menuTable.align(Align.left);
         menuTable.setFillParent(true);
 
@@ -42,33 +43,31 @@ public class MenuView extends View<MenuViewModel>{
         menuTable.add(playButton);
         onClick(playButton, viewModel::startGame);
         playButton.addListener(new InputListener(){
-            long lastEnterTime = 0;
+            boolean hovering = false;
             @Override
             public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor){
-                long currentTime = System.currentTimeMillis();
-                if(currentTime - lastEnterTime > 50){
-                    viewModel.playSound(SoundAsset.HOVER);
-                    playButton.addAction(
-                        Actions.parallel(
-                            Actions.rotateTo(7f, 0.15f, Interpolation.swingOut),
-                            Actions.scaleTo(1.1f, 1.1f, 0.15f, Interpolation.swingOut)
-                        )
-                    );
-                    lastEnterTime = currentTime;
-                }
+                if(pointer != -1 || hovering) return;
+                hovering = true;
+                playButton.clearActions();
+                viewModel.playSound(SoundAsset.HOVER);
+                playButton.addAction(
+                    Actions.parallel(
+                        Actions.rotateTo(7f, 0.15f, Interpolation.swingOut),
+                        Actions.scaleTo(1.1f, 1.1f, 0.15f, Interpolation.swingOut)
+                    )
+                );
             }
             @Override
             public void exit(InputEvent event, float x, float y, int pointer, Actor toActor) {
-                long currentTime = System.currentTimeMillis();
-                if(currentTime - lastEnterTime > 50){
-                    playButton.addAction(
-                        Actions.parallel(
-                            Actions.rotateTo(0f, 0.15f, Interpolation.swingOut),
-                            Actions.scaleTo(1.0f, 1.0f, 0.15f, Interpolation.swingOut)
-                        )
-                    );
-                    lastEnterTime = currentTime;
-                }
+                if(pointer != -1 || !hovering) return;
+                hovering = false;
+                playButton.clearActions();
+                playButton.addAction(
+                    Actions.parallel(
+                        Actions.rotateTo(0f, 0.15f, Interpolation.swingOut),
+                        Actions.scaleTo(1.0f, 1.0f, 0.15f, Interpolation.swingOut)
+                    )
+                );
             }
         });
         
@@ -78,33 +77,31 @@ public class MenuView extends View<MenuViewModel>{
         menuTable.add(quitButton);
         onClick(quitButton, viewModel::quitGame);
         quitButton.addListener(new InputListener(){
-            long lastEnterTime = 0;
+            boolean hovering = false;
             @Override
             public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor){
-                long currentTime = System.currentTimeMillis();
-                if(currentTime - lastEnterTime > 50){
-                    viewModel.playSound(SoundAsset.HOVER);
-                    quitButton.addAction(
-                        Actions.parallel(
-                            Actions.rotateTo(7f, 0.15f, Interpolation.swingOut),
-                            Actions.scaleTo(1.1f, 1.1f, 0.15f, Interpolation.swingOut)
-                        )
-                    );
-                    lastEnterTime = currentTime;
-                }
+                if(pointer != -1 || hovering) return;
+                hovering = true;
+                quitButton.clearActions();
+                viewModel.playSound(SoundAsset.HOVER);
+                quitButton.addAction(
+                    Actions.parallel(
+                        Actions.rotateTo(7f, 0.15f, Interpolation.swingOut),
+                        Actions.scaleTo(1.1f, 1.1f, 0.15f, Interpolation.swingOut)
+                    )
+                );
             }
             @Override
             public void exit(InputEvent event, float x, float y, int pointer, Actor toActor) {
-                long currentTime = System.currentTimeMillis();
-                if(currentTime - lastEnterTime > 50){
-                    quitButton.addAction(
-                        Actions.parallel(
-                            Actions.rotateTo(0f, 0.15f, Interpolation.swingOut),
-                            Actions.scaleTo(1.0f, 1.0f, 0.15f, Interpolation.swingOut)
-                        )
-                    );
-                    lastEnterTime = currentTime;
-                }
+                if(pointer != -1 || !hovering) return;
+                hovering = false;
+                quitButton.clearActions();
+                quitButton.addAction(
+                    Actions.parallel(
+                        Actions.rotateTo(0f, 0.15f, Interpolation.swingOut),
+                        Actions.scaleTo(1.0f, 1.0f, 0.15f, Interpolation.swingOut)
+                    )
+                );
             }
         });
 
