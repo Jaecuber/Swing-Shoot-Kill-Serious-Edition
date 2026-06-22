@@ -3,14 +3,23 @@ package com.github.Jaecuber.swingShootKill.systems;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
+import com.badlogic.gdx.ai.pfa.Graph;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.GdxRuntimeException;
+import com.github.Jaecuber.swingShootKill.asset.AssetService;
+import com.github.Jaecuber.swingShootKill.asset.AtlasAsset;
 import com.github.Jaecuber.swingShootKill.component.Facing;
+import com.github.Jaecuber.swingShootKill.component.Graphic;
 import com.github.Jaecuber.swingShootKill.component.Facing.FacingDirection;
 import com.github.Jaecuber.swingShootKill.component.Move;
 
 public class FacingSystem extends IteratingSystem{
-    public FacingSystem(){
+    private AssetService assetService;
+
+    public FacingSystem(AssetService assetService){
         super(Family.all(Facing.class, Move.class).get());
+        this.assetService = assetService;
     }
 
     @Override
@@ -34,5 +43,27 @@ public class FacingSystem extends IteratingSystem{
                 facing.setDirection(FacingDirection.LEFT);
             }
         }
+
+        Graphic graphic = Graphic.MAPPER.get(entity);
+        if(graphic != null){
+            switch (facing.getDirection()) {
+                case UP -> updateGraphic(facing, FacingDirection.UP, graphic);
+                case DOWN -> updateGraphic(facing, FacingDirection.DOWN, graphic);
+                case LEFT -> updateGraphic(facing, FacingDirection.LEFT, graphic);
+                case RIGHT -> updateGraphic(facing, FacingDirection.RIGHT, graphic);
+            }
+        }
+    }
+
+    private void updateGraphic(Facing facing, FacingDirection direction, Graphic graphic){
+        String atlasKey = facing.getAtlasKey();
+        AtlasAsset atlasAsset = AtlasAsset.valueOf("OBJECTS");
+        TextureAtlas textureAtlas = this.assetService.get(atlasAsset);
+        String combinedKey = atlasKey + "/" + atlasKey + "_" + direction.getAtlasKey();
+        TextureAtlas.AtlasRegion region = textureAtlas.findRegion(combinedKey);
+        if(region != null){
+            graphic.setRegion(region);
+        }
+        throw new GdxRuntimeException("No atlas region found for key " + combinedKey);
     }
 }
