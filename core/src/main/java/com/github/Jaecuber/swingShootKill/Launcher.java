@@ -39,6 +39,7 @@ public class Launcher extends Game {
     @Override
     public void create() {
         this.inputMultiplexer = new InputMultiplexer();
+        Gdx.input.setInputProcessor(inputMultiplexer);
         this.batch = new SpriteBatch();
         this.camera = new OrthographicCamera();
         this.viewport = new FitViewport(WORLD_WIDTH, WORLD_HEIGHT, camera);
