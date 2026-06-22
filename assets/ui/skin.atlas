@@ -26,28 +26,28 @@ filter: Linear, Linear
 repeat: none
 SwingShootKillLogo
   rotate: false
-  xy: 1, 649
-  size: 768, 360
-  orig: 768, 360
+  xy: 1, 533
+  size: 1004, 470
+  orig: 1004, 470
   offset: 0, 0
   index: -1
 charIcon
   rotate: false
-  xy: 771, 769
+  xy: 387, 291
   size: 240, 240
   orig: 240, 240
   offset: 0, 0
   index: -1
 playButton
   rotate: false
-  xy: 1, 487
+  xy: 1, 371
   size: 384, 160
   orig: 384, 160
   offset: 0, 0
   index: -1
 quitButton
   rotate: false
-  xy: 1, 325
+  xy: 1, 209
   size: 384, 160
   orig: 384, 160
   offset: 0, 0

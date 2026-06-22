@@ -4,7 +4,8 @@ import com.badlogic.gdx.assets.AssetDescriptor;
 import com.badlogic.gdx.audio.Sound;
 
 public enum SoundAsset implements Asset<Sound>{
-    CLICK("click.mp3"); //CHANGE LATER
+    CLICK("click.mp3"), //CHANGE LATER
+    HOVER("hover.mp3");
 
     private final AssetDescriptor<Sound> descriptor;
 

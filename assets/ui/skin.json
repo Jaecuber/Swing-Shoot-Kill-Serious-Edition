@@ -1,9 +1,1 @@
-{
-com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle: {
-	default: {
-		up: SwingShootKillLogo
-		down: SwingShootKillLogo
-		over: SwingShootKillLogo
-	}
-}
-}
+{}
