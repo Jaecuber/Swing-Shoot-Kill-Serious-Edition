@@ -1,18 +1,57 @@
 {
-    "activeFile": "",
+    "activeFile": "DungeonAnimatedTiles.tsx",
     "expandedProjectPaths": [
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
+        "DungeonAnimatedTiles.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "DungeonBuildingTileSet.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 0.75
+        },
+        "DungeonDecorations.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "MainMap.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 257.33333333333337,
+                "y": 296.6666666666667
+            }
+        }
     },
+    "frame.defaultDuration": 100,
+    "last.imagePath": "C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/map/TileSets/RF_Catacombs_v1.0",
     "map.height": 30,
     "map.lastUsedFormat": "tmx",
     "map.layerDataFormat": "3",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
     "openFiles": [
+        "MainMap.tmx",
+        "DungeonBuildingTileSet.tsx",
+        "DungeonDecorations.tsx",
+        "DungeonAnimatedTiles.tsx"
     ],
     "project": "SSKTiledMap.tiled-project",
     "recentFiles": [
-    ]
+        "DungeonAnimatedTiles.tsx",
+        "DungeonDecorations.tsx",
+        "DungeonBuildingTileSet.tsx",
+        "MainMap.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    },
+    "tileset.type": 1
 }
