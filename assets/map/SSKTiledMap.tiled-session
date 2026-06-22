@@ -14,6 +14,8 @@
             }
         }
     },
+    "frame.defaultDuration": 100,
+    "last.imagePath": "C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/map/TileSets/RF_Catacombs_v1.0",
     "map.height": 30,
     "map.lastUsedFormat": "tmx",
     "map.layerDataFormat": "3",
