@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="1">
+<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="3">
  <tileset firstgid="1" source="DungeonBuildingTileSet.tsx"/>
  <tileset firstgid="2561" source="DungeonAnimatedTiles.tsx"/>
  <tileset firstgid="2577" source="DungeonDecorations.tsx"/>
+ <tileset firstgid="2833" source="objects.tsx"/>
  <layer id="1" name="Background" width="30" height="30">
   <data encoding="base64" compression="zlib">
    eJydlFlWwkAQRQOERHHagtM5for44Q6ch6UkwsKSgwuTYQNWIKWV56vQ8PFO0+mib9Xr6s7jKMqNks7uSkV7on3RQHQgOhQdiY5FJ6LMsEqj+87uehA9ip5Ez6IX0avoTfQu+gBuUTMxB1UBYjEl+JaT/2VknXFtjJePlwOLzcxeyM2d/WytukdGairIeigXfSrNPoznrWeGFcLFWqv4siejKK9H/V1992rGuj0unlvDq2r/3t+ov5Xr/b8g3KuBXy96Oa7XFv21lma08crVNdbPd4SL51cS7hK4ExI/SqLoNmnulRmGHfHOaR1jw1VmtafWPjE86zk731myFuNibyvbMq2XjIs9vYmL74euKbdiLvtNTeO1kOn1M/MZe1K/L0ytqq+4KezFb4mf9cPOF3PQufaJxoxq7tRwsbeuJWaYbMfFM2aeZfF/j9mbGsJFv71ex75nHPR61Vf13ON6ebSx2b23XlsuMvFtRr/teVixHPCcihaurb9w8vBy2eRTGci18SG5MLE+WPkj3pctmiY8/7Yet/3rcfXdYpobLvqFfeT1OPZ7abjzFi2Sps82Z6/X8M6ynhumUXTTolHa9JD1AZuj/8jNZN9c9FmPuZlXGqftb2nbnPn/+1bJvqfdKDoTnYsuRJfd5lsWqjzmvoTcf7YHft9W7H5tU4tXD8aFvDHePWBnso1Xm+r+AdtB+sA=
@@ -10,7 +11,7 @@
  </layer>
  <layer id="2" name="Middleground" width="30" height="30">
   <data encoding="base64" compression="zlib">
-   eJy91tdu01Acx/FjZ6cTXqBToK6nqMhq2lK4BKnzpouXqNKdtAHuQGLeMMpLREmabq5BYt4wyjPwtWyrjmMndjqO9JHHOf7/cmzLJ0FJiKDBZbegZK1a60Ev+tCPgXPmhhDGKOdLbCM+IaKIIe47O56lfw7zWMCisB8b81X2JZATlbnXkaJvGQW/EEXsooQVzr3hmrd4h/fYEfZjV7U6+v4a1uGxmO8d5JU68AeECCCIEIqc+0XOb/zBX5wK+7G7Wh19v4Q9DFrkPoSP3+tHhOujiCGu1OVcD/296EM/BiT7sUGtjr4fQhhLFrnKfb6l1EEUMcQNx7P0z2EeC1iU7MfGLOokkJPUd8h8ny+7eWQh7nor52vX2jxCtKMDnehCt8d97iC5j7zO5ztOxgQmMYVpzNSRu0Tumux8vs/IeI4XeIlXeF1Hbo7Mkux8vl/I+Ipv+I4f+FlHbkrbxsiKI6FsOS6ZnGjj2ngm7ehAJ7rQ7XWfm0dBVH6f9bk3oBGt2j0YJ2MCk5jCNGbqyaVeQVLnq6uW66Td4LndlKuP8dH/2GOdZc4dc5i9SM0HNXJT9C/L1rlGSm7WYe4O9T7UyM3TX5DVe12U1DVqg+/YJtLIYAvbyPqd5Z5S71+NXL3dI+++tkbtU/8AhzjCMU7w0WGum/aEvKfaGtXAWtKIJjSjBa24FriYrHVsaPufyPvsU9eoIeonMYwRjOI2xi4gV/mfsYd9oX4XDngeh7K6Rm1QfxNpZLCFbWTPkesPq1uP6f29qjboIlf/rVede5HNnKusD8tYwSrWxNl7t4k0MtjCtnA3vlquvj4UsSvUd01/7w5wiCMcC3VtcjPeuJ8U5bl+BGzWhCY0OxyjM583XmPOrSWCqFS+Vg8hiWGMGDSb2OVGXHKaryv7X2G45j//z7A3
+   eJy91tdO21Acx/Hj7IRR2hdgqhXrKUKzCFDay1Zi3rD6EkAgbNretVLnTQd9CciChHHdSp03HfQZ+rVsC8exU7sEjvSRxzn+/3JsyycBSYiAzkW3gGSuWutEF7rRg95z5gYRwhDnC2wjXiGiiCHuPTueon8aM5jFnLAeG/NW9iWwKypzr2GRvhSyPiFyyKOAJc695po3eIt32BHWY5fVOtp+Gitwm8z3NjJyHfj8QvgRQBA5zv0g5yd+4TdOhfXYvFpH2y9gH2GT3Afw8nt9iHB9FDHE5bqc66S/C93oQa9kPTag1tH2gwhh3iRXvs835TqIIoa47niK/mnMYBZzkvXYmEkdD+N3JeUdMt7ni2x9Lp4v7ngq52vVmt1CtKAVbWhHh9t5bhgPPfbnO0LGKMYwjglMOsxdIHMeaZf9+T4l4xme4wVe4pXD3D3yMii47M/3Exmf8QVf8Q3fHebKbVHdxsiKIyFvOS4YHGOYvmaeSQta0YZ2dHic52aQFZXfZ23udahHE04wQsYoxjCOCUw6zO2Tv0vISsp8NdVy7bTrPLcbLuv+Bfm7RP8jt3nW/+bOUfN+ldw9+ftPf8plnqsn527bzN2h3vtquer7nHUp9zonKWvUKt+yNaxjA5vYwrbPXu4p9f5UydW3u+TdU9eoA+oXUcIhjnCME5u5Ttpj8p6oa1Qda0k9GtCIK2jCVX9tslawqu5/IO+jV1mj+qmfxAAGMYRbGK5Brvw/Yx8HQvkuFHkeJSTIXaX+GtaxgU1sYfscub6QsnUb3t/LamEHudpvvezcWjZjrrw+pLCEZaTF2Xu3hnVsYBNbwtn4arna+pBDXijvmvbeFVHCIY6EsjY5Ga/fT4ryXB/8FmtCAxptjtEYz+uvMeb+SwRRqXyt7kcSAxjUaTSwyo04ZDdfU/a/QnfNX2jjtpE=
   </data>
  </layer>
  <layer id="3" name="Foreground" width="30" height="30">
@@ -18,4 +19,13 @@
    eJxjYBgFQwFocdHObAE8ZlsRsBefXmqDSDLsYqOC+zKhZugAaW4grgXiOjr6GxdQHyA3mNPZ3spBENZDDXAPoTDTGUJupSYgtezUJqBecYDC0ZDK9nYRaZ4jifYSCu9ZIzQdjoLBC4jNC5QC9DbNaF4YmQAAF7oIxg==
   </data>
  </layer>
+ <objectgroup id="4" name="objects">
+  <object id="2" gid="2834" x="207.273" y="125.97" width="16" height="16">
+   <properties>
+    <property name="atlasAsset" value="OBJECTS"/>
+    <property name="camFollow" type="bool" value="true"/>
+    <property name="controller" type="bool" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
