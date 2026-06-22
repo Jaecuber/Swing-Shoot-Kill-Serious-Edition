@@ -62,7 +62,7 @@ public class GameScreen extends ScreenAdapter{
         this.engine.addSystem(new ControllerSystem());
         this.engine.addSystem(new PhysicsMoveSystem());
         this.engine.addSystem(new FsmSystem());
-        this.engine.addSystem(new FacingSystem());
+        this.engine.addSystem(new FacingSystem(launcher.getAssetService()));
         this.engine.addSystem(new PhysicsSystem(physicsWorld, 1/60f));
         this.engine.addSystem(new CameraSystem(launcher.getCamera()));
         this.engine.addSystem(new RenderSystem(launcher.getBatch(), launcher.getViewport(), launcher.getCamera()));

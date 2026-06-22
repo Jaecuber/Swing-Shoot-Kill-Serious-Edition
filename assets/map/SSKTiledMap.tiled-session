@@ -6,6 +6,7 @@
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
         "DungeonAnimatedTiles.tsx": {
+            "dynamicWrapping": true,
             "scaleInDock": 1
         },
         "DungeonBuildingTileSet.tsx": {
