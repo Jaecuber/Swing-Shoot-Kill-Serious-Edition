@@ -5,12 +5,22 @@
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
+        "DungeonAnimatedTiles.tsx": {
+            "scaleInDock": 1
+        },
+        "DungeonBuildingTileSet.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 3
+        },
+        "DungeonDecorations.tsx": {
+            "scaleInDock": 1
+        },
         "MainMap.tmx": {
-            "scale": 1.7654166666666666,
+            "scale": 3,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 240.16993155534573,
-                "y": 240.16993155534576
+                "x": 209.99999999999997,
+                "y": 212.66666666666666
             }
         }
     },

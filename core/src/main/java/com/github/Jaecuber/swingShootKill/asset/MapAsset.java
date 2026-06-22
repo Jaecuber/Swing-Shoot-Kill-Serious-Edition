@@ -5,7 +5,7 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 
 public enum MapAsset implements Asset<TiledMap>{
-    MAIN_MAP("mainMenu.mp3");
+    MAIN_MAP("MainMap.tmx");
 
     private final AssetDescriptor<TiledMap> descriptor;
 

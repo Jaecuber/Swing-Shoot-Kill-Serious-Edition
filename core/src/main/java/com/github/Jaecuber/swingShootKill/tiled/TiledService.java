@@ -41,7 +41,7 @@ public class TiledService {
     }
 
     public TiledMap loadMap(MapAsset mapAsset){
-        TiledMap tiledMap = this.assetService.get(mapAsset);
+        TiledMap tiledMap = this.assetService.load(mapAsset);
         tiledMap.getProperties().put("mapAsset", mapAsset);
         return tiledMap;
     }
