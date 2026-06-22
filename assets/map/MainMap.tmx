@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="3">
+<map version="1.10" tiledversion="1.12.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="5">
  <tileset firstgid="1" source="DungeonBuildingTileSet.tsx"/>
  <tileset firstgid="2561" source="DungeonAnimatedTiles.tsx"/>
  <tileset firstgid="2577" source="DungeonDecorations.tsx"/>
@@ -16,15 +16,16 @@
  </layer>
  <layer id="3" name="Foreground" width="30" height="30">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFQwFocdHObAE8ZlsRsBefXmqDSDLsYqOC+zKhZugAaW4grgXiOjr6GxdQHyA3mNPZ3spBENZDDXAPoTDTGUJupSYgtezUJqBecYDC0ZDK9nYRaZ4jifYSCu9ZIzQdjoLBC4jNC5QC9DbNaF4YmQAAF7oIxg==
+   eJxjYBgFQwFocdHObAE8ZlsB5ZTxyOPTS20QSYZdbFRwXybUDB0gzQ3EtUBcR0d/I4M2oL3tULvV6eiGaUC7pkPTgjkd7V0GtGv5AIX1UAVd0HRKbzCLTDt1Rmj8klp2ahNQrzhA4Wg4QPY6kmgvrvDGV7+NglEwkKCLTmkTvU1Dblk+CoY2AAB3ogyN
   </data>
  </layer>
  <objectgroup id="4" name="objects">
-  <object id="2" gid="2834" x="207.273" y="125.97" width="16" height="16">
+  <object id="3" name="player" type="GameObject" gid="2835" x="202" y="119.333" width="22" height="22">
    <properties>
-    <property name="atlasAsset" value="OBJECTS"/>
     <property name="camFollow" type="bool" value="true"/>
     <property name="controller" type="bool" value="true"/>
+    <property name="speed" type="float" value="5"/>
+    <property name="stamina" type="float" value="5"/>
    </properties>
   </object>
  </objectgroup>

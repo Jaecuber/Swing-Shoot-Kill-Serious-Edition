@@ -14,7 +14,7 @@
             "scaleInDock": 3
         },
         "DungeonDecorations.tsx": {
-            "scaleInDock": 1
+            "scaleInDock": 1.5
         },
         "MainMap.tmx": {
             "scale": 3,
@@ -29,7 +29,7 @@
         }
     },
     "frame.defaultDuration": 100,
-    "last.imagePath": "C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets_raw/objects",
+    "last.imagePath": "C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/map/Objects",
     "map.height": 30,
     "map.lastUsedFormat": "tmx",
     "map.layerDataFormat": "3",
@@ -39,7 +39,7 @@
         "MainMap.tmx"
     ],
     "project": "SSKTiledMap.tiled-project",
-    "property.type": "bool",
+    "property.type": "string",
     "recentFiles": [
         "MainMap.tmx"
     ],

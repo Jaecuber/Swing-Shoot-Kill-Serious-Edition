@@ -25,7 +25,7 @@ public class PhysicsMoveSystem extends IteratingSystem{
             return;
         }
 
-        normalizedDirection.set(move.getDirection().nor());
+        normalizedDirection.set(move.getDirection()).nor();
         body.setLinearVelocity(
             move.getMaxSpeed() * normalizedDirection.x,
             move.getMaxSpeed() * normalizedDirection.y

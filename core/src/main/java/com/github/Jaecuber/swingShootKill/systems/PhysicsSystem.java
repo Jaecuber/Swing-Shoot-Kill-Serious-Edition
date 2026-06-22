@@ -29,7 +29,7 @@ public class PhysicsSystem extends IteratingSystem implements EntityListener, Co
     @Override
     public void addedToEngine(Engine engine) {
         super.addedToEngine(engine);
-        engine.addEntityListener(null);
+        engine.addEntityListener(getFamily(), this);
     }
 
     @Override
