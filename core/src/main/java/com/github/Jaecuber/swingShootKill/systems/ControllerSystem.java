@@ -7,7 +7,9 @@ import com.badlogic.gdx.physics.box2d.Body;
 import com.github.Jaecuber.swingShootKill.component.Controller;
 import com.github.Jaecuber.swingShootKill.component.Move;
 import com.github.Jaecuber.swingShootKill.component.Physics;
+import com.github.Jaecuber.swingShootKill.helpers.Helpers;
 import com.github.Jaecuber.swingShootKill.input.Command;
+import com.github.Jaecuber.swingShootKill.input.KeyboardController;
 
 public class ControllerSystem extends IteratingSystem{
     public ControllerSystem(){
@@ -19,6 +21,8 @@ public class ControllerSystem extends IteratingSystem{
         Controller controller = Controller.MAPPER.get(entity);
         Move move = Move.MAPPER.get(entity);
         Body body = Physics.MAPPER.get(entity).getBody();
+
+        controller.getMousePosition().set(KeyboardController.getMousePos());
 
         if(controller.getPressedCommands().isEmpty() && controller.getReleasedCommands().isEmpty() && move == null) return;
         if(body == null) return;

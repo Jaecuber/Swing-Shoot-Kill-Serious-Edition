@@ -20,6 +20,7 @@ import com.github.Jaecuber.swingShootKill.asset.SkinAsset;
 import com.github.Jaecuber.swingShootKill.audio.AudioService;
 import com.github.Jaecuber.swingShootKill.input.GameControllerState;
 import com.github.Jaecuber.swingShootKill.input.KeyboardController;
+import com.github.Jaecuber.swingShootKill.systems.AttackModeSystem;
 import com.github.Jaecuber.swingShootKill.systems.CameraSystem;
 import com.github.Jaecuber.swingShootKill.systems.ControllerSystem;
 import com.github.Jaecuber.swingShootKill.systems.FacingSystem;
@@ -28,6 +29,7 @@ import com.github.Jaecuber.swingShootKill.systems.PhysicsDebugRenderSystem;
 import com.github.Jaecuber.swingShootKill.systems.PhysicsMoveSystem;
 import com.github.Jaecuber.swingShootKill.systems.PhysicsSystem;
 import com.github.Jaecuber.swingShootKill.systems.RenderSystem;
+import com.github.Jaecuber.swingShootKill.tiled.EntitySpawner;
 import com.github.Jaecuber.swingShootKill.tiled.TiledAshleyConfig;
 import com.github.Jaecuber.swingShootKill.tiled.TiledService;
 
@@ -42,6 +44,7 @@ public class GameScreen extends ScreenAdapter{
     private final Stage stage;
     private final Viewport uiViewport;
     private final Skin skin;
+    private final EntitySpawner entitySpawner;
 
     private MapAsset mapAsset;
 
@@ -58,6 +61,7 @@ public class GameScreen extends ScreenAdapter{
         this.stage = new Stage(uiViewport, launcher.getBatch());
         this.skin = launcher.getAssetService().get(SkinAsset.MENU_SCREEN);
         this.mapAsset = mapAsset;
+        this.entitySpawner = new EntitySpawner(this.tiledAshleyConfig);
 
         this.engine.addSystem(new ControllerSystem());
         this.engine.addSystem(new PhysicsMoveSystem());
@@ -65,6 +69,9 @@ public class GameScreen extends ScreenAdapter{
         this.engine.addSystem(new FacingSystem(launcher.getAssetService()));
         this.engine.addSystem(new PhysicsSystem(physicsWorld, 1/60f));
         this.engine.addSystem(new CameraSystem(launcher.getCamera()));
+
+        this.engine.addSystem(new AttackModeSystem(entitySpawner));
+        
         this.engine.addSystem(new RenderSystem(launcher.getBatch(), launcher.getViewport(), launcher.getCamera()));
         this.engine.addSystem(new PhysicsDebugRenderSystem(physicsWorld, launcher.getCamera()));
     }
@@ -84,8 +91,10 @@ public class GameScreen extends ScreenAdapter{
 
         Consumer<TiledMap> renderConsumer = this.engine.getSystem(RenderSystem.class)::setMap;
         Consumer<TiledMap> cameraConsumer = this.engine.getSystem(CameraSystem.class)::setMap;
+
+        Consumer<TiledMap> spawnConsumer = map -> entitySpawner.setTileSets(map.getTileSets());
         
-        this.tiledService.setMapChangeConsumer(renderConsumer.andThen(cameraConsumer));
+        this.tiledService.setMapChangeConsumer(renderConsumer.andThen(cameraConsumer).andThen(spawnConsumer));
         this.tiledService.setLoadObjectConsumer(this.tiledAshleyConfig::onLoadObject);
         this.tiledService.setLoadTileConsumer(this.tiledAshleyConfig::onLoadTile);
 
