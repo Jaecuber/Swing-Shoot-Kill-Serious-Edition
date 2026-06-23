@@ -61,9 +61,9 @@ public class FacingSystem extends IteratingSystem{
         TextureAtlas textureAtlas = this.assetService.get(atlasAsset);
         String combinedKey = atlasKey + "/" + atlasKey + "_" + direction.getAtlasKey();
         TextureAtlas.AtlasRegion region = textureAtlas.findRegion(combinedKey);
-        if(region != null){
-            graphic.setRegion(region);
+        if(region == null){
+            throw new GdxRuntimeException("No atlas region found for key " + combinedKey);
         }
-        throw new GdxRuntimeException("No atlas region found for key " + combinedKey);
+        graphic.setRegion(region);
     }
 }

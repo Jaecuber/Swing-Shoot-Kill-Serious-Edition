@@ -14,6 +14,7 @@ public class MenuViewModel extends ViewModel{
 
     public void startGame(){
         launcher.setScreen(new GameScreen(launcher, MapAsset.MAIN_MAP));
+        this.launcher.getAudioService().stopCurrentMusic();
     }
 
     public void quitGame(){
