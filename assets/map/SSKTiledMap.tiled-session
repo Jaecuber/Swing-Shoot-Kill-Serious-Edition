@@ -15,6 +15,7 @@
     "openFiles": [
     ],
     "project": "SSKTiledMap.tiled-project",
+    "property.type": "bool",
     "recentFiles": [
     ]
 }

@@ -18,6 +18,8 @@
  <tile id="3" type="Prop">
   <properties>
    <property name="atlasAsset" value="OBJECTS"/>
+   <property name="damage" type="float" value="5"/>
+   <property name="damageDelay" type="float" value="1"/>
    <property name="name" value="playersword"/>
   </properties>
   <image source="Objects/playerSword.png" width="22" height="22"/>
@@ -25,6 +27,8 @@
  <tile id="4" type="Prop">
   <properties>
    <property name="atlasAsset" value="OBJECTS"/>
+   <property name="canShoot" type="bool" value="true"/>
+   <property name="cooldown" type="float" value="0.25"/>
    <property name="name" value="playergun"/>
   </properties>
   <image source="Objects/playerRevolver.png" width="25" height="11"/>

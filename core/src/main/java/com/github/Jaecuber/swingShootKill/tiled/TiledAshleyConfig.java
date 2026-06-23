@@ -23,15 +23,19 @@ import com.github.Jaecuber.swingShootKill.Launcher;
 import com.github.Jaecuber.swingShootKill.Launcher;
 import com.github.Jaecuber.swingShootKill.asset.AssetService;
 import com.github.Jaecuber.swingShootKill.asset.AtlasAsset;
+import com.github.Jaecuber.swingShootKill.asset.SoundAsset;
 import com.github.Jaecuber.swingShootKill.component.AttackMode;
 import com.github.Jaecuber.swingShootKill.component.CameraFollow;
 import com.github.Jaecuber.swingShootKill.component.Controller;
 import com.github.Jaecuber.swingShootKill.component.Facing;
 import com.github.Jaecuber.swingShootKill.component.Graphic;
 import com.github.Jaecuber.swingShootKill.component.MapEntity;
+import com.github.Jaecuber.swingShootKill.component.Melee;
 import com.github.Jaecuber.swingShootKill.component.Move;
 import com.github.Jaecuber.swingShootKill.component.Physics;
 import com.github.Jaecuber.swingShootKill.component.Player;
+import com.github.Jaecuber.swingShootKill.component.Projectile;
+import com.github.Jaecuber.swingShootKill.component.Shooter;
 import com.github.Jaecuber.swingShootKill.component.Transform;
 import com.github.Jaecuber.swingShootKill.component.AttackMode.ATTACK_MODE;
 import com.github.Jaecuber.swingShootKill.component.Facing.FacingDirection;
@@ -103,10 +107,12 @@ public class TiledAshleyConfig {
         TextureRegion textureRegion = getTextureRegion(tile);
         int z = tile.getProperties().get("z", 1, Integer.class);
 
+
+        Boolean isTracking = tile.getProperties().get("trackRotation", false, Boolean.class);
         entity.add(new Graphic(textureRegion, Color.WHITE.cpy()));
         addEntityTransform(x, y, z, 
             textureRegion.getRegionWidth(), textureRegion.getRegionHeight(),
-            1f, 1f, entity);
+            1f, 1f, entity, isTracking);
 
 
         addEntityMove(tile, entity);
@@ -118,6 +124,10 @@ public class TiledAshleyConfig {
 
         entity.add(new MapEntity());
 
+
+        addEntityMelee(tile, entity);
+        addEntityShooter(tile, entity);
+        addEntityProjectile(tile, entity);
        
 
         this.engine.addEntity(entity);
@@ -132,11 +142,13 @@ public class TiledAshleyConfig {
 
         entity.add(new Graphic(textureRegion, Color.WHITE.cpy()));
 
+
+        Boolean isTracking = tileMapObject.getProperties().get("trackRotation", false, Boolean.class);
         addEntityTransform(
             tileMapObject.getX(), tileMapObject.getY(), z, 
             textureRegion.getRegionWidth(), textureRegion.getRegionHeight(), 
             tileMapObject.getScaleX(), tileMapObject.getScaleY(), 
-            entity
+            entity, isTracking
         );
 
         addEntityController(tileMapObject, entity);
@@ -151,6 +163,39 @@ public class TiledAshleyConfig {
         addEntityAttackMode(tileMapObject, entity);
 
         this.engine.addEntity(entity);
+    }
+
+    private void addEntityShooter(TiledMapTile tile, Entity entity){
+        boolean canAttack = tile.getProperties().get("canShoot", false, Boolean.class);
+        float cooldown = tile.getProperties().get("cooldown", 0.0f, Float.class);
+        if(cooldown == 0) return;
+        if(!canAttack) return;
+
+        System.out.println(cooldown);
+        
+
+        entity.add(new Shooter(cooldown));
+    }
+
+    private void addEntityMelee(TiledMapTile tile, Entity entity){
+        float damage = tile.getProperties().get("damage", 0f, Float.class);
+        if(damage == 0f) return;
+
+        float damageDelay = tile.getProperties().get("damageDelay", 0f, Float.class);
+       
+
+        entity.add(new Melee(damage, damageDelay));
+    }
+
+    private void addEntityProjectile(TiledMapTile tile, Entity entity){
+        boolean isProjectile = tile.getProperties().get("projectile", false, Boolean.class);
+        if(!isProjectile) return;
+
+        float lifetime = tile.getProperties().get("lifetime", 0.0f, Float.class);
+        if(lifetime == 0) return;
+
+       
+        entity.add(new Projectile(lifetime));
     }
 
     private void addEntityAttackMode(TiledMapTileMapObject tileMapObject, Entity entity){
@@ -229,15 +274,17 @@ public class TiledAshleyConfig {
         entity.add(new Controller());
     }
 
-    private void addEntityTransform(float x, float y, int z, int w, int h, float scaleX, float scaleY, Entity entity) {
+    private void addEntityTransform(float x, float y, int z, int w, int h, float scaleX, float scaleY, Entity entity, boolean isTracking) {
         Vector2 position = new Vector2(x,y);
         Vector2 size = new Vector2(w,h);
         Vector2 scaling = new Vector2(scaleX, scaleY);
 
+
+
         position.scl(Launcher.UNIT_SCALE);
         size.scl(Launcher.UNIT_SCALE);
 
-        entity.add(new Transform(position, z, size, scaling, 0f));
+        entity.add(new Transform(position, z, size, scaling, 0f, isTracking));
     }
 
     private TextureRegion getTextureRegion(TiledMapTile tile){
