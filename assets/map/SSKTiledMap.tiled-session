@@ -1,56 +1,20 @@
 {
-    "activeFile": "MainMap.tmx",
+    "activeFile": "",
     "expandedProjectPaths": [
-        "."
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
-        "DungeonAnimatedTiles.tsx": {
-            "dynamicWrapping": true,
-            "scaleInDock": 1
-        },
-        "DungeonBuildingTileSet.tsx": {
-            "dynamicWrapping": false,
-            "scaleInDock": 3
-        },
-        "DungeonDecorations.tsx": {
-            "dynamicWrapping": false,
-            "scaleInDock": 1
-        },
-        "MainMap.tmx": {
-            "scale": 4,
-            "selectedLayer": 3,
-            "viewCenter": {
-                "x": 185.5,
-                "y": 423
-            }
+        "objects.tsx": {
+            "dynamicWrapping": true
         },
         "player.tsx": {
-            "dynamicWrapping": true,
-            "scaleInDock": 1,
-            "scaleInEditor": 16
+            "dynamicWrapping": true
         }
     },
-    "frame.defaultDuration": 100,
-    "last.imagePath": "D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/map/objects",
-    "map.height": 30,
-    "map.lastUsedFormat": "tmx",
-    "map.layerDataFormat": "3",
-    "map.tileHeight": 16,
-    "map.tileWidth": 16,
+    "last.imagePath": "C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/map/Objects",
     "openFiles": [
-        "MainMap.tmx",
-        "player.tsx"
     ],
     "project": "SSKTiledMap.tiled-project",
-    "property.type": "bool",
     "recentFiles": [
-        "player.tsx",
-        "MainMap.tmx"
-    ],
-    "tileset.lastUsedFormat": "tsx",
-    "tileset.type": 1
-    ],
-    "tileset.lastUsedFormat": "tsx",
-    "tileset.type": 1
+    ]
 }
