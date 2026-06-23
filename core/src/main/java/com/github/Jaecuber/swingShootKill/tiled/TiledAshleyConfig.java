@@ -103,12 +103,7 @@ public class TiledAshleyConfig {
             entity
         );
 
-        addEntityTransform(
-            tileMapObject.getX(), tileMapObject.getY(), z,
-            textureRegion.getRegionWidth(), textureRegion.getRegionHeight(), 
-            tileMapObject.getScaleX(), tileMapObject.getScaleY(), 
-            entity
-        );
+        
         addEntityController(tileMapObject, entity);
         addEntityMove(tile, entity);
         BodyDef.BodyType bodyType = getObjectBodyType(tile);
