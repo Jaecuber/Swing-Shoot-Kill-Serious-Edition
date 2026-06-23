@@ -49,6 +49,7 @@ public class RenderSystem extends SortedIteratingSystem implements Disposable{
 
         batch.begin();
         //color grading would go here if needed later--this.batch.setColor(0.7f, 0.7f, 0.8f, 1f): gloomy blue hue
+        batch.setColor(Color.WHITE);
         this.mapRenderer.setView(this.camera);
         this.bkgLayers.forEach(mapRenderer::renderMapLayer);
 

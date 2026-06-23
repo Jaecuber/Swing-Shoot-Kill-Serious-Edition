@@ -2,6 +2,8 @@ package com.github.Jaecuber.swingShootKill.tiled;
 
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
+import com.badlogic.ashley.core.Family;
+import com.badlogic.ashley.utils.ImmutableArray;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -18,14 +20,19 @@ import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.World;
 import com.github.Jaecuber.swingShootKill.Launcher;
+import com.github.Jaecuber.swingShootKill.Launcher;
 import com.github.Jaecuber.swingShootKill.asset.AssetService;
 import com.github.Jaecuber.swingShootKill.asset.AtlasAsset;
 import com.github.Jaecuber.swingShootKill.component.CameraFollow;
 import com.github.Jaecuber.swingShootKill.component.Controller;
+import com.github.Jaecuber.swingShootKill.component.Facing;
 import com.github.Jaecuber.swingShootKill.component.Graphic;
+import com.github.Jaecuber.swingShootKill.component.MapEntity;
 import com.github.Jaecuber.swingShootKill.component.Move;
 import com.github.Jaecuber.swingShootKill.component.Physics;
+import com.github.Jaecuber.swingShootKill.component.Player;
 import com.github.Jaecuber.swingShootKill.component.Transform;
+import com.github.Jaecuber.swingShootKill.component.Facing.FacingDirection;
 
 public class TiledAshleyConfig {
     private static final Vector2 DEFAULT_PHYSICS_SCALING = new Vector2(1f, 1f);
@@ -61,7 +68,6 @@ public class TiledAshleyConfig {
                 "environment"
             );
         }
-        
     }
 
      private Body createBody(MapObjects mapObjects, Vector2 position, Vector2 scaling, 
@@ -86,9 +92,7 @@ public class TiledAshleyConfig {
         Entity entity = this.engine.createEntity();
         TiledMapTile tile = tileMapObject.getTile();
         TextureRegion textureRegion = getTextureRegion(tile);
-        int z = tile.getProperties().get("z", 1, Integer.class);
-
-       
+         int z = tile.getProperties().get("z", 1, Integer.class);
 
         entity.add(new Graphic(textureRegion, Color.WHITE.cpy()));
 
@@ -99,16 +103,102 @@ public class TiledAshleyConfig {
             entity
         );
 
-        //add component methods down here
-
+        addEntityTransform(
+            tileMapObject.getX(), tileMapObject.getY(), z,
+            textureRegion.getRegionWidth(), textureRegion.getRegionHeight(), 
+            tileMapObject.getScaleX(), tileMapObject.getScaleY(), 
+            entity
+        );
+        addEntityController(tileMapObject, entity);
         addEntityMove(tile, entity);
         BodyDef.BodyType bodyType = getObjectBodyType(tile);
-        addEntityPhysics(tile.getObjects(), bodyType, DEFAULT_PHYSICS_SCALING, entity);
-
-        addEntityCamFollow(tileMapObject, entity);
-        addEntityController(tileMapObject, entity);
+        addEntityPhysics(tile.getObjects(), bodyType, Vector2.Zero, entity);
+        addEntityCameraFollow(tileMapObject, entity);
+        addEntityPlayer(tileMapObject, entity);
+        addEntityMapEntity(tileMapObject, entity);
+        addEntityFacing(tile, entity);
 
         this.engine.addEntity(entity);
+    }
+
+    private void addEntityFacing(TiledMapTile tile, Entity entity){
+        FileTextureData textureData = (FileTextureData) tile.getTextureRegion().getTexture().getTextureData();
+        String atlasKey = textureData.getFileHandle().nameWithoutExtension();
+
+        entity.add(new Facing(FacingDirection.DOWN, atlasKey));
+    }
+
+    private void addEntityPlayer(TiledMapTileMapObject tileMapObject, Entity entity) {
+        if ("Player".equals(tileMapObject.getName())) {
+            entity.add(new Player());
+        }else if ("playerSpawn".equals(tileMapObject.getName())) {
+            ImmutableArray<Entity> players = engine.getEntitiesFor(Family.all(Player.class).get());
+            if (players.size() == 0) return;
+            
+            Entity player = players.first();
+            Transform transform = Transform.MAPPER.get(player);
+            Physics physics = Physics.MAPPER.get(player);
+            
+            transform.getPosition().set(tileMapObject.getX() * Launcher.UNIT_SCALE, tileMapObject.getY() * Launcher.UNIT_SCALE);
+            physics.getBody().setTransform(transform.getPosition(), 0f);
+            physics.getBody().setLinearVelocity(Vector2.Zero);
+            
+            engine.removeEntity(entity);
+        }
+    }
+
+    private void addEntityMapEntity(TiledMapTileMapObject tileMapObject, Entity entity) {
+        if (!"Player".equals(tileMapObject.getName())) {
+            entity.add(new MapEntity());
+        }
+    }
+
+    private void addEntityCameraFollow(TiledMapTileMapObject mapObject, Entity entity) {
+        boolean camFollow = mapObject.getProperties().get("camFollow", false, Boolean.class);
+        if(!camFollow) return;
+
+        entity.add(new CameraFollow());
+    }
+
+    private BodyType getObjectBodyType(TiledMapTile tile) {
+         String classType = tile.getProperties().get("type", "", String.class);
+        if("Prop".equals(classType)){
+            return BodyDef.BodyType.StaticBody;
+        }
+        return BodyDef.BodyType.DynamicBody;
+    }
+
+    private void addEntityPhysics(MapObjects objects, BodyType bodyType, Vector2 relativeTo, Entity entity) {
+        if(objects.getCount() == 0) return;
+        
+        Transform transform = Transform.MAPPER.get(entity);
+        Body body = createBody(objects, transform.getPosition(), transform.getScaling(), bodyType, relativeTo, entity);
+        entity.add(new Physics(body, transform.getPosition().cpy()));
+    }
+
+    private void addEntityMove(TiledMapTile tile, Entity entity) {
+        float speed = tile.getProperties().get("speed", 0f, Float.class);
+        if(speed == 0f) return;
+
+        entity.add(new Move(speed));
+    }
+
+    private void addEntityController(TiledMapTileMapObject tileMapObject, Entity entity) {
+        boolean controller = tileMapObject.getProperties().get("controller", false, Boolean.class);
+        if(!controller) return;
+
+        entity.add(new Controller());
+    }
+
+    private void addEntityTransform(float x, float y, int z, int w, int h, float scaleX, float scaleY, Entity entity) {
+        Vector2 position = new Vector2(x,y);
+        Vector2 size = new Vector2(w,h);
+        Vector2 scaling = new Vector2(scaleX, scaleY);
+
+        position.scl(Launcher.UNIT_SCALE);
+        size.scl(Launcher.UNIT_SCALE);
+
+        entity.add(new Transform(position, z, size, scaling, 0f));
     }
 
     private TextureRegion getTextureRegion(TiledMapTile tile){
@@ -124,61 +214,4 @@ public class TiledAshleyConfig {
         
         return tile.getTextureRegion();
     }
-
-    private void addEntityTransform(
-        float x, float y, int z,
-        float w, float h,
-        float scaleX, float scaleY,
-        Entity entity
-    ){
-        Vector2 position = new Vector2(x,y);
-        Vector2 size = new Vector2(w,h);
-        Vector2 scaling = new Vector2(scaleX, scaleY);
-
-        position.scl(Launcher.UNIT_SCALE);
-        size.scl(Launcher.UNIT_SCALE);
-
-      
-        entity.add(new Transform(position, z, size, scaling, 0f));
-    }
-
-    private void addEntityCamFollow(TiledMapTileMapObject tileMapObject, Entity entity){
-        boolean hasCamFollow = tileMapObject.getProperties().get("camFollow", false, Boolean.class);
-        if(!hasCamFollow) return;
-
-        entity.add(new CameraFollow());
-    }
-
-    private void addEntityController(TiledMapTileMapObject tileMapObject, Entity entity){
-        boolean hasController = tileMapObject.getProperties().get("controller", false, Boolean.class);
-        if(!hasController) return;
-
-        entity.add(new Controller());
-    }
-
-    private void addEntityMove(TiledMapTile tile, Entity entity){
-        float speed = tile.getProperties().get("speed", 0.0f, Float.class);
-        if(speed == 0f) return;
-
-        entity.add(new Move(speed));
-    }
-
-    private BodyType getObjectBodyType(TiledMapTile tile) {
-        String classType = tile.getProperties().get("type", "", String.class);
-        if("Prop".equals(classType)){
-            return BodyDef.BodyType.StaticBody;
-        }
-        return BodyDef.BodyType.DynamicBody;
-    }
-
-    private void addEntityPhysics(MapObjects objects, BodyType bodyType, Vector2 relativeTo, Entity entity) {
-        if(objects.getCount() == 0) return;
-        
-        Transform transform = Transform.MAPPER.get(entity);
-        Body body = createBody(objects, transform.getPosition(), transform.getScaling(), bodyType, relativeTo, entity);
-        entity.add(new Physics(body, transform.getPosition().cpy()));
-    }
-
-
-
 }
