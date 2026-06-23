@@ -18,6 +18,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.github.Jaecuber.swingShootKill.asset.AssetService;
 import com.github.Jaecuber.swingShootKill.audio.AudioService;
+import com.github.Jaecuber.swingShootKill.helpers.Helpers;
 import com.github.Jaecuber.swingShootKill.screens.LoadingScreen;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
@@ -45,6 +46,8 @@ public class Launcher extends Game {
         this.viewport = new FitViewport(WORLD_WIDTH, WORLD_HEIGHT, camera);
         this.assetService = new AssetService(new InternalFileHandleResolver());
         this.audioService = new AudioService(this.assetService);
+
+        Helpers.setLauncher(this);
 
         addScreen(new LoadingScreen(this, assetService));
         setScreen(LoadingScreen.class);

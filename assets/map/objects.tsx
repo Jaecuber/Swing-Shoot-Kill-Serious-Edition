@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.12.0" name="objects" tilewidth="22" tileheight="22" tilecount="1" columns="0">
+<tileset version="1.10" tiledversion="1.12.0" name="objects" tilewidth="25" tileheight="22" tilecount="3" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="2" type="GameObject">
   <properties>
@@ -14,5 +14,19 @@
     <ellipse/>
    </object>
   </objectgroup>
+ </tile>
+ <tile id="3" type="Prop">
+  <properties>
+   <property name="atlasAsset" value="OBJECTS"/>
+   <property name="name" value="playersword"/>
+  </properties>
+  <image source="Objects/playerSword.png" width="22" height="22"/>
+ </tile>
+ <tile id="4" type="Prop">
+  <properties>
+   <property name="atlasAsset" value="OBJECTS"/>
+   <property name="name" value="playergun"/>
+  </properties>
+  <image source="Objects/playerRevolver.png" width="25" height="11"/>
  </tile>
 </tileset>

@@ -6,6 +6,7 @@ import java.util.Map;
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 
 public class KeyboardController extends InputAdapter{
@@ -22,6 +23,8 @@ public class KeyboardController extends InputAdapter{
         Map.entry(Input.Buttons.LEFT, Command.ATTACK)
     );
 
+    private static Vector2 mousePosition;
+
     private final boolean[] commandState;
     private final Map<Class<?extends ControllerState>, ControllerState> stateCache;
     private ControllerState activeState;
@@ -30,6 +33,8 @@ public class KeyboardController extends InputAdapter{
         this.stateCache = new HashMap<>();
         this.activeState = null;
         this.commandState = new boolean[Command.values().length];
+
+        this.mousePosition = new Vector2();
 
         this.stateCache.put(IdleControllerState.class, new IdleControllerState());
         this.stateCache.put(GameControllerState.class, new GameControllerState(engine));
@@ -100,5 +105,16 @@ public class KeyboardController extends InputAdapter{
     @Override
     public boolean touchDragged(int screenX, int screenY, int pointer) {
         return super.touchDragged(screenX, screenY, pointer);
+    }
+
+    @Override
+    public boolean mouseMoved(int screenX, int screenY) {
+        mousePosition.set(screenX, screenY);
+
+        return false;
+    }
+
+    public static Vector2 getMousePos(){
+        return mousePosition;
     }
 }

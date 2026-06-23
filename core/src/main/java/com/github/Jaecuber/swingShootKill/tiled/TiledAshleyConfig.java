@@ -23,6 +23,7 @@ import com.github.Jaecuber.swingShootKill.Launcher;
 import com.github.Jaecuber.swingShootKill.Launcher;
 import com.github.Jaecuber.swingShootKill.asset.AssetService;
 import com.github.Jaecuber.swingShootKill.asset.AtlasAsset;
+import com.github.Jaecuber.swingShootKill.component.AttackMode;
 import com.github.Jaecuber.swingShootKill.component.CameraFollow;
 import com.github.Jaecuber.swingShootKill.component.Controller;
 import com.github.Jaecuber.swingShootKill.component.Facing;
@@ -32,7 +33,9 @@ import com.github.Jaecuber.swingShootKill.component.Move;
 import com.github.Jaecuber.swingShootKill.component.Physics;
 import com.github.Jaecuber.swingShootKill.component.Player;
 import com.github.Jaecuber.swingShootKill.component.Transform;
+import com.github.Jaecuber.swingShootKill.component.AttackMode.ATTACK_MODE;
 import com.github.Jaecuber.swingShootKill.component.Facing.FacingDirection;
+import com.github.Jaecuber.swingShootKill.component.Fsm;
 
 public class TiledAshleyConfig {
     private static final Vector2 DEFAULT_PHYSICS_SCALING = new Vector2(1f, 1f);
@@ -88,6 +91,39 @@ public class TiledAshleyConfig {
         return body;
     }
 
+    public Entity spawnFromTile(TiledMapTile tile, float x, float y){
+
+        //CORRESPONDS TO ACTUAL GAME COORDINATES INSTEAD OF MAP COORDINATES
+        //HELPS WITH RELATIVE SPAWNING
+        x /= Launcher.UNIT_SCALE;
+        y /= Launcher.UNIT_SCALE;
+
+
+        Entity entity = this.engine.createEntity();
+        TextureRegion textureRegion = getTextureRegion(tile);
+        int z = tile.getProperties().get("z", 1, Integer.class);
+
+        entity.add(new Graphic(textureRegion, Color.WHITE.cpy()));
+        addEntityTransform(x, y, z, 
+            textureRegion.getRegionWidth(), textureRegion.getRegionHeight(),
+            1f, 1f, entity);
+
+
+        addEntityMove(tile, entity);
+        
+        BodyDef.BodyType bodyType = getObjectBodyType(tile);
+        addEntityPhysics(tile.getObjects(), bodyType, Vector2.Zero, entity);
+        addEntityFacing(tile, entity);
+        
+
+        entity.add(new MapEntity());
+
+       
+
+        this.engine.addEntity(entity);
+        return entity;
+    }
+
     public void onLoadObject(TiledMapTileMapObject tileMapObject){
         Entity entity = this.engine.createEntity();
         TiledMapTile tile = tileMapObject.getTile();
@@ -103,7 +139,6 @@ public class TiledAshleyConfig {
             entity
         );
 
-        
         addEntityController(tileMapObject, entity);
         addEntityMove(tile, entity);
         BodyDef.BodyType bodyType = getObjectBodyType(tile);
@@ -113,7 +148,16 @@ public class TiledAshleyConfig {
         addEntityMapEntity(tileMapObject, entity);
         addEntityFacing(tile, entity);
 
+        addEntityAttackMode(tileMapObject, entity);
+
         this.engine.addEntity(entity);
+    }
+
+    private void addEntityAttackMode(TiledMapTileMapObject tileMapObject, Entity entity){
+        String attackModeStr = tileMapObject.getProperties().get("attackMode", "", String.class);
+        if(attackModeStr.isBlank()) return;
+
+        entity.add(new AttackMode(ATTACK_MODE.valueOf(attackModeStr)));
     }
 
     private void addEntityFacing(TiledMapTile tile, Entity entity){
