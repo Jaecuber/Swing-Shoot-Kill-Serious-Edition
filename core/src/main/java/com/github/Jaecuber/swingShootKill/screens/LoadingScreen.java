@@ -26,7 +26,14 @@ public class LoadingScreen extends ScreenAdapter{
         for(SoundAsset sound : SoundAsset.values()){
             assetService.queue(sound);
         }
+    
+        for(AtlasAsset atlas : AtlasAsset.values()){
+            assetService.queue(atlas);
+        }
+
+
         assetService.queue(SkinAsset.MENU_SCREEN);
+        
     }
 
     @Override
