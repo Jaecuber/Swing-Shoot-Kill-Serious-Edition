@@ -142,6 +142,46 @@ atlasData: {
 			type: TEXTURE
 			hidden: false
 		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/gameOverBkg.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: gameOverBkg
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/continueButton.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: continueButton
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
 	]
 	fontDrawables: [
 		{
@@ -224,6 +264,406 @@ atlasData: {
 			type: FONT
 			hidden: false
 		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_0.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_0
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_1.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_1
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_2.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_2
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_3.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_3
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_4.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_4
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_5.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_5
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_6.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_6
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_7.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_7
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_8.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_8
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_9.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_9
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_10.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_10
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_11.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_11
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_12.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_12
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_13.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_13
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_14.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_14
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_15.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_15
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_16.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_16
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_17.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_17
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_18.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_18
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_19.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_19
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
 	]
 }
 jsonData: {
@@ -240,6 +680,14 @@ jsonData: {
 		}
 	]
 	fonts: [
+		{
+			class: com.ray3k.skincomposer.data.FontData
+			name: ScrambleStormPixel_Huge
+			flip: false
+			markupEnabled: false
+			scaling: -1
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2).fnt
+		}
 		{
 			class: com.ray3k.skincomposer.data.FontData
 			name: ScrambleStormPixel_Large
@@ -588,6 +1036,33 @@ jsonData: {
 						name: font
 						optional: false
 						value: ScrambleStormPixel_Large
+					}
+					fontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: fontColor
+						optional: true
+						value: null
+					}
+					background: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: background
+						optional: true
+						value: null
+					}
+				}
+				deletable: true
+				parent: null
+			}
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: HugeTitle
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.Label
+				properties: {
+					font: {
+						type: com.badlogic.gdx.graphics.g2d.BitmapFont
+						name: font
+						optional: false
+						value: ScrambleStormPixel_Huge
 					}
 					fontColor: {
 						type: com.badlogic.gdx.graphics.Color
@@ -2087,7 +2562,7 @@ preferences: {
 		value: 30
 	}
 }
-saveFile: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/skin.scmp
+saveFile: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD.scmp
 version: 58
 sceneComposer: {
 	children: [
@@ -2099,7 +2574,7 @@ sceneComposer: {
 						class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimImage
 						name: null
 						drawable: {
-							file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/heart.png
+							file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/continueButton.png
 							bgColor: {
 								r: 1
 								g: 1
@@ -2108,7 +2583,7 @@ sceneComposer: {
 							}
 							tint: null
 							tintName: null
-							name: heart
+							name: continueButton
 							tiled: false
 							minWidth: -1
 							minHeight: -1
@@ -2154,7 +2629,7 @@ sceneComposer: {
 						class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimImage
 						name: null
 						drawable: {
-							file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/heart.png
+							file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/playButton.png
 							bgColor: {
 								r: 1
 								g: 1
@@ -2163,7 +2638,7 @@ sceneComposer: {
 							}
 							tint: null
 							tintName: null
-							name: heart
+							name: playButton
 							tiled: false
 							minWidth: -1
 							minHeight: -1
@@ -2177,218 +2652,7 @@ sceneComposer: {
 						touchable: enabled
 						visible: true
 					}
-					row: 0
-					column: 1
-					padLeft: 0
-					padRight: 0
-					padTop: 0
-					padBottom: 0
-					spaceLeft: 0
-					spaceRight: 0
-					spaceTop: 0
-					spaceBottom: 0
-					expandX: false
-					expandY: false
-					fillX: false
-					fillY: false
-					growX: false
-					growY: false
-					alignment: 1
-					minWidth: -1
-					minHeight: -1
-					maxWidth: -1
-					maxHeight: -1
-					preferredWidth: -1
-					preferredHeight: -1
-					uniformX: false
-					uniformY: false
-					colSpan: 1
-				}
-				{
-					child: {
-						class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimImage
-						name: null
-						drawable: {
-							file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/heart.png
-							bgColor: {
-								r: 1
-								g: 1
-								b: 1
-								a: 1
-							}
-							tint: null
-							tintName: null
-							name: heart
-							tiled: false
-							minWidth: -1
-							minHeight: -1
-							customized: false
-							tenPatchData: null
-							tvgData: null
-							type: TEXTURE
-							hidden: false
-						}
-						scaling: stretch
-						touchable: enabled
-						visible: true
-					}
-					row: 0
-					column: 2
-					padLeft: 0
-					padRight: 0
-					padTop: 0
-					padBottom: 0
-					spaceLeft: 0
-					spaceRight: 0
-					spaceTop: 0
-					spaceBottom: 0
-					expandX: false
-					expandY: false
-					fillX: false
-					fillY: false
-					growX: false
-					growY: false
-					alignment: 1
-					minWidth: -1
-					minHeight: -1
-					maxWidth: -1
-					maxHeight: -1
-					preferredWidth: -1
-					preferredHeight: -1
-					uniformX: false
-					uniformY: false
-					colSpan: 1
-				}
-				{
-					child: {
-						class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimImage
-						name: null
-						drawable: {
-							file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/heart.png
-							bgColor: {
-								r: 1
-								g: 1
-								b: 1
-								a: 1
-							}
-							tint: null
-							tintName: null
-							name: heart
-							tiled: false
-							minWidth: -1
-							minHeight: -1
-							customized: false
-							tenPatchData: null
-							tvgData: null
-							type: TEXTURE
-							hidden: false
-						}
-						scaling: stretch
-						touchable: enabled
-						visible: true
-					}
-					row: 0
-					column: 3
-					padLeft: 0
-					padRight: 0
-					padTop: 0
-					padBottom: 0
-					spaceLeft: 0
-					spaceRight: 0
-					spaceTop: 0
-					spaceBottom: 0
-					expandX: false
-					expandY: false
-					fillX: false
-					fillY: false
-					growX: false
-					growY: false
-					alignment: 1
-					minWidth: -1
-					minHeight: -1
-					maxWidth: -1
-					maxHeight: -1
-					preferredWidth: -1
-					preferredHeight: -1
-					uniformX: false
-					uniformY: false
-					colSpan: 1
-				}
-				{
-					child: {
-						class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimImage
-						name: null
-						drawable: {
-							file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/heart.png
-							bgColor: {
-								r: 1
-								g: 1
-								b: 1
-								a: 1
-							}
-							tint: null
-							tintName: null
-							name: heart
-							tiled: false
-							minWidth: -1
-							minHeight: -1
-							customized: false
-							tenPatchData: null
-							tvgData: null
-							type: TEXTURE
-							hidden: false
-						}
-						scaling: stretch
-						touchable: enabled
-						visible: true
-					}
-					row: 0
-					column: 4
-					padLeft: 0
-					padRight: 0
-					padTop: 0
-					padBottom: 0
-					spaceLeft: 0
-					spaceRight: 0
-					spaceTop: 0
-					spaceBottom: 0
-					expandX: false
-					expandY: false
-					fillX: false
-					fillY: false
-					growX: false
-					growY: false
-					alignment: 1
-					minWidth: -1
-					minHeight: -1
-					maxWidth: -1
-					maxHeight: -1
-					preferredWidth: -1
-					preferredHeight: -1
-					uniformX: false
-					uniformY: false
-					colSpan: 1
-				}
-			]
-			name: null
-			background: null
-			color: null
-			padLeft: 25
-			padRight: 0
-			padTop: 25
-			padBottom: 0
-			paddingEnabled: true
-			alignment: 10
-			fillParent: true
-			touchable: childrenOnly
-			visible: true
-		}
-		{
-			class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimTable
-			cells: [
-				{
-					child: null
-					row: 0
+					row: 1
 					column: 0
 					padLeft: 0
 					padRight: 0
@@ -2415,111 +2679,35 @@ sceneComposer: {
 					uniformY: false
 					colSpan: 1
 				}
-				{
-					child: {
-						class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimLabel
-						name: null
-						style: {
-							name: Title
-							clazz: com.badlogic.gdx.scenes.scene2d.ui.Label
-							properties: {
-								font: {
-									type: com.badlogic.gdx.graphics.g2d.BitmapFont
-									name: font
-									optional: false
-									value: ScrambleStormPixel_Large
-								}
-								fontColor: {
-									type: com.badlogic.gdx.graphics.Color
-									name: fontColor
-									optional: true
-									value: null
-								}
-								background: {
-									type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-									name: background
-									optional: true
-									value: null
-								}
-							}
-							deletable: true
-							parent: null
-						}
-						text: WAVE 1
-						textAlignment: 8
-						ellipsis: false
-						ellipsisString: ...
-						wrap: false
-						color: null
-						touchable: enabled
-						visible: true
-					}
-					row: 0
-					column: 1
-					padLeft: 0
-					padRight: 0
-					padTop: 0
-					padBottom: 0
-					spaceLeft: 0
-					spaceRight: 0
-					spaceTop: 0
-					spaceBottom: 0
-					expandX: false
-					expandY: false
-					fillX: false
-					fillY: false
-					growX: false
-					growY: false
-					alignment: 1
-					minWidth: -1
-					minHeight: -1
-					maxWidth: -1
-					maxHeight: -1
-					preferredWidth: -1
-					preferredHeight: -1
-					uniformX: false
-					uniformY: false
-					colSpan: 1
-				}
-				{
-					child: null
-					row: 0
-					column: 2
-					padLeft: 0
-					padRight: 0
-					padTop: 0
-					padBottom: 0
-					spaceLeft: 0
-					spaceRight: 0
-					spaceTop: 0
-					spaceBottom: 0
-					expandX: false
-					expandY: false
-					fillX: false
-					fillY: false
-					growX: false
-					growY: false
-					alignment: 1
-					minWidth: -1
-					minHeight: -1
-					maxWidth: -1
-					maxHeight: -1
-					preferredWidth: -1
-					preferredHeight: -1
-					uniformX: false
-					uniformY: false
-					colSpan: 1
-				}
 			]
 			name: null
-			background: null
+			background: {
+				file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/gameOverBkg.png
+				bgColor: {
+					r: 1
+					g: 1
+					b: 1
+					a: 1
+				}
+				tint: null
+				tintName: null
+				name: gameOverBkg
+				tiled: false
+				minWidth: -1
+				minHeight: -1
+				customized: false
+				tenPatchData: null
+				tvgData: null
+				type: TEXTURE
+				hidden: false
+			}
 			color: null
 			padLeft: 0
 			padRight: 0
-			padTop: 25
-			padBottom: 0
+			padTop: 0
+			padBottom: 100
 			paddingEnabled: true
-			alignment: 2
+			alignment: 4
 			fillParent: true
 			touchable: childrenOnly
 			visible: true

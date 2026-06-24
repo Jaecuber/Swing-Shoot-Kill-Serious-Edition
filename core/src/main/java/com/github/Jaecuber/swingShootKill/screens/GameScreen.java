@@ -23,8 +23,11 @@ import com.github.Jaecuber.swingShootKill.input.KeyboardController;
 import com.github.Jaecuber.swingShootKill.systems.AttackModeSystem;
 import com.github.Jaecuber.swingShootKill.systems.CameraSystem;
 import com.github.Jaecuber.swingShootKill.systems.ControllerSystem;
+import com.github.Jaecuber.swingShootKill.systems.DamageSystem;
+import com.github.Jaecuber.swingShootKill.systems.EnemyAiSystem;
 import com.github.Jaecuber.swingShootKill.systems.FacingSystem;
 import com.github.Jaecuber.swingShootKill.systems.FsmSystem;
+import com.github.Jaecuber.swingShootKill.systems.HealthSystem;
 import com.github.Jaecuber.swingShootKill.systems.MeleeSystem;
 import com.github.Jaecuber.swingShootKill.systems.PhysicsDebugRenderSystem;
 import com.github.Jaecuber.swingShootKill.systems.PhysicsMoveSystem;
@@ -35,6 +38,8 @@ import com.github.Jaecuber.swingShootKill.systems.ShooterSystem;
 import com.github.Jaecuber.swingShootKill.tiled.EntitySpawner;
 import com.github.Jaecuber.swingShootKill.tiled.TiledAshleyConfig;
 import com.github.Jaecuber.swingShootKill.tiled.TiledService;
+import com.github.Jaecuber.ui.model.GameViewModel;
+import com.github.Jaecuber.ui.view.GameView;
 
 public class GameScreen extends ScreenAdapter{
     private final Engine engine;
@@ -46,6 +51,7 @@ public class GameScreen extends ScreenAdapter{
     private final AudioService audioService;
     private final Stage stage;
     private final Viewport uiViewport;
+    private final GameViewModel viewModel;
     private final Skin skin;
     private final EntitySpawner entitySpawner;
 
@@ -62,15 +68,20 @@ public class GameScreen extends ScreenAdapter{
         this.audioService = launcher.getAudioService();
         this.uiViewport = new FitViewport(1500f, 900f);
         this.stage = new Stage(uiViewport, launcher.getBatch());
+        this.entitySpawner = new EntitySpawner(this.tiledAshleyConfig);
+        this.viewModel = new GameViewModel(launcher, this.tiledService, this.entitySpawner, this.engine);
         this.skin = launcher.getAssetService().get(SkinAsset.MENU_SCREEN);
         this.mapAsset = mapAsset;
-        this.entitySpawner = new EntitySpawner(this.tiledAshleyConfig);
+        
 
         this.engine.addSystem(new ControllerSystem());
         this.engine.addSystem(new PhysicsMoveSystem());
         this.engine.addSystem(new FsmSystem());
         this.engine.addSystem(new FacingSystem(launcher.getAssetService()));
         this.engine.addSystem(new PhysicsSystem(physicsWorld, 1/60f));
+        this.engine.addSystem(new DamageSystem(viewModel));
+        this.engine.addSystem(new HealthSystem(viewModel, keyboardController));
+        this.engine.addSystem(new EnemyAiSystem());
         this.engine.addSystem(new CameraSystem(launcher.getCamera()));
 
         this.engine.addSystem(new AttackModeSystem(entitySpawner));
@@ -93,7 +104,7 @@ public class GameScreen extends ScreenAdapter{
         launcher.setInputProcessor(stage, keyboardController);
         keyboardController.setActiveState(GameControllerState.class);
 
-        //this.stage.addActor(null); //add the gameview when its done
+        this.stage.addActor(new GameView(stage, skin, this.viewModel));
 
         Consumer<TiledMap> renderConsumer = this.engine.getSystem(RenderSystem.class)::setMap;
         Consumer<TiledMap> cameraConsumer = this.engine.getSystem(CameraSystem.class)::setMap;

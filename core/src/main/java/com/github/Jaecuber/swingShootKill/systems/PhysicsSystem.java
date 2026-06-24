@@ -9,8 +9,10 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
+import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.World;
+import com.github.Jaecuber.swingShootKill.component.Enemy;
 import com.github.Jaecuber.swingShootKill.component.Physics;
 import com.github.Jaecuber.swingShootKill.component.Transform;
 
@@ -24,6 +26,7 @@ public class PhysicsSystem extends IteratingSystem implements EntityListener, Co
         this.world = world;
         this.interval = interval;
         this.accumulator = 0f;
+        world.setContactListener(this);
     }
 
     @Override
@@ -85,14 +88,53 @@ public class PhysicsSystem extends IteratingSystem implements EntityListener, Co
 
     //Contact Listener-stub methods for now
     @Override
-    public void beginContact(Contact contact) {}
+    public void beginContact(Contact contact) {
+        Fixture a = contact.getFixtureA();
+        Fixture b = contact.getFixtureB();
+        enemyDetection(a,b,true);
+        enemyDetection(b,a,true);
+    }
 
     @Override
-    public void endContact(Contact contact) {}
+    public void endContact(Contact contact) {
+        Fixture a = contact.getFixtureA();
+        Fixture b = contact.getFixtureB();
+        enemyDetection(a,b,false);
+        enemyDetection(b,a,false);
+    }
 
-    @Override
-    public void preSolve(Contact contact, Manifold oldManifold) {}
+    private void enemyDetection(Fixture sensor, Fixture object, boolean entering){
+        if("detectionRadius".equals(sensor.getUserData())){
+            Entity entity = (Entity) sensor.getBody().getUserData();
+            Enemy enemy = Enemy.MAPPER.get(entity);
+            if(enemy == null) return;
 
-    @Override
-    public void postSolve(Contact contact, ContactImpulse impulse) {}
+            if("player".equals(object.getUserData())){
+                enemy.setAggro(entering);
+            }
+        };
+        if("attackRadius".equals(sensor.getUserData())){
+            Entity entity = (Entity) sensor.getBody().getUserData();
+            Enemy enemy = Enemy.MAPPER.get(entity);
+            if(enemy == null) return;
+            if("player".equals(object.getUserData())){
+                enemy.setAttackStatus(entering);
+            }
+        }
+        if("attackHitbox".equals(sensor.getUserData()) && "playerHitbox".equals(object.getUserData())){
+            Entity playerEntity = (Entity) object.getBody().getUserData();
+            Entity enemyEntity = (Entity) sensor.getBody().getUserData();
+            Enemy enemy = Enemy.MAPPER.get(enemyEntity);
+            //Dodge dodge = Dodge.MAPPER.get(playerEntity);
+
+            if(enemy == null) return;
+            //if(dodge == null) return;
+
+            enemy.setPlayerEntity(entering ? playerEntity : null);
+        }
+    }
+
+    @Override public void preSolve(Contact contact, Manifold oldManifold) {}
+
+    @Override public void postSolve(Contact contact, ContactImpulse impulse) {}
 }

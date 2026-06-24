@@ -73,7 +73,7 @@ public class MenuView extends View<MenuViewModel>{
         
         menuTable.row();
         quitButton = new Image(skin, "quitButton");
-        quitButton.setOrigin(playButton.getWidth()/2, playButton.getHeight()/2);
+        quitButton.setOrigin(quitButton.getWidth()/2, quitButton.getHeight()/2);
         menuTable.add(quitButton);
         onClick(quitButton, viewModel::quitGame);
         quitButton.addListener(new InputListener(){
