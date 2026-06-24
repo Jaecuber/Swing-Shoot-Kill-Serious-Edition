@@ -7,6 +7,7 @@ import com.badlogic.ashley.systems.IteratingSystem;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.github.Jaecuber.swingShootKill.component.AttackMode;
 import com.github.Jaecuber.swingShootKill.component.Controller;
+import com.github.Jaecuber.swingShootKill.component.Melee;
 import com.github.Jaecuber.swingShootKill.component.Move;
 import com.github.Jaecuber.swingShootKill.component.Physics;
 import com.github.Jaecuber.swingShootKill.component.Shooter;
@@ -18,7 +19,7 @@ import com.github.Jaecuber.swingShootKill.input.KeyboardController;
 
 public class ControllerSystem extends IteratingSystem{
 
-    private boolean swordSpinning = false;
+    
 
     public ControllerSystem(){
         super(Family.all(Controller.class).get());
@@ -52,7 +53,6 @@ public class ControllerSystem extends IteratingSystem{
                 case DOWN -> moveEntity(entity, 0f, 1f);
                 case LEFT -> moveEntity(entity, 1f, 0f);
                 case RIGHT -> moveEntity(entity, -1f, 0f);
-                case ATTACK -> attackEntity(entity);
             }
         }
         controller.getReleasedCommands().clear();
@@ -62,7 +62,7 @@ public class ControllerSystem extends IteratingSystem{
     private void weaponSwitch(Entity entity){
         ATTACK_MODE mode = AttackMode.MAPPER.get(entity).getAttackMode();
         switch (mode) {
-            case SWORD ->  AttackMode.MAPPER.get(entity).setAttackMode(ATTACK_MODE.GUN);
+            case SWORD -> AttackMode.MAPPER.get(entity).setAttackMode(ATTACK_MODE.GUN);
             case GUN -> AttackMode.MAPPER.get(entity).setAttackMode(ATTACK_MODE.SWORD);
         }
     }
@@ -92,10 +92,10 @@ public class ControllerSystem extends IteratingSystem{
     }
 
     private void spinSword(Entity currentWeapon){
-        swordSpinning = !swordSpinning;
+        Melee melee = Melee.MAPPER.get(currentWeapon);
 
-        if(swordSpinning){
-        }
+        boolean swordSpinning = !melee.isSpinning();
+        melee.setSpinning(swordSpinning);
 
     }
 

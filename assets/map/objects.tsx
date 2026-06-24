@@ -17,10 +17,12 @@
  </tile>
  <tile id="3" type="Prop">
   <properties>
+   <property name="acceleration" type="float" value="10"/>
    <property name="atlasAsset" value="OBJECTS"/>
    <property name="damage" type="float" value="5"/>
-   <property name="damageDelay" type="float" value="1"/>
+   <property name="maxSpinSpeed" type="float" value="1000"/>
    <property name="name" value="playersword"/>
+   <property name="stamConsume" type="float" value="10"/>
   </properties>
   <image source="Objects/playerSword.png" width="22" height="22"/>
  </tile>

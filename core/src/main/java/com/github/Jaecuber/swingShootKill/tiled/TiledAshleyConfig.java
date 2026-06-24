@@ -23,11 +23,10 @@ import com.github.Jaecuber.swingShootKill.Launcher;
 import com.github.Jaecuber.swingShootKill.Launcher;
 import com.github.Jaecuber.swingShootKill.asset.AssetService;
 import com.github.Jaecuber.swingShootKill.asset.AtlasAsset;
-<<<<<<< HEAD
-import com.github.Jaecuber.swingShootKill.asset.SoundAsset;
-=======
+
+
 import com.github.Jaecuber.swingShootKill.combat.BasicAttack;
->>>>>>> main
+
 import com.github.Jaecuber.swingShootKill.component.AttackMode;
 import com.github.Jaecuber.swingShootKill.component.CameraFollow;
 import com.github.Jaecuber.swingShootKill.component.Controller;
@@ -43,6 +42,7 @@ import com.github.Jaecuber.swingShootKill.component.Physics;
 import com.github.Jaecuber.swingShootKill.component.Player;
 import com.github.Jaecuber.swingShootKill.component.Projectile;
 import com.github.Jaecuber.swingShootKill.component.Shooter;
+import com.github.Jaecuber.swingShootKill.component.Stamina;
 import com.github.Jaecuber.swingShootKill.component.Transform;
 import com.github.Jaecuber.swingShootKill.component.AttackMode.ATTACK_MODE;
 import com.github.Jaecuber.swingShootKill.component.Facing.FacingDirection;
@@ -131,15 +131,12 @@ public class TiledAshleyConfig {
 
         entity.add(new MapEntity());
 
-<<<<<<< HEAD
 
         addEntityMelee(tile, entity);
         addEntityShooter(tile, entity);
         addEntityProjectile(tile, entity);
        
 
-=======
->>>>>>> main
         this.engine.addEntity(entity);
         return entity;
     }
@@ -169,6 +166,8 @@ public class TiledAshleyConfig {
         addEntityPlayer(tileMapObject, entity);
         addEntityMapEntity(tileMapObject, entity);
         addEntityFacing(tile, entity);
+
+        addEntityStamina(tile, entity);
         addEntityHealth(tile, entity);
         addEntityEnemy(tile, entity);
 
@@ -177,14 +176,18 @@ public class TiledAshleyConfig {
         this.engine.addEntity(entity);
     }
 
+    private void addEntityStamina(TiledMapTile tile, Entity entity){
+        float maxStamina = tile.getProperties().get("stamina", 0.0f, Float.class);
+        if(maxStamina == 0f) return;
+
+        entity.add(new Stamina(maxStamina));
+    }
+
     private void addEntityShooter(TiledMapTile tile, Entity entity){
         boolean canAttack = tile.getProperties().get("canShoot", false, Boolean.class);
         float cooldown = tile.getProperties().get("cooldown", 0.0f, Float.class);
         if(cooldown == 0) return;
         if(!canAttack) return;
-
-        System.out.println(cooldown);
-        
 
         entity.add(new Shooter(cooldown));
     }
@@ -193,10 +196,16 @@ public class TiledAshleyConfig {
         float damage = tile.getProperties().get("damage", 0f, Float.class);
         if(damage == 0f) return;
 
-        float damageDelay = tile.getProperties().get("damageDelay", 0f, Float.class);
-       
+        float maxSpinSpeed = tile.getProperties().get("maxSpinSpeed", -1f, Float.class);
+        if(maxSpinSpeed < 0f) return;
 
-        entity.add(new Melee(damage, damageDelay));
+        float acceleration = tile.getProperties().get("acceleration", -1f, Float.class);
+        if(acceleration < 0f) return;
+
+        float stamConsume = tile.getProperties().get("stamConsume", -1f, Float.class);
+       if(stamConsume < 0f) return;
+
+        entity.add(new Melee(damage, maxSpinSpeed, acceleration, stamConsume));
     }
 
     private void addEntityProjectile(TiledMapTile tile, Entity entity){
@@ -321,7 +330,7 @@ public class TiledAshleyConfig {
 
     private void addEntityTransform(float x, float y, int z, int w, int h, float scaleX, float scaleY, Entity entity, boolean isTracking) {
         Vector2 position = new Vector2(x,y);
-        Vector2 size = new Vector2(w,h);
+        Vector2 size = new Vector2(w,h);     
         Vector2 scaling = new Vector2(scaleX, scaleY);
 
 

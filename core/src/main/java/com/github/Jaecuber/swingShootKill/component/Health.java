@@ -2,11 +2,6 @@ package com.github.Jaecuber.swingShootKill.component;
 
 import com.badlogic.ashley.core.Component;
 import com.badlogic.ashley.core.ComponentMapper;
-<<<<<<< HEAD
-
-public class Health implements Component{
-    public static final ComponentMapper<Health> MAPPER = ComponentMapper.getFor(Health.class);
-=======
 import com.badlogic.gdx.math.MathUtils;
 
 public class Health implements Component{
@@ -52,5 +47,4 @@ public class Health implements Component{
     public float getRegen(){
         return regen;
     }
->>>>>>> main
 }

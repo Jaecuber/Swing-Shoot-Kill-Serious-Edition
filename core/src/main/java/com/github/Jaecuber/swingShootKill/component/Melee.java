@@ -2,50 +2,91 @@ package com.github.Jaecuber.swingShootKill.component;
 
 import com.badlogic.ashley.core.Component;
 import com.badlogic.ashley.core.ComponentMapper;
+import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.math.MathUtils;
 import com.github.Jaecuber.swingShootKill.asset.SoundAsset;
 
 public class Melee implements Component {
     public static final ComponentMapper<Melee> MAPPER = ComponentMapper.getFor(Melee.class);
 
-
-
     private float damage;
-    private float damageDelay;
-    private float attackTimer;
+    private float maxSpinSpeed;
+    private boolean isSpinning;
+    private float acceleration;
+    private float stamConsume;
+
+    private float currSpinSpeed;
+    private float accumulator;
+    
+
+    private Entity ownerEntity;
 
 
-    public Melee(float damage, float damageDelay){
+    public Melee(float damage, float maxSpinSpeed, float acceleration, float stamConsume){
         this.damage = damage;
-        this.damageDelay = damageDelay;
+        this.maxSpinSpeed = maxSpinSpeed;
+        this.isSpinning = false;
+        this.ownerEntity = null;
 
-        this.attackTimer = 0f;
-    }
-    
+        this.currSpinSpeed = 0;
+        this.acceleration = acceleration;
+        this.stamConsume = stamConsume;
 
-    public boolean canAttack(){
-        return this.attackTimer == 0f;
-    }
-
-    public boolean isAttacking(){
-        return this.attackTimer > 0f;
+        accumulator = 0f;
     }
 
-    public boolean hasAttackStarted(){
-        return MathUtils.isEqual(this.attackTimer, this.damageDelay, 0.0001f);
+    public void setAccumulator(float accumulator) {
+        this.accumulator = accumulator;
     }
 
-    public void startAttack(){
-        this.attackTimer = this.damageDelay;
+    public float getAccumulator() {
+        return accumulator;
     }
 
-    public void decAttackTimer(float deltaTime){
-        attackTimer = Math.max(0f, attackTimer - deltaTime);
-    }
-    
     public float getDamage() {
         return damage;
     }
+
+    public float getMaxSpinSpeed() {
+        return maxSpinSpeed;
+    }
+
+    public void setSpinning(boolean isSpinning) {
+        this.isSpinning = isSpinning;
+    }
+
+    public boolean isSpinning() {
+        return isSpinning;
+    }
+
+    public void setOwnerEntity(Entity ownerEntity) {
+        this.ownerEntity = ownerEntity;
+    }
+
+    public Entity getOwnerEntity() {
+        return ownerEntity;
+    }
+
+    public float getCurrSpinSpeed() {
+        return currSpinSpeed;
+    }
+
+    public void setCurrSpinSpeed(float currSpinSpeed) {
+        this.currSpinSpeed = MathUtils.clamp(currSpinSpeed, 0, maxSpinSpeed);
+    }
+
+    public float getAcceleration() {
+        return acceleration;
+    }
+
+    public float getStamConsume() {
+        return stamConsume;
+    }
+
+    
+    
+
+    
 
     
 }

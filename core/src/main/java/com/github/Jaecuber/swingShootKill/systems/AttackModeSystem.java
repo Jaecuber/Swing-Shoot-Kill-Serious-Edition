@@ -78,7 +78,10 @@ public class AttackModeSystem extends IteratingSystem{
 
         Transform transform = Transform.MAPPER.get(originEntity);
         currentWeapon = entitySpawner.spawnEntity("playersword", transform.getPosition());
+
+        
         AttackMode.MAPPER.get(originEntity).setCurrentWeaponEntity(currentWeapon);
+        Melee.MAPPER.get(currentWeapon).setOwnerEntity(originEntity);
 
     }
 
