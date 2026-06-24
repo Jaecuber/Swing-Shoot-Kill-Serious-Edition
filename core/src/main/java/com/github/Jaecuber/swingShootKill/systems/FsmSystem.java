@@ -13,6 +13,8 @@ public class FsmSystem extends IteratingSystem{
     @Override
     protected void processEntity(Entity entity, float deltaTime) {
         Fsm fsm = Fsm.MAPPER.get(entity);
-        
+        if(fsm.getEnemyFsm() != null){
+            fsm.getEnemyFsm().update();
+        }
     }
 }

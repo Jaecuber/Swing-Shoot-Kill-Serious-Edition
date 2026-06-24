@@ -23,11 +23,15 @@ import com.github.Jaecuber.swingShootKill.Launcher;
 import com.github.Jaecuber.swingShootKill.Launcher;
 import com.github.Jaecuber.swingShootKill.asset.AssetService;
 import com.github.Jaecuber.swingShootKill.asset.AtlasAsset;
+import com.github.Jaecuber.swingShootKill.combat.BasicAttack;
 import com.github.Jaecuber.swingShootKill.component.AttackMode;
 import com.github.Jaecuber.swingShootKill.component.CameraFollow;
 import com.github.Jaecuber.swingShootKill.component.Controller;
+import com.github.Jaecuber.swingShootKill.component.Enemy;
+import com.github.Jaecuber.swingShootKill.component.Enemy.EnemyAIState;
 import com.github.Jaecuber.swingShootKill.component.Facing;
 import com.github.Jaecuber.swingShootKill.component.Graphic;
+import com.github.Jaecuber.swingShootKill.component.Health;
 import com.github.Jaecuber.swingShootKill.component.MapEntity;
 import com.github.Jaecuber.swingShootKill.component.Move;
 import com.github.Jaecuber.swingShootKill.component.Physics;
@@ -118,8 +122,6 @@ public class TiledAshleyConfig {
 
         entity.add(new MapEntity());
 
-       
-
         this.engine.addEntity(entity);
         return entity;
     }
@@ -147,6 +149,8 @@ public class TiledAshleyConfig {
         addEntityPlayer(tileMapObject, entity);
         addEntityMapEntity(tileMapObject, entity);
         addEntityFacing(tile, entity);
+        addEntityHealth(tile, entity);
+        addEntityEnemy(tile, entity);
 
         addEntityAttackMode(tileMapObject, entity);
 
@@ -165,6 +169,35 @@ public class TiledAshleyConfig {
         String atlasKey = textureData.getFileHandle().nameWithoutExtension();
 
         entity.add(new Facing(FacingDirection.DOWN, atlasKey));
+    }
+
+    private void addEntityHealth(TiledMapTile tile, Entity entity) {
+        float health = tile.getProperties().get("health", 0.0f, Float.class);
+        if(health == 0.0f) return;
+
+        float regen = tile.getProperties().get("regen", 0.0f, Float.class);
+        entity.add(new Health(health, regen));
+    }
+
+    private void addEntityEnemy(TiledMapTile tile, Entity entity) {
+        boolean enemy = tile.getProperties().get("enemy", false, Boolean.class);
+        if(!enemy) return;
+
+        String stateStr = tile.getProperties().get("state", null, String.class);
+        EnemyAIState state = EnemyAIState.valueOf(stateStr);
+        float speed = tile.getProperties().get("speed", 0f, Float.class);
+        float cooldown = tile.getProperties().get("cooldown", 0f, Float.class);
+        float damage = tile.getProperties().get("damage", 0.0f, Float.class);
+
+        String type = tile.getProperties().get("type", null, String.class);
+
+        Enemy enemyComponent = new Enemy(state, speed, cooldown, damage);
+        
+        switch (type) {
+            case "basic" -> enemyComponent.setMoveset(new BasicAttack());
+        }
+
+        entity.add(enemyComponent);
     }
 
     private void addEntityPlayer(TiledMapTileMapObject tileMapObject, Entity entity) {
