@@ -16,7 +16,8 @@ public class KeyboardController extends InputAdapter{
         Map.entry(Input.Keys.S, Command.DOWN),
         Map.entry(Input.Keys.D, Command.RIGHT),
         Map.entry(Input.Keys.SHIFT_LEFT, Command.DASH),
-        Map.entry(Input.Keys.ESCAPE, Command.EXIT)
+        Map.entry(Input.Keys.ESCAPE, Command.EXIT),
+        Map.entry(Input.Keys.E, Command.SWITCH_WEAPONS)
     );
 
     private static final Map<Integer, Command> INPUT_MAPPING = Map.ofEntries(

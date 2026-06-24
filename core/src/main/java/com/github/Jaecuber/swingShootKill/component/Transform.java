@@ -8,17 +8,25 @@ public class Transform implements Component, Comparable<Transform>{
     public static final ComponentMapper<Transform> MAPPER = ComponentMapper.getFor(Transform.class);
 
     private final Vector2 position;
+    private final Vector2 originPos;
     private final int z;
     private final Vector2 size;
     private final Vector2 scaling;
     private float rotationDeg;
 
-    public Transform(Vector2 position, int z, Vector2 size, Vector2 scaling, float rotationDeg) {
+    private boolean trackRotation;
+
+    public Transform(Vector2 position, int z, Vector2 size, Vector2 scaling, float rotationDeg, boolean trackRotation) {
         this.position = position;
         this.z = z;
         this.size = size;
         this.scaling = scaling;
         this.rotationDeg = rotationDeg;
+        this.originPos = new Vector2();
+        originPos.set(size.x * 0.5f, size.y * 0.5f);
+
+        this.trackRotation = trackRotation;
+        
     }
 
     @Override
@@ -47,4 +55,18 @@ public class Transform implements Component, Comparable<Transform>{
     public float getRotationDeg() {
         return rotationDeg;
     }
+
+    public void setRotationDeg(float rotationDeg) {
+        this.rotationDeg = rotationDeg;
+    }
+
+    public Vector2 getOriginPos() {
+        return originPos;
+    }
+
+    public boolean isTrackRotation() {
+        return trackRotation;
+    }
+
+    
 }

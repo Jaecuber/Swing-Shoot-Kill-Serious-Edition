@@ -4,6 +4,7 @@
  <tile id="0">
   <properties>
    <property name="atlasAsset" value="OBJECTS"/>
+   <property name="hasFacing" type="bool" value="true"/>
    <property name="health" type="float" value="5"/>
    <property name="speed" type="float" value="5"/>
    <property name="stamina" type="float" value="100"/>

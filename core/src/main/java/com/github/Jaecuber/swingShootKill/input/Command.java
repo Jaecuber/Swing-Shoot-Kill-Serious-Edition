@@ -7,5 +7,6 @@ public enum Command {
     RIGHT,
     ATTACK,
     DASH,
-    EXIT
+    EXIT,
+    SWITCH_WEAPONS
 }

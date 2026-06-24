@@ -2,6 +2,7 @@ package com.github.Jaecuber.swingShootKill.component;
 
 import com.badlogic.ashley.core.Component;
 import com.badlogic.ashley.core.ComponentMapper;
+import com.badlogic.ashley.core.Entity;
 
 public class Shooter implements Component {
     public static final ComponentMapper<Shooter> MAPPER = ComponentMapper.getFor(Shooter.class);
@@ -11,16 +12,30 @@ public class Shooter implements Component {
     private float elapsedTime;
     private ShooterState shooterState;
 
+    private Entity ownerEntity;
+
+    private int timesShot;
+
 
     public enum ShooterState {IDLE, SHOOTING, COOLDOWN};
     
 
 
-    public Shooter(float cooldown ){
+    public Shooter(float cooldown){
         this.shooterState = ShooterState.IDLE;
         this.cooldown = cooldown;
         this.elapsedTime = 0;
+        this.ownerEntity = null;
+        this.timesShot = 0;
         
+    }
+
+    public void setOwnerEntity(Entity ownerEntity) {
+        this.ownerEntity = ownerEntity;
+    }
+
+    public Entity getOwnerEntity() {
+        return ownerEntity;
     }
 
     public ShooterState getShooterState() {
@@ -45,6 +60,14 @@ public class Shooter implements Component {
 
     public float getElapsedTime() {
         return elapsedTime;
+    }
+
+    public void incrementTimesShot(){
+        timesShot++;
+    }
+
+    public boolean timeToRoll(){
+        return timesShot % 6 == 0;
     }
 
 }
