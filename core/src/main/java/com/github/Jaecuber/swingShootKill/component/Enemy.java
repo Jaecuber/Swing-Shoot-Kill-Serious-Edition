@@ -2,6 +2,7 @@ package com.github.Jaecuber.swingShootKill.component;
 
 import com.badlogic.ashley.core.Component;
 import com.badlogic.ashley.core.ComponentMapper;
+import com.badlogic.ashley.core.Entity;
 import com.github.Jaecuber.swingShootKill.combat.EnemyMoveset;
 
 public class Enemy implements Component{
@@ -9,6 +10,7 @@ public class Enemy implements Component{
 
     private EnemyAIState state;
     private EnemyMoveset moveset;
+    private Entity playerEntity;
 
     private boolean dead;
     private boolean isAggro;
@@ -185,6 +187,14 @@ public class Enemy implements Component{
 
     public float getStateTimer() {
        return stateTimer;
+    }
+
+    public Entity getPlayerEntity() {
+        return playerEntity;
+    }
+
+    public void setPlayerEntity(Entity playerEntity) {
+        this.playerEntity = playerEntity;
     }
 
     public enum EnemyAIState{

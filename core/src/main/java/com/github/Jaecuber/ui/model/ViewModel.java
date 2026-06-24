@@ -11,7 +11,7 @@ public abstract class ViewModel {
 
     public ViewModel(Launcher launcher){
         this.launcher = launcher;
-        propertyChangeSupport = new PropertyChangeSupport(this);
+        this.propertyChangeSupport = new PropertyChangeSupport(this);
     }
 
     public <T> void onPropertyChange(String propertyName, Class<T> propType, OnPropertyChange<T> consumer){
@@ -27,7 +27,7 @@ public abstract class ViewModel {
     }
 
     @FunctionalInterface
-    public interface OnPropertyChange<T> {
+    public interface OnPropertyChange<T>{
         void onChange(T value);
     }
 }

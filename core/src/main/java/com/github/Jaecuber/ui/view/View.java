@@ -28,6 +28,8 @@ public abstract class View<T extends ViewModel> extends Table{
         super.setStage(stage);
         if(stage == null){
             viewModel.clearPropertyChanges();
+        }else{
+            setupPropertyChanges();
         }
     }
 

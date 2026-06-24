@@ -10,6 +10,7 @@ import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.ObjectMap;
+import com.github.Jaecuber.swingShootKill.component.DamageListener;
 import com.github.Jaecuber.swingShootKill.component.Enemy;
 import com.github.Jaecuber.swingShootKill.component.Fsm;
 import com.github.Jaecuber.swingShootKill.component.Move;
@@ -48,7 +49,7 @@ public class EnemyAiSystem extends IteratingSystem{
         if(!body.isBullet()){
             body.setBullet(true);
         }
-        if(!body.isSleepingAllowed()){
+        if(body.isSleepingAllowed()){
             body.setSleepingAllowed(false);
             body.setAwake(true);
         }
@@ -56,8 +57,16 @@ public class EnemyAiSystem extends IteratingSystem{
         enemy.tickKnockbackTimer(deltaTime);
         enemy.tickAttackTimer(deltaTime);
 
+        Entity playerEntity = enemy.getPlayerEntity();
+
         if(playerEntity != null && enemy.isAttacking() && !enemy.hasDamaged()){
-            //do damage stuff
+            enemy.setHasDamaged(true);
+            DamageListener damage = DamageListener.MAPPER.get(playerEntity);
+            if (damage == null) {
+                playerEntity.add(new DamageListener(enemy.getDamage()));
+            } else {
+                damage.addDamage(enemy.getDamage());
+            }
         }
 
         //knockback stuff
@@ -67,6 +76,7 @@ public class EnemyAiSystem extends IteratingSystem{
         }else if(!enemy.isStaggered() && body != null){
             body.setLinearDamping(0f);
         }
+
         //fsm stuff
         switch (enemy.getState()) {
             case IDLE -> enterIdle(entity);

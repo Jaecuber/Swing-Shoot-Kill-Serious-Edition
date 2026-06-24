@@ -151,7 +151,6 @@ public class TiledAshleyConfig {
         addEntityFacing(tile, entity);
         addEntityHealth(tile, entity);
         addEntityEnemy(tile, entity);
-
         addEntityAttackMode(tileMapObject, entity);
 
         this.engine.addEntity(entity);
@@ -196,6 +195,9 @@ public class TiledAshleyConfig {
         switch (type) {
             case "basic" -> enemyComponent.setMoveset(new BasicAttack());
         }
+
+        Fsm fsm = new Fsm(entity);
+        entity.add(fsm);
 
         entity.add(enemyComponent);
     }

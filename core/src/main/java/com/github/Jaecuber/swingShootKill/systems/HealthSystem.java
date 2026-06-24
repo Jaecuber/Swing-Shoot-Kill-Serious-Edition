@@ -26,19 +26,18 @@ public class HealthSystem extends IteratingSystem implements EntityListener{
         Health health = Health.MAPPER.get(entity);
         if(health.getHealth() == health.getMaxHealth()) return;
 
-
         health.addHealth(health.getRegen() * deltaTime);
         if(health.died() && Player.MAPPER.get(entity) != null){
             die(entity);
         }
         if (Player.MAPPER.get(entity) != null) {
-            //viewModel.updateHealthInfo(health.getMaxHealth(), health.getHealth());
+            viewModel.updateHealthInfo(health.getMaxHealth(), health.getHealth());
         }
     }
 
     private void die(Entity entity){
        keyboardController.setActiveState(IdleControllerState.class);
-       //viewModel.showGameOver();
+       viewModel.showGameOver();
     }
 
     @Override
@@ -56,7 +55,7 @@ public class HealthSystem extends IteratingSystem implements EntityListener{
     @Override
     public void entityAdded(Entity entity) {
         Health health = Health.MAPPER.get(entity);
-        //viewModel.updateHealthInfo(health.getMaxHealth(), health.getHealth());
+        viewModel.updateHealthInfo(health.getMaxHealth(), health.getHealth());
     }
 
     @Override

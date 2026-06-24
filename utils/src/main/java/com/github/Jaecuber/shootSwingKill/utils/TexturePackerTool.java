@@ -10,6 +10,5 @@ public class TexturePackerTool {
         String packFileName = "objects";
 
         TexturePacker.process(inputDir, outputDir, packFileName);
-
     }
 }

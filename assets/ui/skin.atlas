@@ -4,13 +4,6 @@ size: 2048, 2048
 format: RGBA8888
 filter: Linear, Linear
 repeat: none
-awesomeCavePixelArt
-  rotate: false
-  xy: 1, 45
-  size: 1280, 720
-  orig: 1280, 720
-  offset: 0, 0
-  index: -1
 menuBkg
   rotate: false
   xy: 1, 767
@@ -20,34 +13,248 @@ menuBkg
   index: -1
 
 skin2.png
-size: 1024, 1024
+size: 2048, 2048
 format: RGBA8888
 filter: Linear, Linear
 repeat: none
-SwingShootKillLogo
+awesomeCavePixelArt
+  rotate: false
+  xy: 1, 117
+  size: 1280, 720
+  orig: 1280, 720
+  offset: 0, 0
+  index: -1
+gameOverBkg
+  rotate: false
+  xy: 1, 839
+  size: 1920, 1080
+  orig: 1920, 1080
+  offset: 0, 0
+  index: -1
+
+skin3.png
+size: 2048, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+ScrambleStormPixel(2)_0
+  rotate: false
+  xy: 515, 843
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel(2)_1
+  rotate: false
+  xy: 1029, 843
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel(2)_2
   rotate: false
   xy: 1, 533
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel(2)_3
+  rotate: false
+  xy: 515, 329
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel(2)_4
+  rotate: false
+  xy: 1029, 329
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel(2)_5
+  rotate: false
+  xy: 1, 19
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel_0
+  rotate: false
+  xy: 1007, 1357
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel_1
+  rotate: false
+  xy: 1521, 1357
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel_2
+  rotate: false
+  xy: 1, 1047
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+SwingShootKillLogo
+  rotate: false
+  xy: 1, 1561
   size: 1004, 470
   orig: 1004, 470
   offset: 0, 0
   index: -1
+continueButton
+  rotate: false
+  xy: 1007, 1871
+  size: 640, 160
+  orig: 640, 160
+  offset: 0, 0
+  index: -1
+
+skin4.png
+size: 2048, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+ScrambleStormPixel(2)_10
+  rotate: false
+  xy: 515, 515
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel(2)_11
+  rotate: false
+  xy: 1029, 1029
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel(2)_12
+  rotate: false
+  xy: 515, 1
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel(2)_13
+  rotate: false
+  xy: 1029, 515
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel(2)_14
+  rotate: false
+  xy: 1029, 1
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel(2)_6
+  rotate: false
+  xy: 1, 1029
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel(2)_7
+  rotate: false
+  xy: 1, 515
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel(2)_8
+  rotate: false
+  xy: 515, 1029
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel(2)_9
+  rotate: false
+  xy: 1, 1
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+
+skin5.png
+size: 2048, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+ScrambleStormPixel(1)
+  rotate: false
+  xy: 1029, 1593
+  size: 506, 110
+  orig: 506, 110
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel(2)_15
+  rotate: false
+  xy: 1, 1191
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel(2)_16
+  rotate: false
+  xy: 1, 677
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel(2)_17
+  rotate: false
+  xy: 515, 1191
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel(2)_18
+  rotate: false
+  xy: 1, 163
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+ScrambleStormPixel(2)_19
+  rotate: false
+  xy: 515, 677
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
 charIcon
   rotate: false
-  xy: 387, 291
+  xy: 1029, 1351
   size: 240, 240
   orig: 240, 240
   offset: 0, 0
   index: -1
+heart
+  rotate: false
+  xy: 1537, 1639
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
 playButton
   rotate: false
-  xy: 1, 371
+  xy: 1, 1
   size: 384, 160
   orig: 384, 160
   offset: 0, 0
   index: -1
 quitButton
   rotate: false
-  xy: 1, 209
+  xy: 515, 515
   size: 384, 160
   orig: 384, 160
   offset: 0, 0
