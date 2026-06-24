@@ -206,6 +206,10 @@ public class TiledAshleyConfig {
     }
 
     private void addEntityFacing(TiledMapTile tile, Entity entity){
+        Boolean hasFacing = tile.getProperties().get("hasFacing", false, Boolean.class);
+
+        if(!hasFacing) return;
+
         FileTextureData textureData = (FileTextureData) tile.getTextureRegion().getTexture().getTextureData();
         String atlasKey = textureData.getFileHandle().nameWithoutExtension();
 

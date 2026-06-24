@@ -23,6 +23,7 @@
  <objectgroup id="4" name="objects">
   <object id="1" name="Player" gid="2833" x="136.622" y="399.583" width="22" height="22">
    <properties>
+    <property name="atlasAsset" value="OBJECTS        "/>
     <property name="attackMode" value="GUN"/>
     <property name="camFollow" type="bool" value="true"/>
     <property name="controller" type="bool" value="true"/>

@@ -14,6 +14,8 @@ public class Shooter implements Component {
 
     private Entity ownerEntity;
 
+    private int timesShot;
+
 
     public enum ShooterState {IDLE, SHOOTING, COOLDOWN};
     
@@ -23,7 +25,8 @@ public class Shooter implements Component {
         this.shooterState = ShooterState.IDLE;
         this.cooldown = cooldown;
         this.elapsedTime = 0;
-        this.ownerEntity = ownerEntity;
+        this.ownerEntity = null;
+        this.timesShot = 0;
         
     }
 
@@ -57,6 +60,14 @@ public class Shooter implements Component {
 
     public float getElapsedTime() {
         return elapsedTime;
+    }
+
+    public void incrementTimesShot(){
+        timesShot++;
+    }
+
+    public boolean timeToRoll(){
+        return timesShot % 6 == 0;
     }
 
 }

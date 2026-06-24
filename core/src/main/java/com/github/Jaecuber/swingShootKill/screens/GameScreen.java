@@ -28,7 +28,9 @@ import com.github.Jaecuber.swingShootKill.systems.FsmSystem;
 import com.github.Jaecuber.swingShootKill.systems.PhysicsDebugRenderSystem;
 import com.github.Jaecuber.swingShootKill.systems.PhysicsMoveSystem;
 import com.github.Jaecuber.swingShootKill.systems.PhysicsSystem;
+import com.github.Jaecuber.swingShootKill.systems.ProjectileSystem;
 import com.github.Jaecuber.swingShootKill.systems.RenderSystem;
+import com.github.Jaecuber.swingShootKill.systems.ShooterSystem;
 import com.github.Jaecuber.swingShootKill.tiled.EntitySpawner;
 import com.github.Jaecuber.swingShootKill.tiled.TiledAshleyConfig;
 import com.github.Jaecuber.swingShootKill.tiled.TiledService;
@@ -71,6 +73,8 @@ public class GameScreen extends ScreenAdapter{
         this.engine.addSystem(new CameraSystem(launcher.getCamera()));
 
         this.engine.addSystem(new AttackModeSystem(entitySpawner));
+        this.engine.addSystem(new ShooterSystem(entitySpawner));
+        this.engine.addSystem(new ProjectileSystem());
         
         this.engine.addSystem(new RenderSystem(launcher.getBatch(), launcher.getViewport(), launcher.getCamera()));
         this.engine.addSystem(new PhysicsDebugRenderSystem(physicsWorld, launcher.getCamera()));

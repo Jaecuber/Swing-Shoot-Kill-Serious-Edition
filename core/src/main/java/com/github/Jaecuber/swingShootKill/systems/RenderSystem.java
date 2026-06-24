@@ -76,8 +76,8 @@ public class RenderSystem extends SortedIteratingSystem implements Disposable{
         this.batch.setColor(graphic.getColor());
         this.batch.draw(
             graphic.getRegion(), 
-            position.x - (1f -scaling.x) * size.x * 0.5f, 
-            position.y - (1f -scaling.y) * size.y * 0.5f,
+            position.x,
+            position.y,
             origin.x, origin.y,
             size.x, size.y,
             scaling.x, scaling.y,

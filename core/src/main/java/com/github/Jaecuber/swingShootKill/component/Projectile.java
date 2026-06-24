@@ -13,8 +13,6 @@ public class Projectile implements Component {
     private Entity hitEntity;
     private Entity sourceEntity;
 
-
-
     public Projectile(float maxLifeTime){
         this.maxLifeTime = maxLifeTime;
         lifetime = 0;
