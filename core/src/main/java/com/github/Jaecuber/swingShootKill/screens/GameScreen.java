@@ -73,7 +73,6 @@ public class GameScreen extends ScreenAdapter{
         this.skin = launcher.getAssetService().get(SkinAsset.MENU_SCREEN);
         this.mapAsset = mapAsset;
         
-
         this.engine.addSystem(new ControllerSystem());
         this.engine.addSystem(new PhysicsMoveSystem());
         this.engine.addSystem(new FsmSystem());
@@ -83,7 +82,6 @@ public class GameScreen extends ScreenAdapter{
         this.engine.addSystem(new HealthSystem(viewModel, keyboardController));
         this.engine.addSystem(new EnemyAiSystem());
         this.engine.addSystem(new CameraSystem(launcher.getCamera()));
-
         this.engine.addSystem(new AttackModeSystem(entitySpawner));
         this.engine.addSystem(new ShooterSystem(entitySpawner));
         this.engine.addSystem(new MeleeSystem());

@@ -5,7 +5,7 @@
  <tileset firstgid="2577" source="DungeonDecorations.tsx"/>
  <tileset firstgid="2833" source="player.tsx"/>
  <tileset firstgid="2834" source="objects.tsx"/>
- <tileset firstgid="2839" source="Enemies.tsx"/>
+ <tileset firstgid="2840" source="Enemies.tsx"/>
  <layer id="1" name="Background" width="30" height="30">
   <data encoding="base64" compression="zlib">
    eJydlFlWwkAQRQOERHHagtM5for44Q6ch6UkwsKSgwuTYQNWIKWV56vQ8PFO0+mib9Xr6s7jKMqNks7uSkV7on3RQHQgOhQdiY5FJ6LMsEqj+87uehA9ip5Ez6IX0avoTfQu+gBuUTMxB1UBYjEl+JaT/2VknXFtjJePlwOLzcxeyM2d/WytukdGairIeigXfSrNPoznrWeGFcLFWqv4siejKK9H/V1992rGuj0unlvDq2r/3t+ov5Xr/b8g3KuBXy96Oa7XFv21lma08crVNdbPd4SL51cS7hK4ExI/SqLoNmnulRmGHfHOaR1jw1VmtafWPjE86zk731myFuNibyvbMq2XjIs9vYmL74euKbdiLvtNTeO1kOn1M/MZe1K/L0ytqq+4KezFb4mf9cPOF3PQufaJxoxq7tRwsbeuJWaYbMfFM2aeZfF/j9mbGsJFv71ex75nHPR61Vf13ON6ebSx2b23XlsuMvFtRr/teVixHPCcihaurb9w8vBy2eRTGci18SG5MLE+WPkj3pctmiY8/7Yet/3rcfXdYpobLvqFfeT1OPZ7abjzFi2Sps82Z6/X8M6ynhumUXTTolHa9JD1AZuj/8jNZN9c9FmPuZlXGqftb2nbnPn/+1bJvqfdKDoTnYsuRJfd5lsWqjzmvoTcf7YHft9W7H5tU4tXD8aFvDHePWBnso1Xm+r+AdtB+sA=
@@ -22,14 +22,14 @@
   </data>
  </layer>
  <objectgroup id="4" name="objects">
-  <object id="8" gid="2833" x="145.182" y="399" width="22" height="22">
+  <object id="8" name="Player" gid="2833" x="145.182" y="399" width="22" height="22">
    <properties>
     <property name="attackMode" value="GUN"/>
     <property name="camFollow" type="bool" value="true"/>
     <property name="controller" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="8" gid="2839" x="256" y="311" width="20" height="20"/>
-  <object id="9" gid="2839" x="317" y="356" width="20" height="20"/>
+  <object id="8" gid="2840" x="256" y="311" width="20" height="20"/>
+  <object id="9" gid="2840" x="317" y="356" width="20" height="20"/>
  </objectgroup>
 </map>

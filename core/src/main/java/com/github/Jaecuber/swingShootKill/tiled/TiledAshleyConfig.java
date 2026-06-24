@@ -166,7 +166,6 @@ public class TiledAshleyConfig {
         addEntityPlayer(tileMapObject, entity);
         addEntityMapEntity(tileMapObject, entity);
         addEntityFacing(tile, entity);
-
         addEntityStamina(tile, entity);
         addEntityHealth(tile, entity);
         addEntityEnemy(tile, entity);
