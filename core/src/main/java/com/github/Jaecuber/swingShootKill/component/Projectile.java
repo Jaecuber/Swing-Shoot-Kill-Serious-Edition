@@ -13,15 +13,10 @@ public class Projectile implements Component {
     private Entity hitEntity;
     private Entity sourceEntity;
 
-    private SoundAsset projSfx;
-
-
-    public Projectile(float maxLifeTime, SoundAsset projSfx){
+    public Projectile(float maxLifeTime){
         this.maxLifeTime = maxLifeTime;
         lifetime = 0;
         hitEntity = null;
-        this.projSfx = projSfx;
-
     }
 
     public Entity getSourceEntity() {
@@ -56,7 +51,5 @@ public class Projectile implements Component {
         return hitEntity;
     }
 
-    public SoundAsset getProjSfx() {
-        return projSfx;
-    }
+    
 }

@@ -22,9 +22,7 @@ public class EntitySpawner {
     public Entity spawnEntity(String name, Vector2 position){
         if (tileSets == null) throw new GdxRuntimeException("Set tilesets first");
 
-        for(TiledMapTileSet set : tileSets) {
-        System.out.println("Checking Tileset: " + set.getName());
-    }
+        
 
         TiledMapTile tile = findTileByName(name);
         if(tile == null) throw new GdxRuntimeException("Unknown enemy: " + name);
