@@ -36,6 +36,11 @@
                     "value": true
                 },
                 {
+                    "name": "hasFacing",
+                    "type": "bool",
+                    "value": true
+                },
+                {
                     "name": "health",
                     "type": "float",
                     "value": 0

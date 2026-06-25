@@ -69,11 +69,11 @@ public class GameScreen extends ScreenAdapter{
         this.uiViewport = new FitViewport(1500f, 900f);
         this.stage = new Stage(uiViewport, launcher.getBatch());
         this.entitySpawner = new EntitySpawner(this.tiledAshleyConfig);
-        this.viewModel = new GameViewModel(launcher, this.tiledService, this.entitySpawner, this.engine);
+        this.viewModel = new GameViewModel(launcher, this.tiledService, this.entitySpawner, this.engine, this.keyboardController);
         this.skin = launcher.getAssetService().get(SkinAsset.MENU_SCREEN);
         this.mapAsset = mapAsset;
         
-        this.engine.addSystem(new ControllerSystem());
+        this.engine.addSystem(new ControllerSystem(viewModel));
         this.engine.addSystem(new PhysicsMoveSystem());
         this.engine.addSystem(new FsmSystem());
         this.engine.addSystem(new FacingSystem(launcher.getAssetService()));

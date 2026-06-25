@@ -1,0 +1,23 @@
+{
+    "upgrades" : {
+        "basicUpgrades" : [
+            {"name" : "Reslience", "rarity" : "Basic", "description" : "Spinning your sword drains 10% less stamina", "price" : 75},
+            {"name" : "Steady Hand", "rarity" : "Basic", "description" : "Reduce your shooting cooldown by 10%", "price" : 125},
+            {"name" : "Haste", "rarity" : "Basic", "description" : "Increased movement speed by 15%", "price" : 100},
+            {"name" : "Greed", "rarity" : "Basic", "description" : "Gold earnings increased by 20%", "price" : 150},
+            {"name" : "Piercing bullet", "rarity" : "Basic", "description" : "Gain a special bullet that does double damage", "price" : 110}
+        ],
+        "rareUpgrades" : [
+            {"name" : "Lifesteal", "rarity" : "Rare", "description" : "Heal 5hp everytime you kill an enemy", "price" : 100}
+            
+        ],
+        "legendaryUpgrades" : [
+            {"name" : "Midas Touch", "rarity" : "Legendary", "description" : "Gain double the amount of gold for killing enemies.", "price" : 650},
+            {"name" : "Vitality", "rarity" : "Legendary", "description" : "One extra chance to live. Gain an extra heart.", "price" : 450},
+            {"name" : "Lifesteal", "rarity" : "Legendary", "description" : "For every 10 enemies you kill, you heal one heart.", "price" : 750}
+        ],
+        "corruptUpgrades" : [
+            {"name" : "Blood Pact", "rarity" : "Corrupt", "description" : "Begin every level at 25% health but immensely boost your max health by 100", "price" : 100}
+        ]
+    }  
+}

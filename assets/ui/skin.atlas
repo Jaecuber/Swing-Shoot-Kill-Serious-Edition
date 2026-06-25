@@ -17,13 +17,6 @@ size: 2048, 2048
 format: RGBA8888
 filter: Linear, Linear
 repeat: none
-awesomeCavePixelArt
-  rotate: false
-  xy: 1, 117
-  size: 1280, 720
-  orig: 1280, 720
-  offset: 0, 0
-  index: -1
 gameOverBkg
   rotate: false
   xy: 1, 839
@@ -33,6 +26,26 @@ gameOverBkg
   index: -1
 
 skin3.png
+size: 2048, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+awesomeCavePixelArt
+  rotate: false
+  xy: 1, 117
+  size: 1280, 720
+  orig: 1280, 720
+  offset: 0, 0
+  index: -1
+upgradesBkg
+  rotate: false
+  xy: 1, 839
+  size: 1920, 1080
+  orig: 1920, 1080
+  offset: 0, 0
+  index: -1
+
+skin4.png
 size: 2048, 2048
 format: RGBA8888
 filter: Linear, Linear
@@ -115,7 +128,7 @@ continueButton
   offset: 0, 0
   index: -1
 
-skin4.png
+skin5.png
 size: 2048, 2048
 format: RGBA8888
 filter: Linear, Linear
@@ -184,78 +197,141 @@ ScrambleStormPixel(2)_9
   offset: 0, 0
   index: -1
 
-skin5.png
+skin6.png
 size: 2048, 2048
 format: RGBA8888
 filter: Linear, Linear
 repeat: none
 ScrambleStormPixel(1)
   rotate: false
-  xy: 1029, 1593
+  xy: 1029, 1878
   size: 506, 110
   orig: 506, 110
   offset: 0, 0
   index: -1
 ScrambleStormPixel(2)_15
   rotate: false
-  xy: 1, 1191
+  xy: 1, 1476
   size: 512, 512
   orig: 512, 512
   offset: 0, 0
   index: -1
 ScrambleStormPixel(2)_16
   rotate: false
-  xy: 1, 677
+  xy: 1, 962
   size: 512, 512
   orig: 512, 512
   offset: 0, 0
   index: -1
 ScrambleStormPixel(2)_17
   rotate: false
-  xy: 515, 1191
+  xy: 515, 1476
   size: 512, 512
   orig: 512, 512
   offset: 0, 0
   index: -1
 ScrambleStormPixel(2)_18
   rotate: false
-  xy: 1, 163
+  xy: 1, 448
   size: 512, 512
   orig: 512, 512
   offset: 0, 0
   index: -1
 ScrambleStormPixel(2)_19
   rotate: false
-  xy: 515, 677
+  xy: 515, 962
   size: 512, 512
   orig: 512, 512
   offset: 0, 0
   index: -1
+ari-w9500
+  rotate: false
+  xy: 515, 768
+  size: 505, 192
+  orig: 505, 192
+  offset: 0, 0
+  index: -1
+ari-w9500(3)
+  rotate: false
+  xy: 1029, 1740
+  size: 505, 136
+  orig: 505, 136
+  offset: 0, 0
+  index: -1
+ari-w9500(4)
+  rotate: false
+  xy: 1, 357
+  size: 506, 89
+  orig: 506, 89
+  offset: 0, 0
+  index: -1
+BasicUpgradeBkg
+  rotate: false
+  xy: 1, 1
+  size: 336, 192
+  orig: 336, 192
+  offset: 0, 0
+  index: -1
+CorruptUpgradeBkg
+  rotate: false
+  xy: 1029, 996
+  size: 336, 192
+  orig: 336, 192
+  offset: 0, 0
+  index: -1
+LegendaryUpgradeBkg
+  rotate: false
+  xy: 1029, 1190
+  size: 336, 192
+  orig: 336, 192
+  offset: 0, 0
+  index: -1
+RareUpgradeBkg
+  rotate: false
+  xy: 1029, 1384
+  size: 336, 192
+  orig: 336, 192
+  offset: 0, 0
+  index: -1
 charIcon
   rotate: false
-  xy: 1029, 1351
+  xy: 515, 364
   size: 240, 240
   orig: 240, 240
   offset: 0, 0
   index: -1
+coinsIcon
+  rotate: false
+  xy: 901, 734
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
 heart
   rotate: false
-  xy: 1537, 1639
+  xy: 1537, 1924
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
 playButton
   rotate: false
-  xy: 1, 1
+  xy: 515, 606
   size: 384, 160
   orig: 384, 160
   offset: 0, 0
   index: -1
 quitButton
   rotate: false
-  xy: 515, 515
+  xy: 1029, 1578
   size: 384, 160
   orig: 384, 160
+  offset: 0, 0
+  index: -1
+rerollButton
+  rotate: false
+  xy: 1, 195
+  size: 480, 160
+  orig: 480, 160
   offset: 0, 0
   index: -1
