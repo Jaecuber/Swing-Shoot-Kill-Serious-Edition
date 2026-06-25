@@ -16,13 +16,15 @@ import com.github.Jaecuber.swingShootKill.component.Shooter.ShooterState;
 import com.github.Jaecuber.swingShootKill.helpers.Helpers;
 import com.github.Jaecuber.swingShootKill.input.Command;
 import com.github.Jaecuber.swingShootKill.input.KeyboardController;
+import com.github.Jaecuber.ui.model.GameViewModel;
 
 public class ControllerSystem extends IteratingSystem{
 
-    
+    private GameViewModel viewModel;
 
-    public ControllerSystem(){
+    public ControllerSystem(GameViewModel viewModel){
         super(Family.all(Controller.class).get());
+        this.viewModel = viewModel;
     }
 
     @Override
@@ -43,6 +45,7 @@ public class ControllerSystem extends IteratingSystem{
                 case LEFT -> moveEntity(entity, -1f, 0f);
                 case RIGHT -> moveEntity(entity, 1f, 0f);
                 case ATTACK -> attackEntity(entity);
+                case OPEN_SHOP -> openShop();
                 case SWITCH_WEAPONS -> weaponSwitch(entity);
             }
         }
@@ -57,6 +60,10 @@ public class ControllerSystem extends IteratingSystem{
         }
         controller.getReleasedCommands().clear();
 
+    }
+
+    private void openShop() {
+        viewModel.openShop();
     }
 
     private void weaponSwitch(Entity entity){

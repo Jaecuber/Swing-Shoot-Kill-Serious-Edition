@@ -82,6 +82,7 @@
             "scaleInDock": 1
         },
         "DungeonAnimatedTiles.tsx": {
+            "dynamicWrapping": true,
             "scaleInDock": 1
         },
         "DungeonBuildingTileSet.tsx": {

@@ -8,6 +8,16 @@ dependencies {
   api "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
   api "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
   api "com.badlogicgames.gdx:gdx:$gdxVersion"
+  // freetype font support for skins
+  api "com.github.raeleus.stripe:freetype:$stripeVersion"
+  // ten patch for better ProgressBar support (scene2d)
+  api "com.github.raeleus.TenPatch:tenpatch:$tenPatchVersion"
+  //typing label support
+  api "com.github.tommyettinger:textratypist:$textraTypistVersion"
+  api "com.github.tommyettinger:freetypist:$freeTypistVersion"
+  //post processing graphics
+  implementation 'com.crashinvaders.vfx:gdx-vfx-core:0.5.4'
+  implementation 'com.crashinvaders.vfx:gdx-vfx-effects:0.5.4'
 
   if(enableGraalNative == 'true') {
     implementation "io.github.berstanio:gdx-svmhelper-annotations:$graalHelperVersion"

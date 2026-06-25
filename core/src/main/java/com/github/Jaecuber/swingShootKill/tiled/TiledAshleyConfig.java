@@ -44,6 +44,7 @@ import com.github.Jaecuber.swingShootKill.component.Projectile;
 import com.github.Jaecuber.swingShootKill.component.Shooter;
 import com.github.Jaecuber.swingShootKill.component.Stamina;
 import com.github.Jaecuber.swingShootKill.component.Transform;
+import com.github.Jaecuber.swingShootKill.component.UpgradeTags;
 import com.github.Jaecuber.swingShootKill.component.AttackMode.ATTACK_MODE;
 import com.github.Jaecuber.swingShootKill.component.Facing.FacingDirection;
 import com.github.Jaecuber.swingShootKill.component.Fsm;
@@ -170,8 +171,15 @@ public class TiledAshleyConfig {
         addEntityHealth(tile, entity);
         addEntityEnemy(tile, entity);
         addEntityAttackMode(tileMapObject, entity);
+        addEntityUpgrade(tileMapObject, entity);
 
         this.engine.addEntity(entity);
+    }
+
+    private void addEntityUpgrade(TiledMapTileMapObject tileMapObject, Entity entity) {
+        if("Player".equals(tileMapObject.getName())){
+            entity.add(new UpgradeTags());
+        }
     }
 
     private void addEntityStamina(TiledMapTile tile, Entity entity){
