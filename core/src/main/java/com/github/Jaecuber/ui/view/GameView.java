@@ -734,6 +734,7 @@ public class GameView extends View<GameViewModel>{
     }
 
     private void gameOverScreen(boolean bool){
+        viewModel.pauseGame();
         gameOverTable.setVisible(bool);
         gameOverTable.setTouchable(Touchable.enabled);
         gameOverTable.addAction(Actions.sequence(
