@@ -111,7 +111,7 @@
             }
         },
         "objects.tsx": {
-            "dynamicWrapping": true,
+            "dynamicWrapping": false,
             "scaleInDock": 1
         },
         "player.tsx": {
@@ -128,7 +128,7 @@
         "DungeonBuildingTileSet.tsx"
     ],
     "project": "SSKTiledMap.tiled-project",
-    "property.type": "bool",
+    "property.type": "int",
     "recentFiles": [
         "DungeonBuildingTileSet.tsx",
         "Enemies.tsx",

@@ -186,16 +186,26 @@ public class TiledAshleyConfig {
         float maxStamina = tile.getProperties().get("stamina", 0.0f, Float.class);
         if(maxStamina == 0f) return;
 
-        entity.add(new Stamina(maxStamina));
+        float stamRegen = tile.getProperties().get("stamRegen", 0.0f, Float.class);
+
+        entity.add(new Stamina(maxStamina, stamRegen));
     }
 
     private void addEntityShooter(TiledMapTile tile, Entity entity){
         boolean canAttack = tile.getProperties().get("canShoot", false, Boolean.class);
         float cooldown = tile.getProperties().get("cooldown", 0.0f, Float.class);
+        float damage = tile.getProperties().get("damage", -1f, Float.class);
+
+        int capacity = tile.getProperties().get("capacity", 0, Integer.class);
+        float reloadTime = tile.getProperties().get("reloadTime", -1f, Float.class);
+
+        
+
         if(cooldown == 0) return;
         if(!canAttack) return;
+        if(damage < 0) return;
 
-        entity.add(new Shooter(cooldown));
+        entity.add(new Shooter(cooldown, damage, reloadTime, capacity));
     }
 
     private void addEntityMelee(TiledMapTile tile, Entity entity){

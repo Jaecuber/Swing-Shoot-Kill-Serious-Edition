@@ -9,10 +9,12 @@ public class Stamina implements Component {
 
     private float maxStamina;
     private float currentStamina;
+    private float stamRegen;
 
-    public Stamina(float maxStamina){
+    public Stamina(float maxStamina, float stamRegen){
         this.maxStamina = maxStamina;
         this.currentStamina = maxStamina;
+        this.stamRegen = stamRegen;
     }
 
     public void updateStamina(float amount){
@@ -21,5 +23,13 @@ public class Stamina implements Component {
 
     public float getCurrentStamina() {
         return currentStamina;
+    }
+
+    public float getMaxStamina() {
+        return maxStamina;
+    }
+
+    public float getStamRegen() {
+        return stamRegen;
     }
 }

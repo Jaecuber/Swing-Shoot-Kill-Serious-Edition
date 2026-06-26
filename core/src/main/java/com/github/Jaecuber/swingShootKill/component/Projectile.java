@@ -13,10 +13,20 @@ public class Projectile implements Component {
     private Entity hitEntity;
     private Entity sourceEntity;
 
+    private float ownerDamage;
+
     public Projectile(float maxLifeTime){
         this.maxLifeTime = maxLifeTime;
         lifetime = 0;
         hitEntity = null;
+    }
+
+    public void setOwnerDamage(float ownerDamage) {
+        this.ownerDamage = ownerDamage;
+    }
+
+    public float getOwnerDamage() {
+        return ownerDamage;
     }
 
     public Entity getSourceEntity() {

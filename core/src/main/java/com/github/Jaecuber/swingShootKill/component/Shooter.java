@@ -3,6 +3,8 @@ package com.github.Jaecuber.swingShootKill.component;
 import com.badlogic.ashley.core.Component;
 import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.ashley.core.Entity;
+import com.badlogic.gdx.utils.Array;
+
 
 public class Shooter implements Component {
     public static final ComponentMapper<Shooter> MAPPER = ComponentMapper.getFor(Shooter.class);
@@ -12,22 +14,42 @@ public class Shooter implements Component {
     private float elapsedTime;
     private ShooterState shooterState;
 
+    private float damage;
+
     private Entity ownerEntity;
 
-    private int timesShot;
+    private int currentBullets;
+    private float reloadTime;
+    private int capacity;
+
+    private Array<String> ownedSpecialBullets;
 
 
-    public enum ShooterState {IDLE, SHOOTING, COOLDOWN};
+    public enum ShooterState {IDLE, SHOOTING, COOLDOWN, RELOADING};
     
 
 
-    public Shooter(float cooldown){
+    public Shooter(float cooldown, float damage, float reloadTime, int capacity){
         this.shooterState = ShooterState.IDLE;
         this.cooldown = cooldown;
         this.elapsedTime = 0;
         this.ownerEntity = null;
-        this.timesShot = 0;
         
+
+        this.reloadTime = reloadTime;
+        this.capacity = capacity;
+        this.currentBullets = capacity;
+
+        this.damage = damage;
+
+        this.ownedSpecialBullets = new Array<>();
+        populateBasicBullets(ownedSpecialBullets);
+    }
+
+    private void populateBasicBullets(Array<String> ownedSpecialBullets){
+        ownedSpecialBullets.add("poison");
+        ownedSpecialBullets.add("electric");
+        ownedSpecialBullets.add("exploding");
     }
 
     public void setOwnerEntity(Entity ownerEntity) {
@@ -46,10 +68,6 @@ public class Shooter implements Component {
         this.shooterState = shooterState;
     }
 
-    public void setCooldown(float cooldown) {
-        this.cooldown = cooldown;
-    }
-
     public float getCooldown() {
         return cooldown;
     }
@@ -62,12 +80,36 @@ public class Shooter implements Component {
         return elapsedTime;
     }
 
-    public void incrementTimesShot(){
-        timesShot++;
+    public void decreaseBullets(){
+        currentBullets--;
     }
 
     public boolean timeToRoll(){
-        return timesShot % 6 == 0;
+        return currentBullets == 1;
+    }
+
+    public String getRandomizedSpecials(){
+        return ownedSpecialBullets.random();
+    }
+
+    public float getDamage() {
+        return damage;
+    }
+
+    public float getReloadTime() {
+        return reloadTime;
+    }
+
+    public boolean needToReload(){
+        return currentBullets <= 0;
+    }
+
+    public void setCurrentBullets(int currentBullets) {
+        this.currentBullets = currentBullets;
+    }
+
+    public int getCapacity() {
+        return capacity;
     }
 
 }

@@ -35,6 +35,7 @@ import com.github.Jaecuber.swingShootKill.systems.PhysicsSystem;
 import com.github.Jaecuber.swingShootKill.systems.ProjectileSystem;
 import com.github.Jaecuber.swingShootKill.systems.RenderSystem;
 import com.github.Jaecuber.swingShootKill.systems.ShooterSystem;
+import com.github.Jaecuber.swingShootKill.systems.StaminaSystem;
 import com.github.Jaecuber.swingShootKill.tiled.EntitySpawner;
 import com.github.Jaecuber.swingShootKill.tiled.TiledAshleyConfig;
 import com.github.Jaecuber.swingShootKill.tiled.TiledService;
@@ -80,6 +81,7 @@ public class GameScreen extends ScreenAdapter{
         this.engine.addSystem(new PhysicsSystem(physicsWorld, 1/60f));
         this.engine.addSystem(new DamageSystem(viewModel));
         this.engine.addSystem(new HealthSystem(viewModel, keyboardController));
+        this.engine.addSystem(new StaminaSystem());
         this.engine.addSystem(new EnemyAiSystem());
         this.engine.addSystem(new CameraSystem(launcher.getCamera()));
         this.engine.addSystem(new AttackModeSystem(entitySpawner));
