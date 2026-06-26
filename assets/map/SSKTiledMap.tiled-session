@@ -92,7 +92,7 @@
         },
         "DungeonDecorations.tsx": {
             "dynamicWrapping": false,
-            "scaleInDock": 0.75
+            "scaleInDock": 1
         },
         "Enemies.tsx": {
             "dynamicWrapping": true,
@@ -106,15 +106,20 @@
             "scale": 2,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 294.5,
-                "y": 286.5
+                "x": 263.5,
+                "y": 297.5
             }
         },
         "Spawn.tsx": {
-            "scaleInDock": 1
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "lights.tsx": {
+            "dynamicWrapping": true
         },
         "objects.tsx": {
-            "dynamicWrapping": false,
+            "dynamicWrapping": true,
             "scaleInDock": 1
         },
         "player.tsx": {
@@ -133,10 +138,11 @@
     "project": "SSKTiledMap.tiled-project",
     "property.type": "float",
     "recentFiles": [
-        "player.tsx",
+        "Spawn.tsx",
+        "MainMap.tmx",
         "DungeonBuildingTileSet.tsx",
         "Enemies.tsx",
-        "MainMap.tmx",
+        "player.tsx",
         "D:/Projects/Runeguard/assets/map/dungeon.tmx",
         "D:/Downloads/craftpix-net-169442-free-2d-top-down-pixel-dungeon-asset-pack/Tiled_files/Dungeon1.tmx"
     ],

@@ -46,6 +46,16 @@
                     "value": 0
                 },
                 {
+                    "name": "lightColor",
+                    "type": "color",
+                    "value": "#ffffffff"
+                },
+                {
+                    "name": "lightDistance",
+                    "type": "float",
+                    "value": 0
+                },
+                {
                     "name": "name",
                     "type": "string",
                     "value": ""

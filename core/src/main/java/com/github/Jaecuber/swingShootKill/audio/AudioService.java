@@ -17,7 +17,7 @@ public class AudioService {
         this.assetService = assetService;
         this.currentMusic = null;
         this.currentMusicAsset = null;
-        this.musicVolume = 0.5f;
+        this.musicVolume = 0.35f;
         this.soundVolume = 0.33f;
     }
 

@@ -45,6 +45,7 @@ public class GameViewModel extends ViewModel{
     public static final String COINS = "coins";
     public static final String WAVE = "wave";
     public static final String TIMER = "timer";
+    public static final String DAMAGED = "damaged";
 
     private Map.Entry<Vector2, Integer> playerDamage;
     private int health;
@@ -93,9 +94,13 @@ public class GameViewModel extends ViewModel{
         return maxHealth;
     }
 
+    public void displayDamage(){
+        this.propertyChangeSupport.firePropertyChange(DAMAGED, false, true);
+    }
+
     //Game over functionality
     public void showGameOver(){
-        this.launcher.getAudioService().playMusic(MusicAsset.MENU);//change to game over music later
+        //this.launcher.getAudioService().playMusic(MusicAsset.MENU);//change to game over music later
         this.propertyChangeSupport.firePropertyChange(GAME_OVER, false, true);
     }
 

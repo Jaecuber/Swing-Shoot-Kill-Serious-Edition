@@ -7,9 +7,11 @@ import java.util.List;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.SortedIteratingSystem;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
@@ -29,6 +31,7 @@ public class RenderSystem extends SortedIteratingSystem implements Disposable{
     private final OrthographicCamera camera;
     private final List<MapLayer> fgdLayers;
     private final List<MapLayer> bkgLayers;
+    private ParticleEffect dustEffect;
 
     public RenderSystem(Batch batch, Viewport viewport, OrthographicCamera camera){
         super(
@@ -41,6 +44,14 @@ public class RenderSystem extends SortedIteratingSystem implements Disposable{
         this.mapRenderer = new OrthogonalTiledMapRenderer(null, Launcher.UNIT_SCALE, this.batch);
         this.fgdLayers = new ArrayList<>();
         this.bkgLayers = new ArrayList<>();
+
+        this.dustEffect = new ParticleEffect();
+        this.dustEffect.load(
+            Gdx.files.internal("particles/dust.p"),
+            Gdx.files.internal("particles")
+        );
+        dustEffect.scaleEffect(Launcher.UNIT_SCALE / 50);
+        this.dustEffect.start();
     }
 
     @Override
@@ -49,8 +60,7 @@ public class RenderSystem extends SortedIteratingSystem implements Disposable{
         this.viewport.apply();
 
         batch.begin();
-        //color grading would go here if needed later--this.batch.setColor(0.7f, 0.7f, 0.8f, 1f): gloomy blue hue
-        batch.setColor(Color.WHITE);
+        this.batch.setColor(0.9f,0.9f,1.0f, 1.0f);
         this.mapRenderer.setView(this.camera);
         this.bkgLayers.forEach(mapRenderer::renderMapLayer);
 
@@ -59,6 +69,10 @@ public class RenderSystem extends SortedIteratingSystem implements Disposable{
         this.batch.setColor(Color.WHITE);
         
         this.fgdLayers.forEach(mapRenderer::renderMapLayer);
+
+        dustEffect.update(deltaTime);
+        dustEffect.draw(batch);
+
         batch.end();
     }
 
@@ -102,10 +116,18 @@ public class RenderSystem extends SortedIteratingSystem implements Disposable{
             }
             currentLayers.add(layer);
         }
+        int mapWidth = tiledMap.getProperties().get("width", Integer.class);
+        int mapHeight = tiledMap.getProperties().get("height", Integer.class);
+        int tileWidth = tiledMap.getProperties().get("tilewidth", Integer.class);
+        dustEffect.setPosition(
+            (mapWidth * tileWidth * Launcher.UNIT_SCALE) * 0.5f,
+            (mapHeight * tileWidth * Launcher.UNIT_SCALE) * 0.5f
+        );
     }
 
     @Override
     public void dispose() {
         this.mapRenderer.dispose();
+        this.dustEffect.dispose();
     }    
 }

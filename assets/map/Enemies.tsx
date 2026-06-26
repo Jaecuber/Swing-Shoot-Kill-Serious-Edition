@@ -6,6 +6,8 @@
    <property name="cooldown" type="float" value="1"/>
    <property name="damage" type="float" value="1"/>
    <property name="health" type="float" value="1"/>
+   <property name="lightColor" type="color" value="#64ff2f2f"/>
+   <property name="lightDistance" type="float" value="7.5"/>
    <property name="name" value="red_cube"/>
    <property name="speed" type="float" value="3"/>
    <property name="state" value="IDLE"/>
@@ -51,6 +53,8 @@
    <property name="cooldown" type="float" value="1"/>
    <property name="damage" type="float" value="1"/>
    <property name="health" type="float" value="2"/>
+   <property name="lightColor" type="color" value="#64ff8c00"/>
+   <property name="lightDistance" type="float" value="7.5"/>
    <property name="name" value="orange_circle"/>
    <property name="speed" type="float" value="1.5"/>
    <property name="state" value="IDLE"/>
@@ -96,6 +100,8 @@
    <property name="cooldown" type="float" value="1"/>
    <property name="damage" type="float" value="1"/>
    <property name="health" type="float" value="1"/>
+   <property name="lightColor" type="color" value="#64fff700"/>
+   <property name="lightDistance" type="float" value="7.5"/>
    <property name="name" value="yellow_triangle"/>
    <property name="speed" type="float" value="5"/>
    <property name="state" value="IDLE"/>

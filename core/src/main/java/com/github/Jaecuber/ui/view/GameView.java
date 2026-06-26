@@ -94,6 +94,19 @@ public class GameView extends View<GameViewModel>{
     private Image rerollButton;
     private boolean rolling = false;
 
+    //Revolver spin display
+    private Table revolverCylinderTable;
+    private Table spinEffectTable;
+    private Table bulletTable;
+
+    private Image revolverCylinderImage;
+    private Image spinEffectImage;
+    
+    private Label bulletLabel;
+
+    //Damage display
+    private Table damageTable;
+
     public GameView(Stage stage, Skin skin, GameViewModel viewModel, Engine engine) {
         super(stage, skin, viewModel);
         while (this.upgradeClasses == null) {
@@ -111,6 +124,8 @@ public class GameView extends View<GameViewModel>{
         setupDisplayInfo();
         setupGameOver();
         setupUpgradeShop();
+        setupSpinDisplay();
+        setupDamageDisplay();
     }
 
     private void setupHealthInfo(){
@@ -505,6 +520,45 @@ public class GameView extends View<GameViewModel>{
         stage.addActor(shopTable);
     }
 
+    private void setupSpinDisplay() {
+        revolverCylinderTable = new Table();
+        revolverCylinderTable.setBackground(skin.getDrawable("darkenedBkg"));
+        revolverCylinderTable.setFillParent(true);
+        revolverCylinderTable.getColor().a = 0.0f;
+        revolverCylinderTable.setTouchable(Touchable.disabled);
+
+        revolverCylinderImage = new Image(skin, "revolverCylinder");
+        revolverCylinderTable.add(revolverCylinderImage);
+        stage.addActor(revolverCylinderTable);
+
+        spinEffectTable = new Table();
+        spinEffectTable.setFillParent(true);
+        spinEffectTable.getColor().a = 0.0f;
+        spinEffectTable.setTouchable(Touchable.disabled);
+
+        spinEffectImage = new Image(skin, "spinEffect");
+        spinEffectTable.add(spinEffectImage);
+        stage.addActor(spinEffectTable);
+
+        bulletTable = new Table();
+        bulletTable.setFillParent(true);
+        bulletTable.getColor().a = 0.0f;
+        bulletTable.setTouchable(Touchable.disabled);
+
+        bulletLabel = new Label("+ Poison Bullet", skin, "InfoTitle");
+        bulletTable.add(bulletLabel);
+        stage.addActor(bulletTable);
+    }
+
+    private void setupDamageDisplay(){
+        damageTable = new Table();
+        damageTable.setFillParent(true);
+        damageTable.setBackground(skin.getDrawable("playerDmgEffect"));
+        damageTable.getColor().a = 0.0f;
+        
+        stage.addActor(damageTable);
+    }
+
     //HUD Functionality
     @Override
     protected void setupPropertyChanges() {
@@ -514,6 +568,7 @@ public class GameView extends View<GameViewModel>{
         viewModel.onPropertyChange(GameViewModel.COINS, Integer.class, this::updateCoins);
         viewModel.onPropertyChange(GameViewModel.WAVE, Integer.class, this::updateWave);
         viewModel.onPropertyChange(GameViewModel.TIMER, Integer.class, this::updateTimer);
+        viewModel.onPropertyChange(GameViewModel.DAMAGED, Boolean.class, this::displayDamage);
     }
 
     private void rerollUpgrades(){
@@ -896,6 +951,14 @@ public class GameView extends View<GameViewModel>{
         gameOverTable.addAction(Actions.sequence(
             Actions.delay(1.0f),
             Actions.fadeIn(1.0f)
+        ));
+    }
+
+    private void displayDamage(boolean bool){
+        damageTable.addAction(Actions.sequence(
+            Actions.fadeIn(0.0f),
+            Actions.run(() -> {viewModel.playSound(SoundAsset.HURT);}),
+            Actions.fadeOut(0.25f)
         ));
     }
 

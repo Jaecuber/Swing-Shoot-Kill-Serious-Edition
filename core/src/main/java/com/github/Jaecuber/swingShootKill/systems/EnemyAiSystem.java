@@ -14,17 +14,21 @@ import com.github.Jaecuber.swingShootKill.component.Coins;
 import com.github.Jaecuber.swingShootKill.component.DamageListener;
 import com.github.Jaecuber.swingShootKill.component.Enemy;
 import com.github.Jaecuber.swingShootKill.component.Fsm;
+import com.github.Jaecuber.swingShootKill.component.Light;
 import com.github.Jaecuber.swingShootKill.component.Move;
 import com.github.Jaecuber.swingShootKill.component.Physics;
 import com.github.Jaecuber.swingShootKill.component.Player;
 import com.github.Jaecuber.swingShootKill.component.Transform;
+import com.github.Jaecuber.ui.model.GameViewModel;
 
 public class EnemyAiSystem extends IteratingSystem{
     private Entity playerEntity;
+    private GameViewModel viewModel;
     private final Array<Entity> deadEntityCache = new Array<>();
 
-    public EnemyAiSystem(){
+    public EnemyAiSystem(GameViewModel viewModel){
         super(Family.all(Enemy.class, Transform.class, Fsm.class, Move.class).get());
+        this.viewModel = viewModel;
     }
 
     @Override
@@ -61,6 +65,7 @@ public class EnemyAiSystem extends IteratingSystem{
 
         if(playerEntity != null && enemy.isAttacking() && !enemy.hasDamaged()){
             enemy.setHasDamaged(true);
+            viewModel.displayDamage();
             DamageListener damage = DamageListener.MAPPER.get(playerEntity);
             if (damage == null) {
                 playerEntity.add(new DamageListener(enemy.getDamage()));
@@ -93,6 +98,9 @@ public class EnemyAiSystem extends IteratingSystem{
         super.update(deltaTime);
 
         for(Entity entity : deadEntityCache){
+            Light light = Light.MAPPER.get(entity);
+            light.getPointLight().remove();
+            
             getEngine().removeEntity(entity);
         }
         deadEntityCache.clear();
