@@ -277,7 +277,7 @@ public class GameView extends View<GameViewModel>{
         });
         horizontalGroup.addActor(rerollButton);
 
-        Label label = new Label("For 100", skin, "Title");
+        Label label = new Label("For 50", skin, "Title");
         horizontalGroup.addActor(label);
 
         Image image = new Image(skin, "coinsIcon");
@@ -734,6 +734,7 @@ public class GameView extends View<GameViewModel>{
     }
 
     private void gameOverScreen(boolean bool){
+        viewModel.pauseGame();
         gameOverTable.setVisible(bool);
         gameOverTable.setTouchable(Touchable.enabled);
         gameOverTable.addAction(Actions.sequence(

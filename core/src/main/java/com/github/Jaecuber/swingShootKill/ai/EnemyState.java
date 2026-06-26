@@ -7,6 +7,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.github.Jaecuber.swingShootKill.component.Enemy;
 import com.github.Jaecuber.swingShootKill.component.Enemy.EnemyAIState;
 import com.github.Jaecuber.swingShootKill.component.Fsm;
+import com.github.Jaecuber.swingShootKill.component.Health;
 import com.github.Jaecuber.swingShootKill.component.Move;
 
 public enum EnemyState implements State<Entity>{
@@ -20,6 +21,11 @@ public enum EnemyState implements State<Entity>{
 
         @Override
         public void update(Entity entity) {
+            Health health = Health.MAPPER.get(entity);
+            if(health.died()){
+                Fsm.MAPPER.get(entity).getEnemyFsm().changeState(DEATH);
+                return;
+            }
             if(Enemy.MAPPER.get(entity).canAttack()){
                 Fsm.MAPPER.get(entity).getEnemyFsm().changeState(ATTACKING);
                 return;
@@ -49,6 +55,11 @@ public enum EnemyState implements State<Entity>{
 
         @Override
         public void update(Entity entity) {
+            Health health = Health.MAPPER.get(entity);
+            if(health.died()){
+                Fsm.MAPPER.get(entity).getEnemyFsm().changeState(DEATH);
+                return;
+            }
             if(Enemy.MAPPER.get(entity).canAttack()){
                 Fsm.MAPPER.get(entity).getEnemyFsm().changeState(ATTACKING);
                 return;
@@ -73,6 +84,11 @@ public enum EnemyState implements State<Entity>{
 
         @Override
         public void update(Entity entity) {
+            Health health = Health.MAPPER.get(entity);
+            if(health.died()){
+                Fsm.MAPPER.get(entity).getEnemyFsm().changeState(DEATH);
+                return;
+            }
             if(Enemy.MAPPER.get(entity).canAttack()){
                 Fsm.MAPPER.get(entity).getEnemyFsm().changeState(ATTACKING);
                 return;
@@ -93,6 +109,11 @@ public enum EnemyState implements State<Entity>{
 
         @Override
         public void update(Entity entity) {
+            Health health = Health.MAPPER.get(entity);
+            if(health.died()){
+                Fsm.MAPPER.get(entity).getEnemyFsm().changeState(DEATH);
+                return;
+            }
             if(!Enemy.MAPPER.get(entity).canAttack()){
                 Fsm.MAPPER.get(entity).getEnemyFsm().changeState(PURSUING);
                 return;
