@@ -29,6 +29,7 @@ import com.github.Jaecuber.swingShootKill.combat.BasicAttack;
 
 import com.github.Jaecuber.swingShootKill.component.AttackMode;
 import com.github.Jaecuber.swingShootKill.component.CameraFollow;
+import com.github.Jaecuber.swingShootKill.component.Coins;
 import com.github.Jaecuber.swingShootKill.component.Controller;
 import com.github.Jaecuber.swingShootKill.component.Enemy;
 import com.github.Jaecuber.swingShootKill.component.Enemy.EnemyAIState;
@@ -172,8 +173,17 @@ public class TiledAshleyConfig {
         addEntityEnemy(tile, entity);
         addEntityAttackMode(tileMapObject, entity);
         addEntityUpgrade(tileMapObject, entity);
+        addEntityCoins(tileMapObject, entity);
 
         this.engine.addEntity(entity);
+    }
+
+    private void addEntityCoins(TiledMapTileMapObject tileMapObject, Entity entity) {
+        int coins = tileMapObject.getProperties().get("coins", 0, Integer.class);
+
+        if(coins == 0) return;
+
+        entity.add(new Coins(coins));
     }
 
     private void addEntityUpgrade(TiledMapTileMapObject tileMapObject, Entity entity) {
