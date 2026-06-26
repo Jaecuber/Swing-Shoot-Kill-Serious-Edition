@@ -83,7 +83,6 @@ public class AttackModeSystem extends IteratingSystem{
         
         AttackMode.MAPPER.get(originEntity).setCurrentWeaponEntity(currentWeapon);
         Melee.MAPPER.get(currentWeapon).setOwnerEntity(originEntity);
-
     }
 
     

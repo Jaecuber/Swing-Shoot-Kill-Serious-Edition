@@ -20,6 +20,7 @@ import com.github.Jaecuber.swingShootKill.asset.SkinAsset;
 import com.github.Jaecuber.swingShootKill.audio.AudioService;
 import com.github.Jaecuber.swingShootKill.input.GameControllerState;
 import com.github.Jaecuber.swingShootKill.input.KeyboardController;
+import com.github.Jaecuber.swingShootKill.logic.RunManager;
 import com.github.Jaecuber.swingShootKill.systems.AttackModeSystem;
 import com.github.Jaecuber.swingShootKill.systems.CameraSystem;
 import com.github.Jaecuber.swingShootKill.systems.ControllerSystem;
@@ -53,6 +54,7 @@ public class GameScreen extends ScreenAdapter{
     private final AudioService audioService;
     private final Stage stage;
     private final Viewport uiViewport;
+    private final RunManager runManager;
     private final GameViewModel viewModel;
     private final Skin skin;
     private final EntitySpawner entitySpawner;
@@ -72,6 +74,7 @@ public class GameScreen extends ScreenAdapter{
         this.stage = new Stage(uiViewport, launcher.getBatch());
         this.entitySpawner = new EntitySpawner(this.tiledAshleyConfig);
         this.viewModel = new GameViewModel(launcher, this.tiledService, this.entitySpawner, this.engine, this.keyboardController);
+        this.runManager = new RunManager(this.tiledService, this.entitySpawner, this.engine, launcher.getAssetService(), this.viewModel, this.audioService, this.keyboardController);
         this.skin = launcher.getAssetService().get(SkinAsset.MENU_SCREEN);
         this.mapAsset = mapAsset;
         
@@ -132,6 +135,8 @@ public class GameScreen extends ScreenAdapter{
         delta = Math.min(delta, 1/30f);
 
         this.engine.update(delta);
+
+        this.runManager.update(delta);
         uiViewport.apply();
         stage.getBatch().setColor(Color.WHITE);
         stage.act(delta);

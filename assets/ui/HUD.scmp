@@ -3,87 +3,7 @@ atlasData: {
 	atlasCurrent: true
 	drawables: [
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/playButton.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: playButton
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/quitButton.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: quitButton
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/charIcon.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: charIcon
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/awesomeCavePixelArt.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: awesomeCavePixelArt
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/menuBkg.png
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/menuBkg.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -103,47 +23,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/SwingShootKillLogo.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: SwingShootKillLogo
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/heart.png
-			bgColor: {
-				r: 1
-				g: 1
-				b: 1
-				a: 1
-			}
-			tint: null
-			tintName: null
-			name: heart
-			tiled: false
-			minWidth: -1
-			minHeight: -1
-			customized: false
-			tenPatchData: null
-			tvgData: null
-			type: TEXTURE
-			hidden: false
-		}
-		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/gameOverBkg.png
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/gameOverBkg.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -163,7 +43,67 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/continueButton.png
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/awesomeCavePixelArt.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: awesomeCavePixelArt
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/upgradesBkg.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: upgradesBkg
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/SwingShootKillLogo.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: SwingShootKillLogo
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/continueButton.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -173,6 +113,206 @@ atlasData: {
 			tint: null
 			tintName: null
 			name: continueButton
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/BasicUpgradeBkg.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: BasicUpgradeBkg
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/CorruptUpgradeBkg.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: CorruptUpgradeBkg
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/LegendaryUpgradeBkg.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: LegendaryUpgradeBkg
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/RareUpgradeBkg.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: RareUpgradeBkg
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/charIcon.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: charIcon
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/coinsIcon.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: coinsIcon
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/heart.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: heart
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/playButton.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: playButton
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/quitButton.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: quitButton
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/rerollButton.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: rerollButton
 			tiled: false
 			minWidth: -1
 			minHeight: -1
@@ -664,6 +804,566 @@ atlasData: {
 			type: FONT
 			hidden: false
 		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ari-w9500(4).png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ari-w9500(4)
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ari-w9500.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ari-w9500
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ari-w9500(3).png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ari-w9500(3)
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_0.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_0
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_1.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_1
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_2.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_2
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_3.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_3
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_4.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_4
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_5.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_5
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_6.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_6
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_7.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_7
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_8.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_8
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_9.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_9
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_10.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_10
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_11.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_11
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_12.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_12
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_13.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_13
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_14.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_14
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_15.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_15
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_16.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_16
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_17.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_17
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_18.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_18
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_19.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(2)_19
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel_0.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel_0
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel_1.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel_1
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel_2.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel_2
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(1).png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ScrambleStormPixel(1)
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ari-w9500(5).png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: ari-w9500(5)
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: FONT
+			hidden: false
+		}
 	]
 }
 jsonData: {
@@ -682,11 +1382,43 @@ jsonData: {
 	fonts: [
 		{
 			class: com.ray3k.skincomposer.data.FontData
+			name: ari-w9500_reg
+			flip: false
+			markupEnabled: false
+			scaling: -1
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ari-w9500(4).fnt
+		}
+		{
+			class: com.ray3k.skincomposer.data.FontData
+			name: ari-w9500_regular
+			flip: false
+			markupEnabled: false
+			scaling: -1
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ari-w9500.fnt
+		}
+		{
+			class: com.ray3k.skincomposer.data.FontData
+			name: ari-w9500_title
+			flip: false
+			markupEnabled: false
+			scaling: -1
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ari-w9500(3).fnt
+		}
+		{
+			class: com.ray3k.skincomposer.data.FontData
+			name: infoTitle
+			flip: false
+			markupEnabled: false
+			scaling: -1
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ari-w9500(5).fnt
+		}
+		{
+			class: com.ray3k.skincomposer.data.FontData
 			name: ScrambleStormPixel_Huge
 			flip: false
 			markupEnabled: false
 			scaling: -1
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2).fnt
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2).fnt
 		}
 		{
 			class: com.ray3k.skincomposer.data.FontData
@@ -694,7 +1426,7 @@ jsonData: {
 			flip: false
 			markupEnabled: false
 			scaling: -1
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel.fnt
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel.fnt
 		}
 		{
 			class: com.ray3k.skincomposer.data.FontData
@@ -702,7 +1434,7 @@ jsonData: {
 			flip: false
 			markupEnabled: false
 			scaling: -1
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(1).fnt
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(1).fnt
 		}
 	]
 	freeTypeFonts: []
@@ -1008,7 +1740,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: ScrambleStormPixel_Regular
+						value: ari-w9500_reg
 					}
 					fontColor: {
 						type: com.badlogic.gdx.graphics.Color
@@ -1035,7 +1767,7 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: ScrambleStormPixel_Large
+						value: ari-w9500_title
 					}
 					fontColor: {
 						type: com.badlogic.gdx.graphics.Color
@@ -1062,7 +1794,34 @@ jsonData: {
 						type: com.badlogic.gdx.graphics.g2d.BitmapFont
 						name: font
 						optional: false
-						value: ScrambleStormPixel_Huge
+						value: ari-w9500_regular
+					}
+					fontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: fontColor
+						optional: true
+						value: null
+					}
+					background: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: background
+						optional: true
+						value: null
+					}
+				}
+				deletable: true
+				parent: null
+			}
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: InfoTitle
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.Label
+				properties: {
+					font: {
+						type: com.badlogic.gdx.graphics.g2d.BitmapFont
+						name: font
+						optional: false
+						value: infoTitle
 					}
 					fontColor: {
 						type: com.badlogic.gdx.graphics.Color
@@ -2571,29 +3330,236 @@ sceneComposer: {
 			cells: [
 				{
 					child: {
-						class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimImage
+						class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimLabel
 						name: null
-						drawable: {
-							file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/continueButton.png
-							bgColor: {
-								r: 1
-								g: 1
-								b: 1
-								a: 1
+						style: {
+							name: InfoTitle
+							clazz: com.badlogic.gdx.scenes.scene2d.ui.Label
+							properties: {
+								font: {
+									type: com.badlogic.gdx.graphics.g2d.BitmapFont
+									name: font
+									optional: false
+									value: infoTitle
+								}
+								fontColor: {
+									type: com.badlogic.gdx.graphics.Color
+									name: fontColor
+									optional: true
+									value: null
+								}
+								background: {
+									type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+									name: background
+									optional: true
+									value: null
+								}
 							}
-							tint: null
-							tintName: null
-							name: continueButton
-							tiled: false
-							minWidth: -1
-							minHeight: -1
-							customized: false
-							tenPatchData: null
-							tvgData: null
-							type: TEXTURE
-							hidden: false
+							deletable: true
+							parent: null
 						}
-						scaling: stretch
+						text: ---- Wave 1 ----
+						textAlignment: 8
+						ellipsis: false
+						ellipsisString: ...
+						wrap: false
+						color: null
+						touchable: enabled
+						visible: true
+					}
+					row: 0
+					column: 0
+					padLeft: 0
+					padRight: 0
+					padTop: 0
+					padBottom: 0
+					spaceLeft: 10
+					spaceRight: 10
+					spaceTop: 10
+					spaceBottom: 10
+					expandX: false
+					expandY: false
+					fillX: false
+					fillY: false
+					growX: false
+					growY: false
+					alignment: 1
+					minWidth: -1
+					minHeight: -1
+					maxWidth: -1
+					maxHeight: -1
+					preferredWidth: -1
+					preferredHeight: -1
+					uniformX: false
+					uniformY: false
+					colSpan: 1
+				}
+				{
+					child: {
+						class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimLabel
+						name: null
+						style: {
+							name: Title
+							clazz: com.badlogic.gdx.scenes.scene2d.ui.Label
+							properties: {
+								font: {
+									type: com.badlogic.gdx.graphics.g2d.BitmapFont
+									name: font
+									optional: false
+									value: ari-w9500_title
+								}
+								fontColor: {
+									type: com.badlogic.gdx.graphics.Color
+									name: fontColor
+									optional: true
+									value: null
+								}
+								background: {
+									type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+									name: background
+									optional: true
+									value: null
+								}
+							}
+							deletable: true
+							parent: null
+						}
+						text: 00:00
+						textAlignment: 8
+						ellipsis: false
+						ellipsisString: ...
+						wrap: false
+						color: null
+						touchable: enabled
+						visible: true
+					}
+					row: 1
+					column: 0
+					padLeft: 0
+					padRight: 0
+					padTop: 0
+					padBottom: 0
+					spaceLeft: 10
+					spaceRight: 10
+					spaceTop: 10
+					spaceBottom: 10
+					expandX: false
+					expandY: false
+					fillX: false
+					fillY: false
+					growX: false
+					growY: false
+					alignment: 1
+					minWidth: -1
+					minHeight: -1
+					maxWidth: -1
+					maxHeight: -1
+					preferredWidth: -1
+					preferredHeight: -1
+					uniformX: false
+					uniformY: false
+					colSpan: 1
+				}
+			]
+			name: null
+			background: null
+			color: null
+			padLeft: 0
+			padRight: 0
+			padTop: 25
+			padBottom: 0
+			paddingEnabled: true
+			alignment: 2
+			fillParent: true
+			touchable: childrenOnly
+			visible: true
+		}
+		{
+			class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimTable
+			cells: [
+				{
+					child: {
+						class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimHorizontalGroup
+						name: null
+						alignment: 1
+						expand: false
+						fill: false
+						padLeft: 0
+						padRight: 0
+						padTop: 0
+						padBottom: 0
+						reverse: false
+						rowAlignment: 1
+						space: 10
+						wrap: false
+						wrapSpace: 0
+						children: [
+							{
+								class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimLabel
+								name: null
+								style: {
+									name: Title
+									clazz: com.badlogic.gdx.scenes.scene2d.ui.Label
+									properties: {
+										font: {
+											type: com.badlogic.gdx.graphics.g2d.BitmapFont
+											name: font
+											optional: false
+											value: ari-w9500_title
+										}
+										fontColor: {
+											type: com.badlogic.gdx.graphics.Color
+											name: fontColor
+											optional: true
+											value: null
+										}
+										background: {
+											type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+											name: background
+											optional: true
+											value: null
+										}
+									}
+									deletable: true
+									parent: null
+								}
+								text: 69420
+								textAlignment: 8
+								ellipsis: false
+								ellipsisString: ...
+								wrap: false
+								color: null
+								touchable: enabled
+								visible: true
+							}
+							{
+								class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimImage
+								name: null
+								drawable: {
+									file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/coinsIcon.png
+									bgColor: {
+										r: 1
+										g: 1
+										b: 1
+										a: 1
+									}
+									tint: null
+									tintName: null
+									name: coinsIcon
+									tiled: false
+									minWidth: -1
+									minHeight: -1
+									customized: false
+									tenPatchData: null
+									tvgData: null
+									type: TEXTURE
+									hidden: false
+								}
+								scaling: stretch
+								touchable: enabled
+								visible: true
+							}
+						]
 						touchable: enabled
 						visible: true
 					}
@@ -2624,90 +3590,16 @@ sceneComposer: {
 					uniformY: false
 					colSpan: 1
 				}
-				{
-					child: {
-						class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimImage
-						name: null
-						drawable: {
-							file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/playButton.png
-							bgColor: {
-								r: 1
-								g: 1
-								b: 1
-								a: 1
-							}
-							tint: null
-							tintName: null
-							name: playButton
-							tiled: false
-							minWidth: -1
-							minHeight: -1
-							customized: false
-							tenPatchData: null
-							tvgData: null
-							type: TEXTURE
-							hidden: false
-						}
-						scaling: stretch
-						touchable: enabled
-						visible: true
-					}
-					row: 1
-					column: 0
-					padLeft: 0
-					padRight: 0
-					padTop: 0
-					padBottom: 0
-					spaceLeft: 0
-					spaceRight: 0
-					spaceTop: 0
-					spaceBottom: 0
-					expandX: false
-					expandY: false
-					fillX: false
-					fillY: false
-					growX: false
-					growY: false
-					alignment: 1
-					minWidth: -1
-					minHeight: -1
-					maxWidth: -1
-					maxHeight: -1
-					preferredWidth: -1
-					preferredHeight: -1
-					uniformX: false
-					uniformY: false
-					colSpan: 1
-				}
 			]
 			name: null
-			background: {
-				file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/gameOverBkg.png
-				bgColor: {
-					r: 1
-					g: 1
-					b: 1
-					a: 1
-				}
-				tint: null
-				tintName: null
-				name: gameOverBkg
-				tiled: false
-				minWidth: -1
-				minHeight: -1
-				customized: false
-				tenPatchData: null
-				tvgData: null
-				type: TEXTURE
-				hidden: false
-			}
+			background: null
 			color: null
 			padLeft: 0
-			padRight: 0
-			padTop: 0
-			padBottom: 100
+			padRight: 25
+			padTop: 25
+			padBottom: 0
 			paddingEnabled: true
-			alignment: 4
+			alignment: 18
 			fillParent: true
 			touchable: childrenOnly
 			visible: true

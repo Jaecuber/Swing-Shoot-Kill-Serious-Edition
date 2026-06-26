@@ -62,6 +62,7 @@ public class Enemy implements Component{
     public void tickKnockbackTimer(float deltaTime) {
         if (!isStaggered) return;
         knockbackTimer -= deltaTime;
+        System.out.println(knockbackTimer);
         if (knockbackTimer <= 0f) {
             isStaggered = false;
         }

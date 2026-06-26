@@ -22,8 +22,7 @@ public class MeleeSystem extends IteratingSystem{
     
 
     public MeleeSystem(){
-        super(Family.all(Melee.class, Transform.class).get());
-        
+        super(Family.all(Melee.class, Transform.class).get());   
     }
 
     @Override
@@ -32,7 +31,6 @@ public class MeleeSystem extends IteratingSystem{
         boolean isSpinning = melee.isSpinning();
 
         Body meleeBody = Physics.MAPPER.get(entity).getBody();
-
         Entity sourceEntity = Melee.MAPPER.get(entity).getOwnerEntity();
 
         Transform ownerTransform = Transform.MAPPER.get(sourceEntity);
@@ -44,25 +42,11 @@ public class MeleeSystem extends IteratingSystem{
 
         Stamina stamina = Stamina.MAPPER.get(sourceEntity);
 
-        if(isSpinning && stamina.getCurrentStamina() - melee.getStamConsume() > 0f){
-            melee.setCurrSpinSpeed(melee.getCurrSpinSpeed() + melee.getAcceleration());
-            melee.setAccumulator(melee.getAccumulator() + deltaTime);
-            
-            if(melee.getAccumulator() >= 1f){
-                stamina.updateStamina(-melee.getStamConsume());
-                melee.setAccumulator(0);
-            }
-
-        } else {
-            melee.setCurrSpinSpeed(melee.getCurrSpinSpeed() - melee.getAcceleration());
-        }
-
         //Adding RotationDeg is Clockwise, Subtracting is CounterClockwise
         meleeTransform.setRotationDeg(meleeTransform.getRotationDeg() - (melee.getCurrSpinSpeed() * deltaTime));
 
         float angleRad = (meleeTransform.getRotationDeg() + 45) * MathUtils.degreesToRadians;
-        float spawnOffset = 1.75f;
-
+        float spawnOffset = 1.25f;
 
         float swordCenterX = ownerCenter.x + (MathUtils.cos(angleRad) * spawnOffset);
         float swordCenterY = ownerCenter.y + (MathUtils.sin(angleRad) * spawnOffset);
@@ -72,11 +56,24 @@ public class MeleeSystem extends IteratingSystem{
         meleeTransform.getPosition().set(spriteBottomLeftX, spriteBottomLeftY);
 
         meleeBody.setTransform(swordCenterX, swordCenterY, angleRad - (MathUtils.PI / 4));
-        collisionLogic(entity, angleRad);
+
+        if(isSpinning && stamina.getCurrentStamina() - melee.getStamConsume() > 0f){
+            melee.setCurrSpinSpeed(melee.getCurrSpinSpeed() + melee.getAcceleration());
+            melee.setAccumulator(melee.getAccumulator() + deltaTime);
+            
+            if(melee.getAccumulator() >= 1f){
+                stamina.updateStamina(-melee.getStamConsume());
+                System.out.println(stamina.getCurrentStamina());
+                melee.setAccumulator(0);
+            }
+            collisionLogic(entity, angleRad, sourceEntity);
+        } else {
+            melee.setCurrSpinSpeed(melee.getCurrSpinSpeed() - melee.getAcceleration());
+        }
         
     }
 
-    private void collisionLogic(Entity swordEntity, float angleRad){
+    private void collisionLogic(Entity swordEntity, float angleRad, Entity playerEntity){
         Entity hitEntity = Melee.MAPPER.get(swordEntity).getHitEntity();
 
         if(hitEntity == null) return;
@@ -86,12 +83,13 @@ public class MeleeSystem extends IteratingSystem{
 
         Body swordBody = Physics.MAPPER.get(swordEntity).getBody();
         Body hitBody = Physics.MAPPER.get(hitEntity).getBody();
+        Body playerBody = Physics.MAPPER.get(playerEntity).getBody();
 
         if(!enemy.isDead() && !health.died()){
             enemy.applyKnockback(0.3f);
-           Vector2 knockbackDirection = new Vector2(
-                hitBody.getPosition().x - swordBody.getPosition().x,
-                hitBody.getPosition().y - swordBody.getPosition().y
+            Vector2 knockbackDirection = new Vector2(
+                hitBody.getPosition().x - playerBody.getPosition().x,
+                hitBody.getPosition().y - playerBody.getPosition().y
             ).nor().scl(20f);
             hitBody.setLinearVelocity(new Vector2(0,0));
             hitBody.applyLinearImpulse(knockbackDirection, hitBody.getWorldCenter(), true);
@@ -105,6 +103,8 @@ public class MeleeSystem extends IteratingSystem{
         } else {
             damageListener.addDamage(damage);
         }
+
+        Melee.MAPPER.get(swordEntity).setHitEntity(null);
     }
 
    

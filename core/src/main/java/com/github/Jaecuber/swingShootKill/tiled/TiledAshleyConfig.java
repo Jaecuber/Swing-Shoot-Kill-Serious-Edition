@@ -29,6 +29,7 @@ import com.github.Jaecuber.swingShootKill.combat.BasicAttack;
 
 import com.github.Jaecuber.swingShootKill.component.AttackMode;
 import com.github.Jaecuber.swingShootKill.component.CameraFollow;
+import com.github.Jaecuber.swingShootKill.component.Coins;
 import com.github.Jaecuber.swingShootKill.component.Controller;
 import com.github.Jaecuber.swingShootKill.component.Enemy;
 import com.github.Jaecuber.swingShootKill.component.Enemy.EnemyAIState;
@@ -115,28 +116,23 @@ public class TiledAshleyConfig {
         TextureRegion textureRegion = getTextureRegion(tile);
         int z = tile.getProperties().get("z", 1, Integer.class);
 
-
         Boolean isTracking = tile.getProperties().get("trackRotation", false, Boolean.class);
         entity.add(new Graphic(textureRegion, Color.WHITE.cpy()));
         addEntityTransform(x, y, z, 
             textureRegion.getRegionWidth(), textureRegion.getRegionHeight(),
             1f, 1f, entity, isTracking);
-
-
         addEntityMove(tile, entity);
-        
         BodyDef.BodyType bodyType = getObjectBodyType(tile);
         addEntityPhysics(tile.getObjects(), bodyType, Vector2.Zero, entity);
         addEntityFacing(tile, entity);
+        addEntityEnemy(tile, entity);
+        addEntityHealth(tile, entity);
         
-
         entity.add(new MapEntity());
-
 
         addEntityMelee(tile, entity);
         addEntityShooter(tile, entity);
         addEntityProjectile(tile, entity);
-       
 
         this.engine.addEntity(entity);
         return entity;
@@ -172,8 +168,17 @@ public class TiledAshleyConfig {
         addEntityEnemy(tile, entity);
         addEntityAttackMode(tileMapObject, entity);
         addEntityUpgrade(tileMapObject, entity);
+        addEntityCoins(tileMapObject, entity);
 
         this.engine.addEntity(entity);
+    }
+
+    private void addEntityCoins(TiledMapTileMapObject tileMapObject, Entity entity) {
+        int coins = tileMapObject.getProperties().get("coins", 0, Integer.class);
+
+        if(coins == 0) return;
+
+        entity.add(new Coins(coins));
     }
 
     private void addEntityUpgrade(TiledMapTileMapObject tileMapObject, Entity entity) {
