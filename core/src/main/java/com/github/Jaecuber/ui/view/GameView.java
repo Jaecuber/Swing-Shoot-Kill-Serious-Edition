@@ -32,6 +32,10 @@ import com.github.Jaecuber.ui.model.GameViewModel;
 public class GameView extends View<GameViewModel>{
     //Top Info
     private Table infoTable;
+    private Table coinsTable;
+    private Label waveLabel;
+    private Label timerLabel;
+    private Label coinsLabel;
 
     //health
     private Table hpTable;
@@ -133,13 +137,30 @@ public class GameView extends View<GameViewModel>{
         infoTable.align(Align.top);
         infoTable.setFillParent(true);
 
-        infoTable.add();
+        waveLabel = new Label("---- Wave 1 ----", skin, "InfoTitle");
+        infoTable.add(waveLabel).space(10.0f);
 
-        Label label = new Label("WAVE 1", skin, "Title");
-        infoTable.add(label);
-
-        infoTable.add();
+        infoTable.row();
+        timerLabel = new Label("00:00", skin, "Title");
+        infoTable.add(timerLabel).space(10.0f);
         stage.addActor(infoTable);
+
+        coinsTable = new Table();
+        coinsTable.padRight(25.0f);
+        coinsTable.padTop(25.0f);
+        coinsTable.align(Align.topRight);
+        coinsTable.setFillParent(true);
+
+        HorizontalGroup horizontalGroup = new HorizontalGroup();
+        horizontalGroup.space(10.0f);
+
+        coinsLabel = new Label("69420", skin, "Title");
+        horizontalGroup.addActor(coinsLabel);
+
+        Image image = new Image(skin, "coinsIcon");
+        horizontalGroup.addActor(image);
+        coinsTable.add(horizontalGroup);
+        stage.addActor(coinsTable);
     }
 
     private void setupGameOver(){
@@ -559,6 +580,9 @@ public class GameView extends View<GameViewModel>{
         viewModel.onPropertyChange(GameViewModel.HEALTH, Integer.class, this::updateHealth);
         viewModel.onPropertyChange(GameViewModel.GAME_OVER, Boolean.class, this::gameOverScreen);
         viewModel.onPropertyChange(GameViewModel.OPEN_SHOP, Boolean.class, this::openShop);
+        viewModel.onPropertyChange(GameViewModel.COINS, Integer.class, this::updateCoins);
+        viewModel.onPropertyChange(GameViewModel.WAVE, Integer.class, this::updateWave);
+        viewModel.onPropertyChange(GameViewModel.TIMER, Integer.class, this::updateTimer);
     }
 
     private void rerollUpgrades(){
@@ -730,6 +754,31 @@ public class GameView extends View<GameViewModel>{
         for(int i = 1; i <= health; i++){
             Image hp = hpTable.findActor("hp" + i);
             hp.setVisible(true);
+        }
+    }
+
+    private void updateWave(int wave){
+        waveLabel.setText("---- Wave " + wave + " ----");
+    }
+
+    private void updateCoins(int coins){
+        coinsLabel.setText("" + coins);
+    }
+
+    private void updateTimer(int time){
+        if(time < 0) return;
+        if(time > 60){
+            if(time/60 < 10){
+                if(time % 60 < 10){
+                    timerLabel.setText("0" + time/60 + ":0" + time % 60);
+                }
+                timerLabel.setText("0" + time/60 + ":" + time % 60);
+            }
+            timerLabel.setText(time/60 + ":" + time % 60);
+        }else if(time < 60 && time >= 10){
+            timerLabel.setText("00:" + time);
+        }else{
+            timerLabel.setText("00:" + "0" + time);
         }
     }
 

@@ -7,6 +7,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.Queue;
+import com.github.Jaecuber.swingShootKill.Launcher;
 import com.github.Jaecuber.swingShootKill.asset.AssetService;
 import com.github.Jaecuber.swingShootKill.asset.JsonAsset;
 import com.github.Jaecuber.swingShootKill.audio.AudioService;
@@ -49,7 +50,7 @@ public class LevelRunner {
     public void runWave(){
         this.wave++;
         this.difficulty = calcDifficulty();
-        //update info for view model
+        viewModel.updateWave(wave);
         spawnWave(difficulty);
     }
 
@@ -59,7 +60,7 @@ public class LevelRunner {
         while(enemyQueue.notEmpty()){
             String enemy = enemyQueue.removeFirst();
             Vector2 randomSpawn = spawns.random();
-            entitySpawner.spawnEntity(enemy, randomSpawn);
+            entitySpawner.spawnEntity(enemy, randomSpawn.scl(Launcher.UNIT_SCALE));
         }
     }
 

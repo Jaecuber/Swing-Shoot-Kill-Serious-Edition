@@ -41,10 +41,16 @@ public class GameViewModel extends ViewModel{
     public static final String MAX_HEALTH = "maxHealth";
     public static final String GAME_OVER = "gameOver";
     public static final String OPEN_SHOP = "openShop";
+    public static final String COINS = "coins";
+    public static final String WAVE = "wave";
+    public static final String TIMER = "timer";
 
     private Map.Entry<Vector2, Integer> playerDamage;
     private int health;
     private int maxHealth;
+    private int wave;
+    private int time;
+    private int coins;
     private boolean shopOpen = false;
 
     private final Vector2 tempVec2;
@@ -130,6 +136,28 @@ public class GameViewModel extends ViewModel{
         if(upgradeTags == null) throw new GdxRuntimeException("No upgrade tags for player entity");
 
         upgradeTags.addTag(tag, amt);
+    }
+
+    //info HUD functionality
+    public void updateCoins(int coins){
+        if(this.coins != coins){
+            this.propertyChangeSupport.firePropertyChange(COINS, this.coins, coins);
+        }
+        this.coins = coins;
+    }
+
+    public void updateWave(int wave){
+        if(this.wave != wave){
+            this.propertyChangeSupport.firePropertyChange(WAVE, this.wave, wave);
+        }
+        this.wave = wave;
+    }
+
+    public void updateTimer(int time){
+        if(this.time != time){
+            this.propertyChangeSupport.firePropertyChange(TIMER, this.time, time);
+        }
+        this.time = time;
     }
 
     //misc
