@@ -322,6 +322,86 @@ atlasData: {
 			type: TEXTURE
 			hidden: false
 		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/revolverCylinder.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: revolverCylinder
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/darkenedBkg.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: darkenedBkg
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/spinEffect.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: spinEffect
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
+		{
+			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/playerDmgEffect.png
+			bgColor: {
+				r: 1
+				g: 1
+				b: 1
+				a: 1
+			}
+			tint: null
+			tintName: null
+			name: playerDmgEffect
+			tiled: false
+			minWidth: -1
+			minHeight: -1
+			customized: false
+			tenPatchData: null
+			tvgData: null
+			type: TEXTURE
+			hidden: false
+		}
 	]
 	fontDrawables: [
 		{
@@ -3330,237 +3410,30 @@ sceneComposer: {
 			cells: [
 				{
 					child: {
-						class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimLabel
+						class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimImage
 						name: null
-						style: {
-							name: InfoTitle
-							clazz: com.badlogic.gdx.scenes.scene2d.ui.Label
-							properties: {
-								font: {
-									type: com.badlogic.gdx.graphics.g2d.BitmapFont
-									name: font
-									optional: false
-									value: infoTitle
-								}
-								fontColor: {
-									type: com.badlogic.gdx.graphics.Color
-									name: fontColor
-									optional: true
-									value: null
-								}
-								background: {
-									type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-									name: background
-									optional: true
-									value: null
-								}
+						drawable: {
+							file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets_raw/ui/playerDmgEffect.png
+							bgColor: {
+								r: 1
+								g: 1
+								b: 1
+								a: 1
 							}
-							deletable: true
-							parent: null
+							tint: null
+							tintName: null
+							name: playerDmgEffect
+							tiled: false
+							minWidth: -1
+							minHeight: -1
+							customized: false
+							tenPatchData: null
+							tvgData: null
+							type: TEXTURE
+							hidden: false
 						}
-						text: ---- Wave 1 ----
-						textAlignment: 8
-						ellipsis: false
-						ellipsisString: ...
-						wrap: false
-						color: null
-						touchable: enabled
-						visible: true
-					}
-					row: 0
-					column: 0
-					padLeft: 0
-					padRight: 0
-					padTop: 0
-					padBottom: 0
-					spaceLeft: 10
-					spaceRight: 10
-					spaceTop: 10
-					spaceBottom: 10
-					expandX: false
-					expandY: false
-					fillX: false
-					fillY: false
-					growX: false
-					growY: false
-					alignment: 1
-					minWidth: -1
-					minHeight: -1
-					maxWidth: -1
-					maxHeight: -1
-					preferredWidth: -1
-					preferredHeight: -1
-					uniformX: false
-					uniformY: false
-					colSpan: 1
-				}
-				{
-					child: {
-						class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimLabel
-						name: null
-						style: {
-							name: Title
-							clazz: com.badlogic.gdx.scenes.scene2d.ui.Label
-							properties: {
-								font: {
-									type: com.badlogic.gdx.graphics.g2d.BitmapFont
-									name: font
-									optional: false
-									value: ari-w9500_title
-								}
-								fontColor: {
-									type: com.badlogic.gdx.graphics.Color
-									name: fontColor
-									optional: true
-									value: null
-								}
-								background: {
-									type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-									name: background
-									optional: true
-									value: null
-								}
-							}
-							deletable: true
-							parent: null
-						}
-						text: 00:00
-						textAlignment: 8
-						ellipsis: false
-						ellipsisString: ...
-						wrap: false
-						color: null
-						touchable: enabled
-						visible: true
-					}
-					row: 1
-					column: 0
-					padLeft: 0
-					padRight: 0
-					padTop: 0
-					padBottom: 0
-					spaceLeft: 10
-					spaceRight: 10
-					spaceTop: 10
-					spaceBottom: 10
-					expandX: false
-					expandY: false
-					fillX: false
-					fillY: false
-					growX: false
-					growY: false
-					alignment: 1
-					minWidth: -1
-					minHeight: -1
-					maxWidth: -1
-					maxHeight: -1
-					preferredWidth: -1
-					preferredHeight: -1
-					uniformX: false
-					uniformY: false
-					colSpan: 1
-				}
-			]
-			name: null
-			background: null
-			color: null
-			padLeft: 0
-			padRight: 0
-			padTop: 25
-			padBottom: 0
-			paddingEnabled: true
-			alignment: 2
-			fillParent: true
-			touchable: childrenOnly
-			visible: true
-		}
-		{
-			class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimTable
-			cells: [
-				{
-					child: {
-						class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimHorizontalGroup
-						name: null
-						alignment: 1
-						expand: false
-						fill: false
-						padLeft: 0
-						padRight: 0
-						padTop: 0
-						padBottom: 0
-						reverse: false
-						rowAlignment: 1
-						space: 10
-						wrap: false
-						wrapSpace: 0
-						children: [
-							{
-								class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimLabel
-								name: null
-								style: {
-									name: Title
-									clazz: com.badlogic.gdx.scenes.scene2d.ui.Label
-									properties: {
-										font: {
-											type: com.badlogic.gdx.graphics.g2d.BitmapFont
-											name: font
-											optional: false
-											value: ari-w9500_title
-										}
-										fontColor: {
-											type: com.badlogic.gdx.graphics.Color
-											name: fontColor
-											optional: true
-											value: null
-										}
-										background: {
-											type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-											name: background
-											optional: true
-											value: null
-										}
-									}
-									deletable: true
-									parent: null
-								}
-								text: 69420
-								textAlignment: 8
-								ellipsis: false
-								ellipsisString: ...
-								wrap: false
-								color: null
-								touchable: enabled
-								visible: true
-							}
-							{
-								class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimImage
-								name: null
-								drawable: {
-									file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/coinsIcon.png
-									bgColor: {
-										r: 1
-										g: 1
-										b: 1
-										a: 1
-									}
-									tint: null
-									tintName: null
-									name: coinsIcon
-									tiled: false
-									minWidth: -1
-									minHeight: -1
-									customized: false
-									tenPatchData: null
-									tvgData: null
-									type: TEXTURE
-									hidden: false
-								}
-								scaling: stretch
-								touchable: enabled
-								visible: true
-							}
-						]
-						touchable: enabled
+						scaling: stretch
+						touchable: disabled
 						visible: true
 					}
 					row: 0
@@ -3595,11 +3468,11 @@ sceneComposer: {
 			background: null
 			color: null
 			padLeft: 0
-			padRight: 25
-			padTop: 25
+			padRight: 0
+			padTop: 0
 			padBottom: 0
-			paddingEnabled: true
-			alignment: 18
+			paddingEnabled: false
+			alignment: 1
 			fillParent: true
 			touchable: childrenOnly
 			visible: true

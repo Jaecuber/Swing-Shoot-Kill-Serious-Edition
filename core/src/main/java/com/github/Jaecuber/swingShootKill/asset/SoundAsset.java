@@ -14,7 +14,8 @@ public enum SoundAsset implements Asset<Sound>{
     WAVE_BWAAM("waveBwaam.mp3"),
     WAVE_DRUM("waveDrum.mp3"),
     SHOP_OPEN("shopOpen.mp3"),
-    WOOSH("woosh.mp3");
+    WOOSH("woosh.mp3"),
+    HURT("hurt.mp3");
 
     private final AssetDescriptor<Sound> descriptor;
 

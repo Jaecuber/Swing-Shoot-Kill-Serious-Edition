@@ -36,6 +36,7 @@ import com.github.Jaecuber.swingShootKill.component.Enemy.EnemyAIState;
 import com.github.Jaecuber.swingShootKill.component.Facing;
 import com.github.Jaecuber.swingShootKill.component.Graphic;
 import com.github.Jaecuber.swingShootKill.component.Health;
+import com.github.Jaecuber.swingShootKill.component.Light;
 import com.github.Jaecuber.swingShootKill.component.MapEntity;
 import com.github.Jaecuber.swingShootKill.component.Melee;
 import com.github.Jaecuber.swingShootKill.component.Move;
@@ -48,6 +49,11 @@ import com.github.Jaecuber.swingShootKill.component.Transform;
 import com.github.Jaecuber.swingShootKill.component.UpgradeTags;
 import com.github.Jaecuber.swingShootKill.component.AttackMode.ATTACK_MODE;
 import com.github.Jaecuber.swingShootKill.component.Facing.FacingDirection;
+import com.github.Jaecuber.swingShootKill.systems.LightingSystem;
+
+import box2dLight.PointLight;
+import box2dLight.RayHandler;
+
 import com.github.Jaecuber.swingShootKill.component.Fsm;
 
 public class TiledAshleyConfig {
@@ -56,11 +62,13 @@ public class TiledAshleyConfig {
     private final Engine engine;
     private final AssetService assetService;
     private final World physicsWorld;
+    private final RayHandler rayHandler;
 
-    public TiledAshleyConfig(Engine engine, AssetService assetService, World physicsWorld) {
+    public TiledAshleyConfig(Engine engine, AssetService assetService, World physicsWorld, RayHandler rayHandler) {
         this.engine = engine;
         this.assetService = assetService;
         this.physicsWorld = physicsWorld;
+        this.rayHandler = rayHandler;
     }
 
     public void onLoadTile(TiledMapTile tileMapTile, float x, float y){
@@ -135,6 +143,7 @@ public class TiledAshleyConfig {
         addEntityMelee(tile, entity);
         addEntityShooter(tile, entity);
         addEntityProjectile(tile, entity);
+        addEntityLight(tile, entity);
 
         this.engine.addEntity(entity);
         return entity;
@@ -171,8 +180,22 @@ public class TiledAshleyConfig {
         addEntityAttackMode(tileMapObject, entity);
         addEntityUpgrade(tileMapObject, entity);
         addEntityCoins(tile, entity);
+        addEntityLight(tile, entity);
 
         this.engine.addEntity(entity);
+    }
+
+    private void addEntityLight(TiledMapTile tile, Entity entity){
+        Color color = tile.getProperties().get("lightColor", null, Color.class);
+        if(color == null) return;
+
+        float lightDistance = tile.getProperties().get("lightDistance", 0.0f, Float.class);
+
+        System.out.println("addingLight");
+        PointLight pointLight = new PointLight(rayHandler, 128, color, lightDistance, 0.0f, 0.0f);
+        pointLight.setSoft(true);
+        pointLight.setXray(true); 
+        entity.add(new Light(pointLight));
     }
 
     private void addEntityCoins(TiledMapTile tile, Entity entity) {
