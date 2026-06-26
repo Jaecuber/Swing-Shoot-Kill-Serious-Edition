@@ -3,7 +3,7 @@ atlasData: {
 	atlasCurrent: true
 	drawables: [
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/menuBkg.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/menuBkg.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -23,7 +23,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/gameOverBkg.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/gameOverBkg.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -43,7 +43,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/awesomeCavePixelArt.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/awesomeCavePixelArt.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -63,7 +63,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/upgradesBkg.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/upgradesBkg.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -83,7 +83,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/SwingShootKillLogo.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/SwingShootKillLogo.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -103,7 +103,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/continueButton.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/continueButton.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -123,7 +123,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/BasicUpgradeBkg.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/BasicUpgradeBkg.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -143,7 +143,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/CorruptUpgradeBkg.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/CorruptUpgradeBkg.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -163,7 +163,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/LegendaryUpgradeBkg.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/LegendaryUpgradeBkg.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -183,7 +183,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/RareUpgradeBkg.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/RareUpgradeBkg.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -203,7 +203,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/charIcon.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/charIcon.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -223,7 +223,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/coinsIcon.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/coinsIcon.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -243,7 +243,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/heart.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/heart.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -263,7 +263,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/playButton.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/playButton.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -283,7 +283,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/quitButton.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/quitButton.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -303,7 +303,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/rerollButton.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/rerollButton.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -325,7 +325,7 @@ atlasData: {
 	]
 	fontDrawables: [
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel_0.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel_0.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -345,7 +345,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel_1.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel_1.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -365,7 +365,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel_2.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel_2.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -385,7 +385,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(1).png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(1).png
 			bgColor: {
 				r: 1
 				g: 1
@@ -405,7 +405,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_0.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_0.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -425,7 +425,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_1.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_1.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -445,7 +445,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_2.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_2.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -465,7 +465,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_3.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_3.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -485,7 +485,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_4.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_4.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -505,7 +505,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_5.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_5.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -525,7 +525,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_6.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_6.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -545,7 +545,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_7.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_7.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -565,7 +565,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_8.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_8.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -585,7 +585,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_9.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_9.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -605,7 +605,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_10.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_10.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -625,7 +625,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_11.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_11.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -645,7 +645,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_12.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_12.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -665,7 +665,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_13.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_13.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -685,7 +685,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_14.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_14.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -705,7 +705,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_15.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_15.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -725,7 +725,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_16.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_16.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -745,7 +745,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_17.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_17.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -765,7 +765,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_18.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_18.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -785,7 +785,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ScrambleStormPixel(2)_19.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_19.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -805,7 +805,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ari-w9500(4).png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ari-w9500(4).png
 			bgColor: {
 				r: 1
 				g: 1
@@ -825,7 +825,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ari-w9500.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ari-w9500.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -845,7 +845,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ari-w9500(3).png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ari-w9500(3).png
 			bgColor: {
 				r: 1
 				g: 1
@@ -865,7 +865,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_0.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_0.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -885,7 +885,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_1.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_1.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -905,7 +905,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_2.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_2.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -925,7 +925,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_3.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_3.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -945,7 +945,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_4.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_4.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -965,7 +965,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_5.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_5.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -985,7 +985,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_6.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_6.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1005,7 +1005,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_7.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_7.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1025,7 +1025,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_8.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_8.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1045,7 +1045,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_9.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_9.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1065,7 +1065,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_10.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_10.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1085,7 +1085,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_11.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_11.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1105,7 +1105,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_12.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_12.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1125,7 +1125,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_13.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_13.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1145,7 +1145,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_14.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_14.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1165,7 +1165,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_15.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_15.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1185,7 +1185,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_16.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_16.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1205,7 +1205,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_17.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_17.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1225,7 +1225,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_18.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_18.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1245,7 +1245,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_19.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2)_19.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1265,7 +1265,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel_0.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel_0.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1285,7 +1285,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel_1.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel_1.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1305,7 +1305,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel_2.png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel_2.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1325,7 +1325,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(1).png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(1).png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1345,7 +1345,7 @@ atlasData: {
 			hidden: false
 		}
 		{
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ari-w9500(5).png
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ari-w9500(5).png
 			bgColor: {
 				r: 1
 				g: 1
@@ -1386,7 +1386,7 @@ jsonData: {
 			flip: false
 			markupEnabled: false
 			scaling: -1
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ari-w9500(4).fnt
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ari-w9500(4).fnt
 		}
 		{
 			class: com.ray3k.skincomposer.data.FontData
@@ -1394,7 +1394,7 @@ jsonData: {
 			flip: false
 			markupEnabled: false
 			scaling: -1
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ari-w9500.fnt
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ari-w9500.fnt
 		}
 		{
 			class: com.ray3k.skincomposer.data.FontData
@@ -1402,7 +1402,7 @@ jsonData: {
 			flip: false
 			markupEnabled: false
 			scaling: -1
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ari-w9500(3).fnt
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ari-w9500(3).fnt
 		}
 		{
 			class: com.ray3k.skincomposer.data.FontData
@@ -1410,7 +1410,7 @@ jsonData: {
 			flip: false
 			markupEnabled: false
 			scaling: -1
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ari-w9500(5).fnt
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/ari-w9500(5).fnt
 		}
 		{
 			class: com.ray3k.skincomposer.data.FontData
@@ -1418,7 +1418,7 @@ jsonData: {
 			flip: false
 			markupEnabled: false
 			scaling: -1
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2).fnt
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(2).fnt
 		}
 		{
 			class: com.ray3k.skincomposer.data.FontData
@@ -1426,7 +1426,7 @@ jsonData: {
 			flip: false
 			markupEnabled: false
 			scaling: -1
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel.fnt
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel.fnt
 		}
 		{
 			class: com.ray3k.skincomposer.data.FontData
@@ -1434,11 +1434,82 @@ jsonData: {
 			flip: false
 			markupEnabled: false
 			scaling: -1
-			file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(1).fnt
+			file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/ScrambleStormPixel(1).fnt
 		}
 	]
 	freeTypeFonts: []
 	classStyleMap: {
+		com.badlogic.gdx.scenes.scene2d.ui.SelectBox: [
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: default
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.SelectBox
+				properties: {
+					font: {
+						type: com.badlogic.gdx.graphics.g2d.BitmapFont
+						name: font
+						optional: false
+						value: null
+					}
+					fontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: fontColor
+						optional: false
+						value: null
+					}
+					overFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: overFontColor
+						optional: true
+						value: null
+					}
+					disabledFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: disabledFontColor
+						optional: true
+						value: null
+					}
+					background: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: background
+						optional: true
+						value: null
+					}
+					scrollStyle: {
+						type: com.badlogic.gdx.scenes.scene2d.ui.ScrollPane$ScrollPaneStyle
+						name: scrollStyle
+						optional: false
+						value: default
+					}
+					listStyle: {
+						type: com.badlogic.gdx.scenes.scene2d.ui.List$ListStyle
+						name: listStyle
+						optional: false
+						value: default
+					}
+					backgroundOver: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: backgroundOver
+						optional: true
+						value: null
+					}
+					backgroundOpen: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: backgroundOpen
+						optional: true
+						value: null
+					}
+					backgroundDisabled: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: backgroundDisabled
+						optional: true
+						value: null
+					}
+				}
+				deletable: false
+				parent: null
+			}
+		]
 		com.badlogic.gdx.scenes.scene2d.ui.Slider: [
 			{
 				class: com.ray3k.skincomposer.data.StyleData
@@ -1645,1082 +1716,6 @@ jsonData: {
 						name: disabledKnobAfter
 						optional: true
 						value: null
-					}
-				}
-				deletable: false
-				parent: null
-			}
-		]
-		com.badlogic.gdx.scenes.scene2d.ui.SplitPane: [
-			{
-				class: com.ray3k.skincomposer.data.StyleData
-				name: default-horizontal
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.SplitPane
-				properties: {
-					handle: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: handle
-						optional: false
-						value: null
-					}
-				}
-				deletable: false
-				parent: null
-			}
-			{
-				class: com.ray3k.skincomposer.data.StyleData
-				name: default-vertical
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.SplitPane
-				properties: {
-					handle: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: handle
-						optional: false
-						value: null
-					}
-				}
-				deletable: false
-				parent: null
-			}
-		]
-		com.badlogic.gdx.scenes.scene2d.ui.ScrollPane: [
-			{
-				class: com.ray3k.skincomposer.data.StyleData
-				name: default
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.ScrollPane
-				properties: {
-					background: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: background
-						optional: true
-						value: null
-					}
-					corner: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: corner
-						optional: true
-						value: null
-					}
-					hScroll: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: hScroll
-						optional: true
-						value: null
-					}
-					hScrollKnob: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: hScrollKnob
-						optional: true
-						value: null
-					}
-					vScroll: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: vScroll
-						optional: true
-						value: null
-					}
-					vScrollKnob: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: vScrollKnob
-						optional: true
-						value: null
-					}
-				}
-				deletable: false
-				parent: null
-			}
-		]
-		com.badlogic.gdx.scenes.scene2d.ui.Label: [
-			{
-				class: com.ray3k.skincomposer.data.StyleData
-				name: default
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.Label
-				properties: {
-					font: {
-						type: com.badlogic.gdx.graphics.g2d.BitmapFont
-						name: font
-						optional: false
-						value: ari-w9500_reg
-					}
-					fontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: fontColor
-						optional: true
-						value: null
-					}
-					background: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: background
-						optional: true
-						value: null
-					}
-				}
-				deletable: false
-				parent: null
-			}
-			{
-				class: com.ray3k.skincomposer.data.StyleData
-				name: Title
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.Label
-				properties: {
-					font: {
-						type: com.badlogic.gdx.graphics.g2d.BitmapFont
-						name: font
-						optional: false
-						value: ari-w9500_title
-					}
-					fontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: fontColor
-						optional: true
-						value: null
-					}
-					background: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: background
-						optional: true
-						value: null
-					}
-				}
-				deletable: true
-				parent: null
-			}
-			{
-				class: com.ray3k.skincomposer.data.StyleData
-				name: HugeTitle
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.Label
-				properties: {
-					font: {
-						type: com.badlogic.gdx.graphics.g2d.BitmapFont
-						name: font
-						optional: false
-						value: ari-w9500_regular
-					}
-					fontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: fontColor
-						optional: true
-						value: null
-					}
-					background: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: background
-						optional: true
-						value: null
-					}
-				}
-				deletable: true
-				parent: null
-			}
-			{
-				class: com.ray3k.skincomposer.data.StyleData
-				name: InfoTitle
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.Label
-				properties: {
-					font: {
-						type: com.badlogic.gdx.graphics.g2d.BitmapFont
-						name: font
-						optional: false
-						value: infoTitle
-					}
-					fontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: fontColor
-						optional: true
-						value: null
-					}
-					background: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: background
-						optional: true
-						value: null
-					}
-				}
-				deletable: true
-				parent: null
-			}
-		]
-		com.badlogic.gdx.scenes.scene2d.ui.Window: [
-			{
-				class: com.ray3k.skincomposer.data.StyleData
-				name: default
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.Window
-				properties: {
-					background: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: background
-						optional: true
-						value: null
-					}
-					titleFont: {
-						type: com.badlogic.gdx.graphics.g2d.BitmapFont
-						name: titleFont
-						optional: false
-						value: null
-					}
-					titleFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: titleFontColor
-						optional: true
-						value: null
-					}
-					stageBackground: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: stageBackground
-						optional: true
-						value: null
-					}
-				}
-				deletable: false
-				parent: null
-			}
-		]
-		com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton: [
-			{
-				class: com.ray3k.skincomposer.data.StyleData
-				name: default
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton
-				properties: {
-					imageUp: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: imageUp
-						optional: true
-						value: null
-					}
-					imageDown: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: imageDown
-						optional: true
-						value: null
-					}
-					imageOver: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: imageOver
-						optional: true
-						value: null
-					}
-					imageDisabled: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: imageDisabled
-						optional: true
-						value: null
-					}
-					imageChecked: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: imageChecked
-						optional: true
-						value: null
-					}
-					imageCheckedDown: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: imageCheckedDown
-						optional: true
-						value: null
-					}
-					imageCheckedOver: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: imageCheckedOver
-						optional: true
-						value: null
-					}
-					font: {
-						type: com.badlogic.gdx.graphics.g2d.BitmapFont
-						name: font
-						optional: false
-						value: null
-					}
-					fontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: fontColor
-						optional: true
-						value: null
-					}
-					downFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: downFontColor
-						optional: true
-						value: null
-					}
-					overFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: overFontColor
-						optional: true
-						value: null
-					}
-					focusedFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: focusedFontColor
-						optional: true
-						value: null
-					}
-					disabledFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: disabledFontColor
-						optional: true
-						value: null
-					}
-					checkedFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: checkedFontColor
-						optional: true
-						value: null
-					}
-					checkedDownFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: checkedDownFontColor
-						optional: true
-						value: null
-					}
-					checkedOverFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: checkedOverFontColor
-						optional: true
-						value: null
-					}
-					checkedFocusedFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: checkedFocusedFontColor
-						optional: true
-						value: null
-					}
-					up: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: up
-						optional: true
-						value: null
-					}
-					down: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: down
-						optional: true
-						value: null
-					}
-					over: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: over
-						optional: true
-						value: null
-					}
-					focused: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: focused
-						optional: true
-						value: null
-					}
-					disabled: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: disabled
-						optional: true
-						value: null
-					}
-					checked: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checked
-						optional: true
-						value: null
-					}
-					checkedOver: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkedOver
-						optional: true
-						value: null
-					}
-					checkedDown: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkedDown
-						optional: true
-						value: null
-					}
-					checkedFocused: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkedFocused
-						optional: true
-						value: null
-					}
-					pressedOffsetX: {
-						type: float
-						name: pressedOffsetX
-						optional: true
-						value: 0
-					}
-					pressedOffsetY: {
-						type: float
-						name: pressedOffsetY
-						optional: true
-						value: 0
-					}
-					unpressedOffsetX: {
-						type: float
-						name: unpressedOffsetX
-						optional: true
-						value: 0
-					}
-					unpressedOffsetY: {
-						type: float
-						name: unpressedOffsetY
-						optional: true
-						value: 0
-					}
-					checkedOffsetX: {
-						type: float
-						name: checkedOffsetX
-						optional: true
-						value: 0
-					}
-					checkedOffsetY: {
-						type: float
-						name: checkedOffsetY
-						optional: true
-						value: 0
-					}
-				}
-				deletable: false
-				parent: null
-			}
-		]
-		com.badlogic.gdx.scenes.scene2d.ui.ImageButton: [
-			{
-				class: com.ray3k.skincomposer.data.StyleData
-				name: default
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.ImageButton
-				properties: {
-					imageUp: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: imageUp
-						optional: true
-						value: null
-					}
-					imageDown: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: imageDown
-						optional: true
-						value: null
-					}
-					imageOver: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: imageOver
-						optional: true
-						value: null
-					}
-					imageDisabled: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: imageDisabled
-						optional: true
-						value: null
-					}
-					imageChecked: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: imageChecked
-						optional: true
-						value: null
-					}
-					imageCheckedDown: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: imageCheckedDown
-						optional: true
-						value: null
-					}
-					imageCheckedOver: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: imageCheckedOver
-						optional: true
-						value: null
-					}
-					up: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: up
-						optional: true
-						value: null
-					}
-					down: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: down
-						optional: true
-						value: null
-					}
-					over: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: over
-						optional: true
-						value: null
-					}
-					focused: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: focused
-						optional: true
-						value: null
-					}
-					disabled: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: disabled
-						optional: true
-						value: null
-					}
-					checked: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checked
-						optional: true
-						value: null
-					}
-					checkedOver: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkedOver
-						optional: true
-						value: null
-					}
-					checkedDown: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkedDown
-						optional: true
-						value: null
-					}
-					checkedFocused: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkedFocused
-						optional: true
-						value: null
-					}
-					pressedOffsetX: {
-						type: float
-						name: pressedOffsetX
-						optional: true
-						value: 0
-					}
-					pressedOffsetY: {
-						type: float
-						name: pressedOffsetY
-						optional: true
-						value: 0
-					}
-					unpressedOffsetX: {
-						type: float
-						name: unpressedOffsetX
-						optional: true
-						value: 0
-					}
-					unpressedOffsetY: {
-						type: float
-						name: unpressedOffsetY
-						optional: true
-						value: 0
-					}
-					checkedOffsetX: {
-						type: float
-						name: checkedOffsetX
-						optional: true
-						value: 0
-					}
-					checkedOffsetY: {
-						type: float
-						name: checkedOffsetY
-						optional: true
-						value: 0
-					}
-				}
-				deletable: false
-				parent: null
-			}
-		]
-		com.badlogic.gdx.scenes.scene2d.ui.TextButton: [
-			{
-				class: com.ray3k.skincomposer.data.StyleData
-				name: default
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.TextButton
-				properties: {
-					font: {
-						type: com.badlogic.gdx.graphics.g2d.BitmapFont
-						name: font
-						optional: false
-						value: null
-					}
-					fontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: fontColor
-						optional: true
-						value: null
-					}
-					downFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: downFontColor
-						optional: true
-						value: null
-					}
-					overFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: overFontColor
-						optional: true
-						value: null
-					}
-					focusedFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: focusedFontColor
-						optional: true
-						value: null
-					}
-					disabledFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: disabledFontColor
-						optional: true
-						value: null
-					}
-					checkedFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: checkedFontColor
-						optional: true
-						value: null
-					}
-					checkedDownFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: checkedDownFontColor
-						optional: true
-						value: null
-					}
-					checkedOverFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: checkedOverFontColor
-						optional: true
-						value: null
-					}
-					checkedFocusedFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: checkedFocusedFontColor
-						optional: true
-						value: null
-					}
-					up: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: up
-						optional: true
-						value: null
-					}
-					down: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: down
-						optional: true
-						value: null
-					}
-					over: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: over
-						optional: true
-						value: null
-					}
-					focused: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: focused
-						optional: true
-						value: null
-					}
-					disabled: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: disabled
-						optional: true
-						value: null
-					}
-					checked: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checked
-						optional: true
-						value: null
-					}
-					checkedOver: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkedOver
-						optional: true
-						value: null
-					}
-					checkedDown: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkedDown
-						optional: true
-						value: null
-					}
-					checkedFocused: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkedFocused
-						optional: true
-						value: null
-					}
-					pressedOffsetX: {
-						type: float
-						name: pressedOffsetX
-						optional: true
-						value: 0
-					}
-					pressedOffsetY: {
-						type: float
-						name: pressedOffsetY
-						optional: true
-						value: 0
-					}
-					unpressedOffsetX: {
-						type: float
-						name: unpressedOffsetX
-						optional: true
-						value: 0
-					}
-					unpressedOffsetY: {
-						type: float
-						name: unpressedOffsetY
-						optional: true
-						value: 0
-					}
-					checkedOffsetX: {
-						type: float
-						name: checkedOffsetX
-						optional: true
-						value: 0
-					}
-					checkedOffsetY: {
-						type: float
-						name: checkedOffsetY
-						optional: true
-						value: 0
-					}
-				}
-				deletable: false
-				parent: null
-			}
-		]
-		com.badlogic.gdx.scenes.scene2d.ui.SelectBox: [
-			{
-				class: com.ray3k.skincomposer.data.StyleData
-				name: default
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.SelectBox
-				properties: {
-					font: {
-						type: com.badlogic.gdx.graphics.g2d.BitmapFont
-						name: font
-						optional: false
-						value: null
-					}
-					fontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: fontColor
-						optional: false
-						value: null
-					}
-					overFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: overFontColor
-						optional: true
-						value: null
-					}
-					disabledFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: disabledFontColor
-						optional: true
-						value: null
-					}
-					background: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: background
-						optional: true
-						value: null
-					}
-					scrollStyle: {
-						type: com.badlogic.gdx.scenes.scene2d.ui.ScrollPane$ScrollPaneStyle
-						name: scrollStyle
-						optional: false
-						value: default
-					}
-					listStyle: {
-						type: com.badlogic.gdx.scenes.scene2d.ui.List$ListStyle
-						name: listStyle
-						optional: false
-						value: default
-					}
-					backgroundOver: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: backgroundOver
-						optional: true
-						value: null
-					}
-					backgroundOpen: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: backgroundOpen
-						optional: true
-						value: null
-					}
-					backgroundDisabled: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: backgroundDisabled
-						optional: true
-						value: null
-					}
-				}
-				deletable: false
-				parent: null
-			}
-		]
-		com.badlogic.gdx.scenes.scene2d.ui.TextField: [
-			{
-				class: com.ray3k.skincomposer.data.StyleData
-				name: default
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.TextField
-				properties: {
-					font: {
-						type: com.badlogic.gdx.graphics.g2d.BitmapFont
-						name: font
-						optional: false
-						value: null
-					}
-					fontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: fontColor
-						optional: false
-						value: null
-					}
-					focusedFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: focusedFontColor
-						optional: true
-						value: null
-					}
-					disabledFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: disabledFontColor
-						optional: true
-						value: null
-					}
-					background: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: background
-						optional: true
-						value: null
-					}
-					focusedBackground: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: focusedBackground
-						optional: true
-						value: null
-					}
-					disabledBackground: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: disabledBackground
-						optional: true
-						value: null
-					}
-					cursor: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: cursor
-						optional: true
-						value: null
-					}
-					selection: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: selection
-						optional: true
-						value: null
-					}
-					messageFont: {
-						type: com.badlogic.gdx.graphics.g2d.BitmapFont
-						name: messageFont
-						optional: true
-						value: null
-					}
-					messageFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: messageFontColor
-						optional: true
-						value: null
-					}
-				}
-				deletable: false
-				parent: null
-			}
-		]
-		com.badlogic.gdx.scenes.scene2d.ui.CheckBox: [
-			{
-				class: com.ray3k.skincomposer.data.StyleData
-				name: default
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.CheckBox
-				properties: {
-					checkboxOn: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkboxOn
-						optional: false
-						value: null
-					}
-					checkboxOff: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkboxOff
-						optional: false
-						value: null
-					}
-					checkboxOnOver: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkboxOnOver
-						optional: true
-						value: null
-					}
-					checkboxOver: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkboxOver
-						optional: true
-						value: null
-					}
-					checkboxOnDisabled: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkboxOnDisabled
-						optional: true
-						value: null
-					}
-					checkboxOffDisabled: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkboxOffDisabled
-						optional: true
-						value: null
-					}
-					font: {
-						type: com.badlogic.gdx.graphics.g2d.BitmapFont
-						name: font
-						optional: false
-						value: null
-					}
-					fontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: fontColor
-						optional: true
-						value: null
-					}
-					downFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: downFontColor
-						optional: true
-						value: null
-					}
-					overFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: overFontColor
-						optional: true
-						value: null
-					}
-					focusedFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: focusedFontColor
-						optional: true
-						value: null
-					}
-					disabledFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: disabledFontColor
-						optional: true
-						value: null
-					}
-					checkedFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: checkedFontColor
-						optional: true
-						value: null
-					}
-					checkedDownFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: checkedDownFontColor
-						optional: true
-						value: null
-					}
-					checkedOverFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: checkedOverFontColor
-						optional: true
-						value: null
-					}
-					checkedFocusedFontColor: {
-						type: com.badlogic.gdx.graphics.Color
-						name: checkedFocusedFontColor
-						optional: true
-						value: null
-					}
-					up: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: up
-						optional: true
-						value: null
-					}
-					down: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: down
-						optional: true
-						value: null
-					}
-					over: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: over
-						optional: true
-						value: null
-					}
-					focused: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: focused
-						optional: true
-						value: null
-					}
-					disabled: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: disabled
-						optional: true
-						value: null
-					}
-					checked: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checked
-						optional: true
-						value: null
-					}
-					checkedOver: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkedOver
-						optional: true
-						value: null
-					}
-					checkedDown: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkedDown
-						optional: true
-						value: null
-					}
-					checkedFocused: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: checkedFocused
-						optional: true
-						value: null
-					}
-					pressedOffsetX: {
-						type: float
-						name: pressedOffsetX
-						optional: true
-						value: 0
-					}
-					pressedOffsetY: {
-						type: float
-						name: pressedOffsetY
-						optional: true
-						value: 0
-					}
-					unpressedOffsetX: {
-						type: float
-						name: unpressedOffsetX
-						optional: true
-						value: 0
-					}
-					unpressedOffsetY: {
-						type: float
-						name: unpressedOffsetY
-						optional: true
-						value: 0
-					}
-					checkedOffsetX: {
-						type: float
-						name: checkedOffsetX
-						optional: true
-						value: 0
-					}
-					checkedOffsetY: {
-						type: float
-						name: checkedOffsetY
-						optional: true
-						value: 0
 					}
 				}
 				deletable: false
@@ -3026,82 +2021,35 @@ jsonData: {
 				parent: null
 			}
 		]
-		com.badlogic.gdx.scenes.scene2d.ui.Tree: [
+		com.badlogic.gdx.scenes.scene2d.ui.Window: [
 			{
 				class: com.ray3k.skincomposer.data.StyleData
 				name: default
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.Tree
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.Window
 				properties: {
-					plus: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: plus
-						optional: false
-						value: null
-					}
-					minus: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: minus
-						optional: false
-						value: null
-					}
-					plusOver: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: plusOver
-						optional: true
-						value: null
-					}
-					minusOver: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: minusOver
-						optional: true
-						value: null
-					}
-					over: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: over
-						optional: true
-						value: null
-					}
-					selection: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: selection
-						optional: true
-						value: null
-					}
 					background: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: background
 						optional: true
 						value: null
 					}
-				}
-				deletable: false
-				parent: null
-			}
-		]
-		com.badlogic.gdx.scenes.scene2d.ui.TextTooltip: [
-			{
-				class: com.ray3k.skincomposer.data.StyleData
-				name: default
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.TextTooltip
-				properties: {
-					label: {
-						type: com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle
-						name: label
+					titleFont: {
+						type: com.badlogic.gdx.graphics.g2d.BitmapFont
+						name: titleFont
 						optional: false
-						value: default
+						value: null
 					}
-					background: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: background
+					titleFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: titleFontColor
 						optional: true
 						value: null
 					}
-					wrapWidth: {
-						type: float
-						name: wrapWidth
+					stageBackground: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: stageBackground
 						optional: true
-						value: 0
+						value: null
 					}
 				}
 				deletable: false
@@ -3224,6 +2172,942 @@ jsonData: {
 				parent: null
 			}
 		]
+		com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton: [
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: default
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.ImageTextButton
+				properties: {
+					imageUp: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: imageUp
+						optional: true
+						value: null
+					}
+					imageDown: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: imageDown
+						optional: true
+						value: null
+					}
+					imageOver: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: imageOver
+						optional: true
+						value: null
+					}
+					imageDisabled: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: imageDisabled
+						optional: true
+						value: null
+					}
+					imageChecked: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: imageChecked
+						optional: true
+						value: null
+					}
+					imageCheckedDown: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: imageCheckedDown
+						optional: true
+						value: null
+					}
+					imageCheckedOver: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: imageCheckedOver
+						optional: true
+						value: null
+					}
+					font: {
+						type: com.badlogic.gdx.graphics.g2d.BitmapFont
+						name: font
+						optional: false
+						value: null
+					}
+					fontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: fontColor
+						optional: true
+						value: null
+					}
+					downFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: downFontColor
+						optional: true
+						value: null
+					}
+					overFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: overFontColor
+						optional: true
+						value: null
+					}
+					focusedFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: focusedFontColor
+						optional: true
+						value: null
+					}
+					disabledFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: disabledFontColor
+						optional: true
+						value: null
+					}
+					checkedFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: checkedFontColor
+						optional: true
+						value: null
+					}
+					checkedDownFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: checkedDownFontColor
+						optional: true
+						value: null
+					}
+					checkedOverFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: checkedOverFontColor
+						optional: true
+						value: null
+					}
+					checkedFocusedFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: checkedFocusedFontColor
+						optional: true
+						value: null
+					}
+					up: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: up
+						optional: true
+						value: null
+					}
+					down: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: down
+						optional: true
+						value: null
+					}
+					over: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: over
+						optional: true
+						value: null
+					}
+					focused: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: focused
+						optional: true
+						value: null
+					}
+					disabled: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: disabled
+						optional: true
+						value: null
+					}
+					checked: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checked
+						optional: true
+						value: null
+					}
+					checkedOver: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedOver
+						optional: true
+						value: null
+					}
+					checkedDown: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedDown
+						optional: true
+						value: null
+					}
+					checkedFocused: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedFocused
+						optional: true
+						value: null
+					}
+					pressedOffsetX: {
+						type: float
+						name: pressedOffsetX
+						optional: true
+						value: 0
+					}
+					pressedOffsetY: {
+						type: float
+						name: pressedOffsetY
+						optional: true
+						value: 0
+					}
+					unpressedOffsetX: {
+						type: float
+						name: unpressedOffsetX
+						optional: true
+						value: 0
+					}
+					unpressedOffsetY: {
+						type: float
+						name: unpressedOffsetY
+						optional: true
+						value: 0
+					}
+					checkedOffsetX: {
+						type: float
+						name: checkedOffsetX
+						optional: true
+						value: 0
+					}
+					checkedOffsetY: {
+						type: float
+						name: checkedOffsetY
+						optional: true
+						value: 0
+					}
+				}
+				deletable: false
+				parent: null
+			}
+		]
+		com.badlogic.gdx.scenes.scene2d.ui.Tree: [
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: default
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.Tree
+				properties: {
+					plus: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: plus
+						optional: false
+						value: null
+					}
+					minus: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: minus
+						optional: false
+						value: null
+					}
+					plusOver: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: plusOver
+						optional: true
+						value: null
+					}
+					minusOver: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: minusOver
+						optional: true
+						value: null
+					}
+					over: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: over
+						optional: true
+						value: null
+					}
+					selection: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: selection
+						optional: true
+						value: null
+					}
+					background: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: background
+						optional: true
+						value: null
+					}
+				}
+				deletable: false
+				parent: null
+			}
+		]
+		com.badlogic.gdx.scenes.scene2d.ui.SplitPane: [
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: default-horizontal
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.SplitPane
+				properties: {
+					handle: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: handle
+						optional: false
+						value: null
+					}
+				}
+				deletable: false
+				parent: null
+			}
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: default-vertical
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.SplitPane
+				properties: {
+					handle: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: handle
+						optional: false
+						value: null
+					}
+				}
+				deletable: false
+				parent: null
+			}
+		]
+		com.badlogic.gdx.scenes.scene2d.ui.ImageButton: [
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: default
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.ImageButton
+				properties: {
+					imageUp: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: imageUp
+						optional: true
+						value: null
+					}
+					imageDown: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: imageDown
+						optional: true
+						value: null
+					}
+					imageOver: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: imageOver
+						optional: true
+						value: null
+					}
+					imageDisabled: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: imageDisabled
+						optional: true
+						value: null
+					}
+					imageChecked: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: imageChecked
+						optional: true
+						value: null
+					}
+					imageCheckedDown: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: imageCheckedDown
+						optional: true
+						value: null
+					}
+					imageCheckedOver: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: imageCheckedOver
+						optional: true
+						value: null
+					}
+					up: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: up
+						optional: true
+						value: null
+					}
+					down: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: down
+						optional: true
+						value: null
+					}
+					over: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: over
+						optional: true
+						value: null
+					}
+					focused: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: focused
+						optional: true
+						value: null
+					}
+					disabled: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: disabled
+						optional: true
+						value: null
+					}
+					checked: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checked
+						optional: true
+						value: null
+					}
+					checkedOver: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedOver
+						optional: true
+						value: null
+					}
+					checkedDown: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedDown
+						optional: true
+						value: null
+					}
+					checkedFocused: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedFocused
+						optional: true
+						value: null
+					}
+					pressedOffsetX: {
+						type: float
+						name: pressedOffsetX
+						optional: true
+						value: 0
+					}
+					pressedOffsetY: {
+						type: float
+						name: pressedOffsetY
+						optional: true
+						value: 0
+					}
+					unpressedOffsetX: {
+						type: float
+						name: unpressedOffsetX
+						optional: true
+						value: 0
+					}
+					unpressedOffsetY: {
+						type: float
+						name: unpressedOffsetY
+						optional: true
+						value: 0
+					}
+					checkedOffsetX: {
+						type: float
+						name: checkedOffsetX
+						optional: true
+						value: 0
+					}
+					checkedOffsetY: {
+						type: float
+						name: checkedOffsetY
+						optional: true
+						value: 0
+					}
+				}
+				deletable: false
+				parent: null
+			}
+		]
+		com.badlogic.gdx.scenes.scene2d.ui.CheckBox: [
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: default
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.CheckBox
+				properties: {
+					checkboxOn: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkboxOn
+						optional: false
+						value: null
+					}
+					checkboxOff: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkboxOff
+						optional: false
+						value: null
+					}
+					checkboxOnOver: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkboxOnOver
+						optional: true
+						value: null
+					}
+					checkboxOver: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkboxOver
+						optional: true
+						value: null
+					}
+					checkboxOnDisabled: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkboxOnDisabled
+						optional: true
+						value: null
+					}
+					checkboxOffDisabled: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkboxOffDisabled
+						optional: true
+						value: null
+					}
+					font: {
+						type: com.badlogic.gdx.graphics.g2d.BitmapFont
+						name: font
+						optional: false
+						value: null
+					}
+					fontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: fontColor
+						optional: true
+						value: null
+					}
+					downFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: downFontColor
+						optional: true
+						value: null
+					}
+					overFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: overFontColor
+						optional: true
+						value: null
+					}
+					focusedFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: focusedFontColor
+						optional: true
+						value: null
+					}
+					disabledFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: disabledFontColor
+						optional: true
+						value: null
+					}
+					checkedFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: checkedFontColor
+						optional: true
+						value: null
+					}
+					checkedDownFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: checkedDownFontColor
+						optional: true
+						value: null
+					}
+					checkedOverFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: checkedOverFontColor
+						optional: true
+						value: null
+					}
+					checkedFocusedFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: checkedFocusedFontColor
+						optional: true
+						value: null
+					}
+					up: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: up
+						optional: true
+						value: null
+					}
+					down: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: down
+						optional: true
+						value: null
+					}
+					over: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: over
+						optional: true
+						value: null
+					}
+					focused: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: focused
+						optional: true
+						value: null
+					}
+					disabled: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: disabled
+						optional: true
+						value: null
+					}
+					checked: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checked
+						optional: true
+						value: null
+					}
+					checkedOver: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedOver
+						optional: true
+						value: null
+					}
+					checkedDown: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedDown
+						optional: true
+						value: null
+					}
+					checkedFocused: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedFocused
+						optional: true
+						value: null
+					}
+					pressedOffsetX: {
+						type: float
+						name: pressedOffsetX
+						optional: true
+						value: 0
+					}
+					pressedOffsetY: {
+						type: float
+						name: pressedOffsetY
+						optional: true
+						value: 0
+					}
+					unpressedOffsetX: {
+						type: float
+						name: unpressedOffsetX
+						optional: true
+						value: 0
+					}
+					unpressedOffsetY: {
+						type: float
+						name: unpressedOffsetY
+						optional: true
+						value: 0
+					}
+					checkedOffsetX: {
+						type: float
+						name: checkedOffsetX
+						optional: true
+						value: 0
+					}
+					checkedOffsetY: {
+						type: float
+						name: checkedOffsetY
+						optional: true
+						value: 0
+					}
+				}
+				deletable: false
+				parent: null
+			}
+		]
+		com.badlogic.gdx.scenes.scene2d.ui.ScrollPane: [
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: default
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.ScrollPane
+				properties: {
+					background: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: background
+						optional: true
+						value: null
+					}
+					corner: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: corner
+						optional: true
+						value: null
+					}
+					hScroll: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: hScroll
+						optional: true
+						value: null
+					}
+					hScrollKnob: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: hScrollKnob
+						optional: true
+						value: null
+					}
+					vScroll: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: vScroll
+						optional: true
+						value: null
+					}
+					vScrollKnob: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: vScrollKnob
+						optional: true
+						value: null
+					}
+				}
+				deletable: false
+				parent: null
+			}
+		]
+		com.badlogic.gdx.scenes.scene2d.ui.TextButton: [
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: default
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.TextButton
+				properties: {
+					font: {
+						type: com.badlogic.gdx.graphics.g2d.BitmapFont
+						name: font
+						optional: false
+						value: null
+					}
+					fontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: fontColor
+						optional: true
+						value: null
+					}
+					downFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: downFontColor
+						optional: true
+						value: null
+					}
+					overFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: overFontColor
+						optional: true
+						value: null
+					}
+					focusedFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: focusedFontColor
+						optional: true
+						value: null
+					}
+					disabledFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: disabledFontColor
+						optional: true
+						value: null
+					}
+					checkedFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: checkedFontColor
+						optional: true
+						value: null
+					}
+					checkedDownFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: checkedDownFontColor
+						optional: true
+						value: null
+					}
+					checkedOverFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: checkedOverFontColor
+						optional: true
+						value: null
+					}
+					checkedFocusedFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: checkedFocusedFontColor
+						optional: true
+						value: null
+					}
+					up: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: up
+						optional: true
+						value: null
+					}
+					down: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: down
+						optional: true
+						value: null
+					}
+					over: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: over
+						optional: true
+						value: null
+					}
+					focused: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: focused
+						optional: true
+						value: null
+					}
+					disabled: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: disabled
+						optional: true
+						value: null
+					}
+					checked: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checked
+						optional: true
+						value: null
+					}
+					checkedOver: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedOver
+						optional: true
+						value: null
+					}
+					checkedDown: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedDown
+						optional: true
+						value: null
+					}
+					checkedFocused: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: checkedFocused
+						optional: true
+						value: null
+					}
+					pressedOffsetX: {
+						type: float
+						name: pressedOffsetX
+						optional: true
+						value: 0
+					}
+					pressedOffsetY: {
+						type: float
+						name: pressedOffsetY
+						optional: true
+						value: 0
+					}
+					unpressedOffsetX: {
+						type: float
+						name: unpressedOffsetX
+						optional: true
+						value: 0
+					}
+					unpressedOffsetY: {
+						type: float
+						name: unpressedOffsetY
+						optional: true
+						value: 0
+					}
+					checkedOffsetX: {
+						type: float
+						name: checkedOffsetX
+						optional: true
+						value: 0
+					}
+					checkedOffsetY: {
+						type: float
+						name: checkedOffsetY
+						optional: true
+						value: 0
+					}
+				}
+				deletable: false
+				parent: null
+			}
+		]
+		com.badlogic.gdx.scenes.scene2d.ui.Touchpad: [
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: default
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.Touchpad
+				properties: {
+					background: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: background
+						optional: true
+						value: null
+					}
+					knob: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: knob
+						optional: true
+						value: null
+					}
+				}
+				deletable: false
+				parent: null
+			}
+		]
+		com.badlogic.gdx.scenes.scene2d.ui.TextField: [
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: default
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.TextField
+				properties: {
+					font: {
+						type: com.badlogic.gdx.graphics.g2d.BitmapFont
+						name: font
+						optional: false
+						value: null
+					}
+					fontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: fontColor
+						optional: false
+						value: null
+					}
+					focusedFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: focusedFontColor
+						optional: true
+						value: null
+					}
+					disabledFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: disabledFontColor
+						optional: true
+						value: null
+					}
+					background: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: background
+						optional: true
+						value: null
+					}
+					focusedBackground: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: focusedBackground
+						optional: true
+						value: null
+					}
+					disabledBackground: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: disabledBackground
+						optional: true
+						value: null
+					}
+					cursor: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: cursor
+						optional: true
+						value: null
+					}
+					selection: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: selection
+						optional: true
+						value: null
+					}
+					messageFont: {
+						type: com.badlogic.gdx.graphics.g2d.BitmapFont
+						name: messageFont
+						optional: true
+						value: null
+					}
+					messageFontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: messageFontColor
+						optional: true
+						value: null
+					}
+				}
+				deletable: false
+				parent: null
+			}
+		]
 		com.badlogic.gdx.scenes.scene2d.ui.List: [
 			{
 				class: com.ray3k.skincomposer.data.StyleData
@@ -3277,23 +3161,139 @@ jsonData: {
 				parent: null
 			}
 		]
-		com.badlogic.gdx.scenes.scene2d.ui.Touchpad: [
+		com.badlogic.gdx.scenes.scene2d.ui.Label: [
 			{
 				class: com.ray3k.skincomposer.data.StyleData
 				name: default
-				clazz: com.badlogic.gdx.scenes.scene2d.ui.Touchpad
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.Label
 				properties: {
+					font: {
+						type: com.badlogic.gdx.graphics.g2d.BitmapFont
+						name: font
+						optional: false
+						value: ari-w9500_reg
+					}
+					fontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: fontColor
+						optional: true
+						value: null
+					}
 					background: {
 						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
 						name: background
 						optional: true
 						value: null
 					}
-					knob: {
-						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
-						name: knob
+				}
+				deletable: false
+				parent: null
+			}
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: Title
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.Label
+				properties: {
+					font: {
+						type: com.badlogic.gdx.graphics.g2d.BitmapFont
+						name: font
+						optional: false
+						value: ari-w9500_title
+					}
+					fontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: fontColor
 						optional: true
 						value: null
+					}
+					background: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: background
+						optional: true
+						value: null
+					}
+				}
+				deletable: true
+				parent: null
+			}
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: HugeTitle
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.Label
+				properties: {
+					font: {
+						type: com.badlogic.gdx.graphics.g2d.BitmapFont
+						name: font
+						optional: false
+						value: ari-w9500_regular
+					}
+					fontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: fontColor
+						optional: true
+						value: null
+					}
+					background: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: background
+						optional: true
+						value: null
+					}
+				}
+				deletable: true
+				parent: null
+			}
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: InfoTitle
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.Label
+				properties: {
+					font: {
+						type: com.badlogic.gdx.graphics.g2d.BitmapFont
+						name: font
+						optional: false
+						value: infoTitle
+					}
+					fontColor: {
+						type: com.badlogic.gdx.graphics.Color
+						name: fontColor
+						optional: true
+						value: null
+					}
+					background: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: background
+						optional: true
+						value: null
+					}
+				}
+				deletable: true
+				parent: null
+			}
+		]
+		com.badlogic.gdx.scenes.scene2d.ui.TextTooltip: [
+			{
+				class: com.ray3k.skincomposer.data.StyleData
+				name: default
+				clazz: com.badlogic.gdx.scenes.scene2d.ui.TextTooltip
+				properties: {
+					label: {
+						type: com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle
+						name: label
+						optional: false
+						value: default
+					}
+					background: {
+						type: com.badlogic.gdx.scenes.scene2d.utils.Drawable
+						name: background
+						optional: true
+						value: null
+					}
+					wrapWidth: {
+						type: float
+						name: wrapWidth
+						optional: true
+						value: 0
 					}
 				}
 				deletable: false
@@ -3321,7 +3321,7 @@ preferences: {
 		value: 30
 	}
 }
-saveFile: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD.scmp
+saveFile: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD.scmp
 version: 58
 sceneComposer: {
 	children: [
@@ -3536,7 +3536,7 @@ sceneComposer: {
 								class: com.ray3k.skincomposer.dialog.scenecomposer.DialogSceneComposerModel$SimImage
 								name: null
 								drawable: {
-									file: D:/Projects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/coinsIcon.png
+									file: C:/Users/meish/Desktop/PersonalProjects/Swing-Shoot-Kill-Serious-Edition/assets/ui/HUD_data/coinsIcon.png
 									bgColor: {
 										r: 1
 										g: 1

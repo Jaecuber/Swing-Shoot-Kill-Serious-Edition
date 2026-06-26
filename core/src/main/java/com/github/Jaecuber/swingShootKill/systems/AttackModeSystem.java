@@ -10,83 +10,81 @@ import com.github.Jaecuber.swingShootKill.tiled.EntitySpawner;
 import com.github.Jaecuber.swingShootKill.component.AttackMode.ATTACK_MODE;
 import com.github.Jaecuber.swingShootKill.component.Melee;
 import com.github.Jaecuber.swingShootKill.component.Shooter;
+import com.github.Jaecuber.swingShootKill.component.Visible; // Import our new flag
 
-public class AttackModeSystem extends IteratingSystem{
+public class AttackModeSystem extends IteratingSystem {
 
-    
     private EntitySpawner entitySpawner;
 
-    public AttackModeSystem(EntitySpawner entitySpawner){
+    public AttackModeSystem(EntitySpawner entitySpawner) {
         super(Family.all(AttackMode.class, Transform.class).get());
         this.entitySpawner = entitySpawner;
     }
 
     @Override
-    public void update(float deltaTime) {
-    
-        super.update(deltaTime);
-    }
-
-    @Override
     protected void processEntity(Entity entity, float deltaTime) {
         AttackMode attackModeComp = AttackMode.MAPPER.get(entity);
-        ATTACK_MODE mode = attackModeComp.getAttackMode(); 
+        ATTACK_MODE mode = attackModeComp.getAttackMode();
 
-        Entity currentWeapon = attackModeComp.getCurrentWeaponEntity();
+        initializeWeapons(entity, attackModeComp);
 
-        if (currentWeapon != null) {
-            boolean holdMeleeWantsGun = (mode == ATTACK_MODE.GUN && currentWeapon.getComponent(Melee.class) != null);
-            boolean holdGunWantSword = (mode == ATTACK_MODE.SWORD && currentWeapon.getComponent(Shooter.class) != null);
+        Entity gun = attackModeComp.getGunEntity();
+        Entity sword = attackModeComp.getSwordEntity();
 
-            if (holdMeleeWantsGun || holdGunWantSword) {
-                getEngine().removeEntity(currentWeapon);
-                attackModeComp.setCurrentWeaponEntity(null);
-                currentWeapon = null;
+
+        if (mode == ATTACK_MODE.GUN) {
+            if (gun != null && gun.getComponent(Visible.class) == null) {
+                gun.add(new Visible());
+                Melee.MAPPER.get(sword).setSpinning(false);
+                attackModeComp.setCurrentWeaponEntity(gun);
+            }
+            if (sword != null) {
+                sword.remove(Visible.class);
+            }
+        } else if (mode == ATTACK_MODE.SWORD) {
+            if (sword != null && sword.getComponent(Visible.class) == null) {
+                sword.add(new Visible());
+                
+                attackModeComp.setCurrentWeaponEntity(sword);
+            }
+            if (gun != null) {
+                gun.remove(Visible.class);
+            }
+        }
+    }
+
+    private void initializeWeapons(Entity player, AttackMode attackModeComp) {
+        Transform transform = Transform.MAPPER.get(player);
+
+        
+        if (attackModeComp.getGunEntity() == null) {
+            Vector2 weaponPosition = new Vector2(transform.getPosition());
+            weaponPosition.x += transform.getSize().x * 0.8f;
+            weaponPosition.y += transform.getSize().y * 0.35f;
+
+            Entity gun = entitySpawner.spawnEntity("playergun", weaponPosition);
+            Shooter.MAPPER.get(gun).setOwnerEntity(player);
+            attackModeComp.setGunEntity(gun);
+            
+            
+            if (attackModeComp.getAttackMode() != ATTACK_MODE.GUN) {
+                gun.remove(Visible.class);
+            } else {
+                gun.add(new Visible());
             }
         }
 
-        if(currentWeapon == null){
-            switch(mode){
-                case GUN -> createGun(entity, currentWeapon);
-                case SWORD -> createSword(entity, currentWeapon);
-            };
+        
+        if (attackModeComp.getSwordEntity() == null) {
+            Entity sword = entitySpawner.spawnEntity("playersword", transform.getPosition());
+            Melee.MAPPER.get(sword).setOwnerEntity(player);
+            attackModeComp.setSwordEntity(sword);
+
+            if (attackModeComp.getAttackMode() != ATTACK_MODE.SWORD) {
+                sword.remove(Visible.class);
+            } else {
+                sword.add(new Visible());
+            }
         }
-
     }
-
-    private void createGun(Entity originEntity, Entity currentWeapon){
-        if(currentWeapon != null) return;
-
-
-        Transform transform = Transform.MAPPER.get(originEntity);
-        Vector2 weaponPosition = new Vector2();
-        weaponPosition.set(transform.getPosition());
-
-        weaponPosition.x += transform.getSize().x * 0.8f;
-        weaponPosition.y += transform.getSize().y * 0.35f;
-
-        currentWeapon = entitySpawner.spawnEntity("playergun", weaponPosition);
-
-        
-
-        AttackMode.MAPPER.get(originEntity).setCurrentWeaponEntity(currentWeapon);
-        Shooter.MAPPER.get(currentWeapon).setOwnerEntity(originEntity);
-        
-    }
-
-    private void createSword(Entity originEntity, Entity currentWeapon){
-        if(currentWeapon != null) return;
-
-        Transform transform = Transform.MAPPER.get(originEntity);
-        currentWeapon = entitySpawner.spawnEntity("playersword", transform.getPosition());
-
-        
-        AttackMode.MAPPER.get(originEntity).setCurrentWeaponEntity(currentWeapon);
-        Melee.MAPPER.get(currentWeapon).setOwnerEntity(originEntity);
-    }
-
-    
-
-    
-
 }

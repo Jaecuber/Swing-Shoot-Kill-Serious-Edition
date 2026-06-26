@@ -23,7 +23,6 @@
    <property name="maxSpinSpeed" type="float" value="1000"/>
    <property name="name" value="playersword"/>
    <property name="stamConsume" type="float" value="10"/>
-   <property name="stamRegen" type="float" value="5"/>
   </properties>
   <image source="Objects/playerSword.png" width="22" height="22"/>
   <objectgroup draworder="index" id="2">
