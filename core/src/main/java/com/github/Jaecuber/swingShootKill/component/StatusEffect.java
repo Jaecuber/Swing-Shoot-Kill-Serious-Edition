@@ -5,17 +5,27 @@ import com.badlogic.ashley.core.ComponentMapper;
 
 public class StatusEffect implements Component {
     public static final ComponentMapper<StatusEffect> MAPPER = ComponentMapper.getFor(StatusEffect.class);
-    
-    public enum STATUS_EFFECT {POISON, ELECTRIC, BURN}
-    private STATUS_EFFECT sEffect;
 
+    private String statusEffect;
+    private float timeElapsed;
+    private float duration;
 
-    public void setsEffect(STATUS_EFFECT sEffect) {
-        this.sEffect = sEffect;
+    public StatusEffect(String statusEffect){
+        this.statusEffect = statusEffect;
+        this.timeElapsed = 0;
+        //duration = Math.
     }
 
-    public STATUS_EFFECT getsEffect() {
-        return sEffect;
+    public String getStatusEffect() {
+        return statusEffect;
     }
+
+    public void addTimeElapsed(float value){
+        this.timeElapsed += value;
+    }
+
+    // public boolean isDone(){
+
+    // }
 
 }

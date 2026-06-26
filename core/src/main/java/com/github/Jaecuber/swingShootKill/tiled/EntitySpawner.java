@@ -22,8 +22,6 @@ public class EntitySpawner {
     public Entity spawnEntity(String name, Vector2 position){
         if (tileSets == null) throw new GdxRuntimeException("Set tilesets first");
 
-        
-
         TiledMapTile tile = findTileByName(name);
         if(tile == null) throw new GdxRuntimeException("Unknown enemy: " + name);
         return tiledAshleyConfig.spawnFromTile(tile, position.x, position.y);

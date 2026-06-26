@@ -5,7 +5,7 @@ import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.gdx.utils.ObjectMap;
 
 public class UpgradeTags implements Component{
-public static final ComponentMapper<UpgradeTags> MAPPER = ComponentMapper.getFor(UpgradeTags.class);
+    public static final ComponentMapper<UpgradeTags> MAPPER = ComponentMapper.getFor(UpgradeTags.class);
     private ObjectMap<String, Integer> upgradeTags;
     private boolean dirty;
 

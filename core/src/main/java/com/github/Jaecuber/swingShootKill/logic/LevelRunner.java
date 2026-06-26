@@ -7,6 +7,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.Queue;
+import com.github.Jaecuber.swingShootKill.Launcher;
 import com.github.Jaecuber.swingShootKill.asset.AssetService;
 import com.github.Jaecuber.swingShootKill.asset.JsonAsset;
 import com.github.Jaecuber.swingShootKill.audio.AudioService;
@@ -49,7 +50,7 @@ public class LevelRunner {
     public void runWave(){
         this.wave++;
         this.difficulty = calcDifficulty();
-        //update info for view model
+        viewModel.updateWave(wave);
         spawnWave(difficulty);
     }
 
@@ -58,8 +59,8 @@ public class LevelRunner {
         Queue<String> enemyQueue = createQueue(difficulty);
         while(enemyQueue.notEmpty()){
             String enemy = enemyQueue.removeFirst();
-            Vector2 randomSpawn = spawns.get((Integer) MathUtils.random(0, spawns.size - 1));
-            entitySpawner.spawnEntity(enemy, randomSpawn);
+            Vector2 randomSpawn = spawns.random();
+            entitySpawner.spawnEntity(enemy, randomSpawn.scl(Launcher.UNIT_SCALE));
         }
     }
 
@@ -68,7 +69,7 @@ public class LevelRunner {
         Array<String> validEnemies = getValidEnemies(difficulty);
         int numEnemies = MathUtils.round((3.0f + 1.50f) * (float) Math.pow(difficulty, 0.80f));
         for(int i = 0; i < numEnemies; i++){
-            queue.addFirst(validEnemies.get((Integer) MathUtils.random(0, validEnemies.size - 1)));
+            queue.addFirst(validEnemies.random());
         }
         return queue;
     }
