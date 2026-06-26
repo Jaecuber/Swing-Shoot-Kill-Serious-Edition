@@ -87,7 +87,7 @@ public class GameScreen extends ScreenAdapter{
         this.engine.addSystem(new AttackModeSystem(entitySpawner));
         this.engine.addSystem(new ShooterSystem(entitySpawner));
         this.engine.addSystem(new MeleeSystem());
-        this.engine.addSystem(new ProjectileSystem());
+        this.engine.addSystem(new ProjectileSystem(launcher.getAssetService()));
         
         this.engine.addSystem(new RenderSystem(launcher.getBatch(), launcher.getViewport(), launcher.getCamera()));
         this.engine.addSystem(new PhysicsDebugRenderSystem(physicsWorld, launcher.getCamera()));

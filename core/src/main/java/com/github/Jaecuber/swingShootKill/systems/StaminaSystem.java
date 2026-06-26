@@ -31,12 +31,10 @@ public class StaminaSystem extends IteratingSystem implements EntityListener{
 
         if(mode.getAttackMode() == ATTACK_MODE.GUN){
             stamina.updateStamina(stamina.getStamRegen() * deltaTime);
-            System.out.println("Regenning Stam");
         } else{
             Melee melee = Melee.MAPPER.get(weaponEntity);
             if(melee != null && !melee.isSpinning()){
                 stamina.updateStamina(stamina.getStamRegen() * deltaTime);
-                System.out.println("Regenning Stam");
             }
         }
         

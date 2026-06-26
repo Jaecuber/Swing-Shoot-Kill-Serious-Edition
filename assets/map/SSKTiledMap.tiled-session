@@ -130,9 +130,9 @@
     "project": "SSKTiledMap.tiled-project",
     "property.type": "int",
     "recentFiles": [
+        "player.tsx",
         "DungeonBuildingTileSet.tsx",
         "Enemies.tsx",
-        "player.tsx",
         "MainMap.tmx",
         "D:/Projects/Runeguard/assets/map/dungeon.tmx",
         "D:/Downloads/craftpix-net-169442-free-2d-top-down-pixel-dungeon-asset-pack/Tiled_files/Dungeon1.tmx"
