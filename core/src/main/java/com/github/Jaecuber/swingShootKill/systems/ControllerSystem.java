@@ -5,6 +5,8 @@ import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
 import com.badlogic.gdx.physics.box2d.Body;
+import com.github.Jaecuber.swingShootKill.asset.SoundAsset;
+import com.github.Jaecuber.swingShootKill.audio.AudioService;
 import com.github.Jaecuber.swingShootKill.component.AttackMode;
 import com.github.Jaecuber.swingShootKill.component.Controller;
 import com.github.Jaecuber.swingShootKill.component.Melee;
@@ -21,10 +23,12 @@ import com.github.Jaecuber.ui.model.GameViewModel;
 public class ControllerSystem extends IteratingSystem{
 
     private GameViewModel viewModel;
+    private AudioService audioService;
 
-    public ControllerSystem(GameViewModel viewModel){
+    public ControllerSystem(GameViewModel viewModel, AudioService audioService){
         super(Family.all(Controller.class).get());
         this.viewModel = viewModel;
+        this.audioService = audioService;
     }
 
     @Override
@@ -88,6 +92,7 @@ public class ControllerSystem extends IteratingSystem{
         Shooter shooter = Shooter.MAPPER.get(currentWeapon);
 
         if(shooter.getShooterState() == ShooterState.IDLE){
+            audioService.playSound(SoundAsset.GUNSHOT);
             shooter.setShooterState(ShooterState.SHOOTING);
         }
     }

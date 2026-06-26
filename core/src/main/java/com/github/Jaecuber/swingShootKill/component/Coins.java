@@ -19,4 +19,8 @@ public class Coins implements Component{
     public void setCoinBalance(int coinBalance) {
         this.coinBalance = coinBalance;
     }
+
+    public void addCoins(int coins){
+        this.coinBalance += coins;
+    }
 }

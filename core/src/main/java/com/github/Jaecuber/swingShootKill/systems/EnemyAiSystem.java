@@ -10,6 +10,7 @@ import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.ObjectMap;
+import com.github.Jaecuber.swingShootKill.component.Coins;
 import com.github.Jaecuber.swingShootKill.component.DamageListener;
 import com.github.Jaecuber.swingShootKill.component.Enemy;
 import com.github.Jaecuber.swingShootKill.component.Fsm;
@@ -24,7 +25,6 @@ public class EnemyAiSystem extends IteratingSystem{
 
     public EnemyAiSystem(){
         super(Family.all(Enemy.class, Transform.class, Fsm.class, Move.class).get());
-        
     }
 
     @Override
@@ -159,6 +159,10 @@ public class EnemyAiSystem extends IteratingSystem{
 
     private void death(Entity entity) {
         Enemy enemy = Enemy.MAPPER.get(entity);
+        Coins coins = Coins.MAPPER.get(playerEntity);
+        if(coins != null){
+            coins.addCoins(enemy.getValue());
+        }
         if(enemy.isDead()){
             deadEntityCache.add(entity);
         }

@@ -1,6 +1,8 @@
 package com.github.Jaecuber.ui.view;
 
+import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
+import com.badlogic.ashley.core.Family;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Interpolation;
@@ -24,12 +26,14 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.badlogic.gdx.utils.ObjectSet;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.github.Jaecuber.swingShootKill.asset.SoundAsset;
+import com.github.Jaecuber.swingShootKill.component.Coins;
 import com.github.Jaecuber.swingShootKill.component.UpgradeTags;
 import com.github.Jaecuber.swingShootKill.data.UpgradeClass;
 import com.github.Jaecuber.swingShootKill.data.UpgradeEntry;
 import com.github.Jaecuber.ui.model.GameViewModel;
 
 public class GameView extends View<GameViewModel>{
+    private Engine engine;
     //Top Info
     private Table infoTable;
     private Table coinsTable;
@@ -81,16 +85,23 @@ public class GameView extends View<GameViewModel>{
     private Table shopInfoTable;
     private Label playerBalance;
 
+    private UpgradeEntry upgrade1;
+    private UpgradeEntry upgrade2;
+    private UpgradeEntry upgrade3;
+    private UpgradeEntry upgrade4;
+
     private Table rerollTable;
     private Image rerollButton;
     private boolean rolling = false;
 
-    public GameView(Stage stage, Skin skin, GameViewModel viewModel) {
+    public GameView(Stage stage, Skin skin, GameViewModel viewModel, Engine engine) {
         super(stage, skin, viewModel);
         while (this.upgradeClasses == null) {
             this.upgradeClasses = viewModel.loadUpgradeClasses();
         }
+        this.engine = engine;
         displayUpgrades();
+        setUpgradeListeners();
     }
 
     //Setting up the HUD
@@ -347,26 +358,6 @@ public class GameView extends View<GameViewModel>{
         upgrade1Table.padLeft(10.0f);
         upgrade1Table.padTop(10.0f);
         upgrade1Table.align(Align.topLeft);
-        upgrade1Table.addListener(new InputListener(){
-            boolean hovering = false;
-            @Override
-            public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor){
-                if(pointer != -1 || hovering) return;
-                if(fromActor != null && fromActor.isDescendantOf(upgrade1Table)) return;
-                hovering = true;
-                upgrade1Table.clearActions();
-                viewModel.playSound(SoundAsset.HOVER);
-                upgrade1Table.addAction(Actions.scaleTo(1.05f, 1.05f, 0.15f, Interpolation.swingOut));
-            }
-            @Override
-            public void exit(InputEvent event, float x, float y, int pointer, Actor toActor) {
-                if(pointer != -1 || !hovering) return;
-                if(toActor != null && toActor.isDescendantOf(upgrade1Table)) return;
-                hovering = false;
-                upgrade1Table.clearActions();
-                upgrade1Table.addAction(Actions.scaleTo(1.0f, 1.0f, 0.15f, Interpolation.swingOut));
-            }
-        });
 
         HorizontalGroup horizontalGroup = new HorizontalGroup();
         horizontalGroup.space(10.0f);
@@ -405,26 +396,6 @@ public class GameView extends View<GameViewModel>{
         upgrade2Table.padLeft(10.0f);
         upgrade2Table.padTop(10.0f);
         upgrade2Table.align(Align.topLeft);
-        upgrade2Table.addListener(new InputListener(){
-            boolean hovering = false;
-            @Override
-            public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor){
-                if(pointer != -1 || hovering) return;
-                if(fromActor != null && fromActor.isDescendantOf(upgrade2Table)) return;
-                hovering = true;
-                upgrade2Table.clearActions();
-                viewModel.playSound(SoundAsset.HOVER);
-                upgrade2Table.addAction(Actions.scaleTo(1.05f, 1.05f, 0.15f, Interpolation.swingOut));
-            }
-            @Override
-            public void exit(InputEvent event, float x, float y, int pointer, Actor toActor) {
-                if(pointer != -1 || !hovering) return;
-                if(toActor != null && toActor.isDescendantOf(upgrade2Table)) return;
-                hovering = false;
-                upgrade2Table.clearActions();
-                upgrade2Table.addAction(Actions.scaleTo(1.0f, 1.0f, 0.15f, Interpolation.swingOut));
-            }
-        });
 
         horizontalGroup = new HorizontalGroup();
         horizontalGroup.space(10.0f);
@@ -463,26 +434,6 @@ public class GameView extends View<GameViewModel>{
         upgrade3Table.padLeft(10.0f);
         upgrade3Table.padTop(10.0f);
         upgrade3Table.align(Align.topLeft);
-        upgrade3Table.addListener(new InputListener(){
-            boolean hovering = false;
-            @Override
-            public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor){
-                if(pointer != -1 || hovering) return;
-                if(fromActor != null && fromActor.isDescendantOf(upgrade3Table)) return;
-                hovering = true;
-                upgrade3Table.clearActions();
-                viewModel.playSound(SoundAsset.HOVER);
-                upgrade3Table.addAction(Actions.scaleTo(1.05f, 1.05f, 0.15f, Interpolation.swingOut));
-            }
-            @Override
-            public void exit(InputEvent event, float x, float y, int pointer, Actor toActor) {
-                if(pointer != -1 || !hovering) return;
-                if(toActor != null && toActor.isDescendantOf(upgrade3Table)) return;
-                hovering = false;
-                upgrade3Table.clearActions();
-                upgrade3Table.addAction(Actions.scaleTo(1.0f, 1.0f, 0.15f, Interpolation.swingOut));
-            }
-        });
 
         horizontalGroup = new HorizontalGroup();
         horizontalGroup.space(10.0f);
@@ -520,27 +471,7 @@ public class GameView extends View<GameViewModel>{
         upgrade4Table.setBackground(skin.getDrawable("CorruptUpgradeBkg"));
         upgrade4Table.padLeft(10.0f);
         upgrade4Table.padTop(10.0f);
-        upgrade4Table.align(Align.topLeft);  
-        upgrade4Table.addListener(new InputListener(){
-            boolean hovering = false;
-            @Override
-            public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor){
-                if(pointer != -1 || hovering) return;
-                if(fromActor != null && fromActor.isDescendantOf(upgrade4Table)) return;
-                hovering = true;
-                upgrade4Table.clearActions();
-                viewModel.playSound(SoundAsset.HOVER);
-                upgrade4Table.addAction(Actions.scaleTo(1.05f, 1.05f, 0.15f, Interpolation.swingOut));
-            }
-            @Override
-            public void exit(InputEvent event, float x, float y, int pointer, Actor toActor) {
-                if(pointer != -1 || !hovering) return;
-                if(toActor != null && toActor.isDescendantOf(upgrade4Table)) return;
-                hovering = false;
-                upgrade4Table.clearActions();
-                upgrade4Table.addAction(Actions.scaleTo(1.0f, 1.0f, 0.15f, Interpolation.swingOut));
-            }
-        });
+        upgrade4Table.align(Align.topLeft);
 
         horizontalGroup = new HorizontalGroup();
         horizontalGroup.space(10.0f);
@@ -590,22 +521,30 @@ public class GameView extends View<GameViewModel>{
         float duration = 3.0f;
         Actor rollHandler = new Actor();
         stage.addActor(rollHandler);
-        
-        this.rolling = true;
-        rerollButton.setColor(Color.GRAY);
-        for(int i = 0; i < randRollAmt; i++){
-            float progress = (float) i / (randRollAmt - 1);
-            float delay = Interpolation.exp5In.apply(0f, duration, progress);
 
-            rollHandler.addAction(Actions.sequence(
-                Actions.delay(delay),
-                Actions.run(() -> {displayUpgrades(); viewModel.playSound(SoundAsset.HOVER); animateUpgradeRoll();})
-            ));
-            rollHandler.addAction(Actions.sequence(
-                Actions.delay(duration + 0.1f),
-                Actions.run(() -> {rollHandler.remove(); this.rolling = false; rerollButton.setColor(Color.WHITE);})
-            ));
-        }
+        Entity coinEntity = this.engine.getEntitiesFor(Family.all(Coins.class).get()).first();
+        
+        if(Coins.MAPPER.get(coinEntity).getCoinBalance() < 50){
+            rerollButton.setColor(Color.GRAY);
+            viewModel.playSound(SoundAsset.ERROR);
+        }else{
+            Coins.MAPPER.get(coinEntity).addCoins(-50);
+            this.rolling = true;
+            rerollButton.setColor(Color.GRAY);
+            for(int i = 0; i < randRollAmt; i++){
+                float progress = (float) i / (randRollAmt - 1);
+                float delay = Interpolation.exp5In.apply(0f, duration, progress);
+
+                rollHandler.addAction(Actions.sequence(
+                    Actions.delay(delay),
+                    Actions.run(() -> {displayUpgrades(); viewModel.playSound(SoundAsset.HOVER); animateUpgradeRoll();})
+                ));
+                rollHandler.addAction(Actions.sequence(
+                    Actions.delay(duration + 0.1f),
+                    Actions.run(() -> {rollHandler.remove(); this.rolling = false; rerollButton.setColor(Color.WHITE); setUpgradeListeners();})
+                ));
+            }
+        }    
     }
 
     private void animateUpgradeRoll(){
@@ -618,19 +557,180 @@ public class GameView extends View<GameViewModel>{
         upgrade2Table.addAction(Actions.moveBy(0f, -10f, 0.1f, Interpolation.sine));
         upgrade3Table.addAction(Actions.moveBy(0f, -10f, 0.1f, Interpolation.sine));
         upgrade4Table.addAction(Actions.moveBy(0f, -10f, 0.1f, Interpolation.sine));
+
+        upgrade1Table.setColor(Color.WHITE);
+        upgrade2Table.setColor(Color.WHITE);
+        upgrade3Table.setColor(Color.WHITE);
+        upgrade4Table.setColor(Color.WHITE);
+    }
+
+    private void setUpgradeListeners(){
+        upgrade1Table.clearListeners();
+        upgrade2Table.clearListeners();
+        upgrade3Table.clearListeners();
+        upgrade4Table.clearListeners();
+
+        upgrade1Table.setTouchable(Touchable.enabled);
+        upgrade2Table.setTouchable(Touchable.enabled);
+        upgrade3Table.setTouchable(Touchable.enabled);
+        upgrade4Table.setTouchable(Touchable.enabled);
+
+        //upgrade 1
+        upgrade1Table.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) { 
+                Entity coinEntity = engine.getEntitiesFor(Family.all(Coins.class).get()).first();
+                if(Coins.MAPPER.get(coinEntity).getCoinBalance() < upgrade1.getPrice()){
+                    viewModel.playSound(SoundAsset.ERROR);
+                    return;
+                }
+                viewModel.addUpgradeTag(upgrade1.getName(), 1);
+                Coins.MAPPER.get(coinEntity).addCoins(-upgrade1.getPrice());
+                upgrade1Table.setTouchable(Touchable.disabled);
+                upgrade1Table.setColor(Color.GRAY);
+            }
+        });
+        upgrade1Table.addListener(new InputListener(){
+            boolean hovering = false;
+            @Override
+            public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor){
+                if(pointer != -1 || hovering) return;
+                if(fromActor != null && fromActor.isDescendantOf(upgrade1Table)) return;
+                hovering = true;
+                upgrade1Table.clearActions();
+                viewModel.playSound(SoundAsset.HOVER);
+                upgrade1Table.addAction(Actions.scaleTo(1.05f, 1.05f, 0.15f, Interpolation.swingOut));
+            }
+            @Override
+            public void exit(InputEvent event, float x, float y, int pointer, Actor toActor) {
+                if(pointer != -1 || !hovering) return;
+                if(toActor != null && toActor.isDescendantOf(upgrade1Table)) return;
+                hovering = false;
+                upgrade1Table.clearActions();
+                upgrade1Table.addAction(Actions.scaleTo(1.0f, 1.0f, 0.15f, Interpolation.swingOut));
+            }
+        });
+        
+        //upgrade 2
+        upgrade2Table.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) { 
+                Entity coinEntity = engine.getEntitiesFor(Family.all(Coins.class).get()).first();
+                if(Coins.MAPPER.get(coinEntity).getCoinBalance() < upgrade2.getPrice()){
+                    viewModel.playSound(SoundAsset.ERROR);
+                    return;
+                }
+                viewModel.addUpgradeTag(upgrade2.getName(), 1);
+                Coins.MAPPER.get(coinEntity).addCoins(-upgrade2.getPrice());
+                upgrade2Table.setTouchable(Touchable.disabled);
+                upgrade2Table.setColor(Color.GRAY);
+            }
+        });
+        upgrade2Table.addListener(new InputListener(){
+            boolean hovering = false;
+            @Override
+            public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor){
+                if(pointer != -1 || hovering) return;
+                if(fromActor != null && fromActor.isDescendantOf(upgrade2Table)) return;
+                hovering = true;
+                upgrade2Table.clearActions();
+                viewModel.playSound(SoundAsset.HOVER);
+                upgrade2Table.addAction(Actions.scaleTo(1.05f, 1.05f, 0.15f, Interpolation.swingOut));
+            }
+            @Override
+            public void exit(InputEvent event, float x, float y, int pointer, Actor toActor) {
+                if(pointer != -1 || !hovering) return;
+                if(toActor != null && toActor.isDescendantOf(upgrade2Table)) return;
+                hovering = false;
+                upgrade2Table.clearActions();
+                upgrade2Table.addAction(Actions.scaleTo(1.0f, 1.0f, 0.15f, Interpolation.swingOut));
+            }
+        });
+
+        //upgrade 3
+        upgrade3Table.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) { 
+                Entity coinEntity = engine.getEntitiesFor(Family.all(Coins.class).get()).first();
+                if(Coins.MAPPER.get(coinEntity).getCoinBalance() < upgrade3.getPrice()){
+                    viewModel.playSound(SoundAsset.ERROR);
+                    return;
+                }
+                viewModel.addUpgradeTag(upgrade3.getName(), 1);
+                Coins.MAPPER.get(coinEntity).addCoins(-upgrade3.getPrice());
+                upgrade3Table.setTouchable(Touchable.disabled);
+                upgrade3Table.setColor(Color.GRAY);
+            }
+        });
+        upgrade3Table.addListener(new InputListener(){
+            boolean hovering = false;
+            @Override
+            public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor){
+                if(pointer != -1 || hovering) return;
+                if(fromActor != null && fromActor.isDescendantOf(upgrade3Table)) return;
+                hovering = true;
+                upgrade3Table.clearActions();
+                viewModel.playSound(SoundAsset.HOVER);
+                upgrade3Table.addAction(Actions.scaleTo(1.05f, 1.05f, 0.15f, Interpolation.swingOut));
+            }
+            @Override
+            public void exit(InputEvent event, float x, float y, int pointer, Actor toActor) {
+                if(pointer != -1 || !hovering) return;
+                if(toActor != null && toActor.isDescendantOf(upgrade3Table)) return;
+                hovering = false;
+                upgrade3Table.clearActions();
+                upgrade3Table.addAction(Actions.scaleTo(1.0f, 1.0f, 0.15f, Interpolation.swingOut));
+            }
+        });
+
+        //upgrade 4
+        upgrade4Table.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) { 
+                Entity coinEntity = engine.getEntitiesFor(Family.all(Coins.class).get()).first();
+                if(Coins.MAPPER.get(coinEntity).getCoinBalance() < upgrade4.getPrice()){
+                    viewModel.playSound(SoundAsset.ERROR);
+                    return;
+                }
+                viewModel.addUpgradeTag(upgrade4.getName(), 1);
+                Coins.MAPPER.get(coinEntity).addCoins(-upgrade4.getPrice());
+                upgrade4Table.setTouchable(Touchable.disabled);
+                upgrade4Table.setColor(Color.GRAY);
+            }
+        });
+        upgrade4Table.addListener(new InputListener(){
+            boolean hovering = false;
+            @Override
+            public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor){
+                if(pointer != -1 || hovering) return;
+                if(fromActor != null && fromActor.isDescendantOf(upgrade4Table)) return;
+                hovering = true;
+                upgrade4Table.clearActions();
+                viewModel.playSound(SoundAsset.HOVER);
+                upgrade4Table.addAction(Actions.scaleTo(1.05f, 1.05f, 0.15f, Interpolation.swingOut));
+            }
+            @Override
+            public void exit(InputEvent event, float x, float y, int pointer, Actor toActor) {
+                if(pointer != -1 || !hovering) return;
+                if(toActor != null && toActor.isDescendantOf(upgrade4Table)) return;
+                hovering = false;
+                upgrade4Table.clearActions();
+                upgrade4Table.addAction(Actions.scaleTo(1.0f, 1.0f, 0.15f, Interpolation.swingOut));
+            }
+        });
     }
 
     private void displayUpgrades(){
         ObjectSet<String> usedUpgrades = new ObjectSet<>();
 
         //getting upgrades
-        UpgradeEntry upgrade1 = getUpgrade(usedUpgrades);
+        upgrade1 = getUpgrade(usedUpgrades);
         usedUpgrades.add(upgrade1.getName());
-        UpgradeEntry upgrade2 = getUpgrade(usedUpgrades);
+        upgrade2 = getUpgrade(usedUpgrades);
         usedUpgrades.add(upgrade2.getName());
-        UpgradeEntry upgrade3 = getUpgrade(usedUpgrades);
+        upgrade3 = getUpgrade(usedUpgrades);
         usedUpgrades.add(upgrade3.getName());
-        UpgradeEntry upgrade4 = getUpgrade(usedUpgrades);
+        upgrade4 = getUpgrade(usedUpgrades);
 
         //setting table backgrounds & rarities
         switch (upgrade1.getRarity()) {
@@ -706,6 +806,12 @@ public class GameView extends View<GameViewModel>{
     private void openShop(Boolean open){
         if(open){
             viewModel.pauseGame();
+            Entity coinEntity = this.engine.getEntitiesFor(Family.all(Coins.class).get()).first();
+            if(Coins.MAPPER.get(coinEntity).getCoinBalance() < 50){
+                rerollButton.setColor(Color.GRAY);
+            }else{
+                rerollButton.setColor(Color.WHITE);
+            }
             upgrade1Table.addAction(Actions.moveBy(0f, -25f, 0.0f));
             upgrade2Table.addAction(Actions.moveBy(0f, -25, 0.0f));
             upgrade3Table.addAction(Actions.moveBy(0f, -25, 0.0f));
@@ -762,7 +868,8 @@ public class GameView extends View<GameViewModel>{
     }
 
     private void updateCoins(int coins){
-        coinsLabel.setText("" + coins);
+        coinsLabel.setText(coins);
+        playerBalance.setText(coins);
     }
 
     private void updateTimer(int time){

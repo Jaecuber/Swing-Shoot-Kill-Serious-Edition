@@ -1,7 +1,7 @@
 {
     "enemies" : [
         {"name" : "red_cube", "minDiff" : 0.0},
-        {"name" : "orange_circle", "minDiff" : 2.5},
+        {"name" : "orange_circle", "minDiff" : 2.0},
         {"name" : "yellow_triangle", "minDiff" : 3.0}
     ]
 }

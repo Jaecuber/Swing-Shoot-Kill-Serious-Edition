@@ -108,9 +108,11 @@ public class TiledAshleyConfig {
 
         //CORRESPONDS TO ACTUAL GAME COORDINATES INSTEAD OF MAP COORDINATES
         //HELPS WITH RELATIVE SPAWNING
-        x /= Launcher.UNIT_SCALE;
-        y /= Launcher.UNIT_SCALE;
-
+        if(!tile.getProperties().get("enemy", false, Boolean.class)){
+            x /= Launcher.UNIT_SCALE;
+            y /= Launcher.UNIT_SCALE;
+        }
+        
 
         Entity entity = this.engine.createEntity();
         TextureRegion textureRegion = getTextureRegion(tile);
@@ -168,14 +170,13 @@ public class TiledAshleyConfig {
         addEntityEnemy(tile, entity);
         addEntityAttackMode(tileMapObject, entity);
         addEntityUpgrade(tileMapObject, entity);
-        addEntityCoins(tileMapObject, entity);
+        addEntityCoins(tile, entity);
 
         this.engine.addEntity(entity);
     }
 
-    private void addEntityCoins(TiledMapTileMapObject tileMapObject, Entity entity) {
-        int coins = tileMapObject.getProperties().get("coins", 0, Integer.class);
-
+    private void addEntityCoins(TiledMapTile tile, Entity entity) {
+        int coins = tile.getProperties().get("coins", 0, Integer.class);
         if(coins == 0) return;
 
         entity.add(new Coins(coins));
@@ -275,10 +276,11 @@ public class TiledAshleyConfig {
         float speed = tile.getProperties().get("speed", 0f, Float.class);
         float cooldown = tile.getProperties().get("cooldown", 0f, Float.class);
         float damage = tile.getProperties().get("damage", 0.0f, Float.class);
+        int value = tile.getProperties().get("value", 0, Integer.class);
 
         String type = tile.getProperties().get("type", null, String.class);
 
-        Enemy enemyComponent = new Enemy(state, speed, cooldown, damage);
+        Enemy enemyComponent = new Enemy(state, speed, cooldown, damage, value);
         
         switch (type) {
             case "basic" -> enemyComponent.setMoveset(new BasicAttack());

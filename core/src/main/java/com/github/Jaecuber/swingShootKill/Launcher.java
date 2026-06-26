@@ -24,8 +24,8 @@ import com.github.Jaecuber.swingShootKill.screens.LoadingScreen;
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
 public class Launcher extends Game {
     //CHANGE THESE LATER IF NEEDED
-    public static final float WORLD_WIDTH = 20f;
-    public static final float WORLD_HEIGHT = 12f;
+    public static final float WORLD_WIDTH = 20f;//20
+    public static final float WORLD_HEIGHT = 12f;//12
     public static final float UNIT_SCALE = 1f/16f;
 
     private Batch batch;

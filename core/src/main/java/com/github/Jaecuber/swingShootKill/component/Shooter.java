@@ -72,6 +72,10 @@ public class Shooter implements Component {
         return cooldown;
     }
 
+    public void setCooldown(float cooldown){
+        this.cooldown = cooldown;
+    }
+
     public void setElapsedTime(float elapsedTime) {
         this.elapsedTime = elapsedTime;
     }
