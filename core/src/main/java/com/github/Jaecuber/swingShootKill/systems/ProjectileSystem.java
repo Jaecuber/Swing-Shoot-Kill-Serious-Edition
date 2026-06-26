@@ -1,37 +1,48 @@
 package com.github.Jaecuber.swingShootKill.systems;
 
+import com.github.Jaecuber.swingShootKill.asset.AssetService;
+import com.github.Jaecuber.swingShootKill.asset.JsonAsset;
 import com.github.Jaecuber.swingShootKill.component.DamageListener;
 import com.github.Jaecuber.swingShootKill.component.Health;
 import com.github.Jaecuber.swingShootKill.component.Move;
 import com.github.Jaecuber.swingShootKill.component.Projectile;
+import com.github.Jaecuber.swingShootKill.component.SpecialBullets;
 import com.github.Jaecuber.swingShootKill.component.Transform;
-import com.github.Jaecuber.swingShootKill.tiled.EntitySpawner;
+import com.github.Jaecuber.swingShootKill.data.BulletBag;
+import com.github.Jaecuber.swingShootKill.data.BulletEntry;
+
 import com.github.Jaecuber.ui.model.GameViewModel;
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
 import com.badlogic.gdx.physics.box2d.Body;
+import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.Json;
 
 public class ProjectileSystem extends IteratingSystem{
     
+    private BulletBag bulletBag;
+    private AssetService assetService;
 
-    
 
 
-    public ProjectileSystem(){
+    public ProjectileSystem(AssetService assetService){
         super(Family.all(Projectile.class, Move.class, Transform.class).get());
         
+        String raw = assetService.get(JsonAsset.BULLET_BAG);
+        Json json = new Json();
+        BulletBag bag = json.fromJson(BulletBag.class, raw);
+        bag.initializeMap();
+
+        this.bulletBag = bag;
         
     }
 
     @Override
     protected void processEntity(Entity entity, float deltaTime) {
        Projectile projectile = Projectile.MAPPER.get(entity);
-       Transform transform = Transform.MAPPER.get(entity);
-       Move move = Move.MAPPER.get(entity);
-
-    
+      
         if(projectile.getHitEntity() != null){
             collisionLogic(projectile.getHitEntity(), entity);
         }
@@ -45,10 +56,15 @@ public class ProjectileSystem extends IteratingSystem{
 
     }
 
-    private void collisionLogic(Entity hitEntity, Entity projEntity){
+    private void collisionLogic(Entity projEntity, Entity hitEntity){
         Health health = Health.MAPPER.get(hitEntity);
         Projectile projectile = Projectile.MAPPER.get(projEntity);
         float damage = projectile.getOwnerDamage();
+
+        if(SpecialBullets.MAPPER.get(projEntity) != null){
+            applyBulletEffects(projEntity, hitEntity);
+            damage *= bulletBag.getBulletConfig(SpecialBullets.MAPPER.get(projEntity).getBulletType()).getDmgMultipler();
+        }
 
         if(health == null){
            getEngine().removeEntity(projEntity);
@@ -63,8 +79,15 @@ public class ProjectileSystem extends IteratingSystem{
         }
 
         
-
         System.out.println(health.getHealth());
         getEngine().removeEntity(projEntity);
+    }
+
+    private void applyBulletEffects(Entity projEntity, Entity hitEntity){
+        BulletEntry config = bulletBag.getBulletConfig(SpecialBullets.MAPPER.get(projEntity).getBulletType());
+
+
+
+       // float duration = 
     }
 }

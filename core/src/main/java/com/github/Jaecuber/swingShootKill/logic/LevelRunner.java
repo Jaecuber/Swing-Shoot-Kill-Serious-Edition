@@ -58,7 +58,7 @@ public class LevelRunner {
         Queue<String> enemyQueue = createQueue(difficulty);
         while(enemyQueue.notEmpty()){
             String enemy = enemyQueue.removeFirst();
-            Vector2 randomSpawn = spawns.get((Integer) MathUtils.random(0, spawns.size - 1));
+            Vector2 randomSpawn = spawns.random();
             entitySpawner.spawnEntity(enemy, randomSpawn);
         }
     }
@@ -68,7 +68,7 @@ public class LevelRunner {
         Array<String> validEnemies = getValidEnemies(difficulty);
         int numEnemies = MathUtils.round((3.0f + 1.50f) * (float) Math.pow(difficulty, 0.80f));
         for(int i = 0; i < numEnemies; i++){
-            queue.addFirst(validEnemies.get((Integer) MathUtils.random(0, validEnemies.size - 1)));
+            queue.addFirst(validEnemies.random());
         }
         return queue;
     }
