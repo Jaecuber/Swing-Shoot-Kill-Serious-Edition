@@ -9,24 +9,28 @@ import com.github.Jaecuber.swingShootKill.asset.SoundAsset;
 public class Melee implements Component {
     public static final ComponentMapper<Melee> MAPPER = ComponentMapper.getFor(Melee.class);
 
-    private float damage;
     private float maxSpinSpeed;
     private boolean isSpinning;
-    private float acceleration;
-    private float stamConsume;
-
     private float currSpinSpeed;
+    private float acceleration;
+
+    private float stamConsume;
+    private float damage;
+    
     private float accumulator;
     
-
     private Entity ownerEntity;
+    private Entity hitEntity;
 
 
     public Melee(float damage, float maxSpinSpeed, float acceleration, float stamConsume){
         this.damage = damage;
         this.maxSpinSpeed = maxSpinSpeed;
+
         this.isSpinning = false;
+
         this.ownerEntity = null;
+        this.hitEntity = null;
 
         this.currSpinSpeed = 0;
         this.acceleration = acceleration;
@@ -81,6 +85,14 @@ public class Melee implements Component {
 
     public float getStamConsume() {
         return stamConsume;
+    }
+
+    public void setHitEntity(Entity hitEntity) {
+        this.hitEntity = hitEntity;
+    }
+
+    public Entity getHitEntity() {
+        return hitEntity;
     }
 
     

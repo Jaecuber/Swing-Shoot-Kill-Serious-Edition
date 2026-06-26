@@ -1,5 +1,6 @@
 package com.github.Jaecuber.swingShootKill.systems;
 
+import com.github.Jaecuber.swingShootKill.component.DamageListener;
 import com.github.Jaecuber.swingShootKill.component.Health;
 import com.github.Jaecuber.swingShootKill.component.Move;
 import com.github.Jaecuber.swingShootKill.component.Projectile;
@@ -35,7 +36,6 @@ public class ProjectileSystem extends IteratingSystem{
             collisionLogic(projectile.getHitEntity(), entity);
         }
 
-
        projectile.setLifetime(deltaTime);
        
        if(!projectile.isActive()){
@@ -47,23 +47,24 @@ public class ProjectileSystem extends IteratingSystem{
 
     private void collisionLogic(Entity hitEntity, Entity projEntity){
         Health health = Health.MAPPER.get(hitEntity);
+        Projectile projectile = Projectile.MAPPER.get(projEntity);
+        float damage = projectile.getOwnerDamage();
 
         if(health == null){
            getEngine().removeEntity(projEntity);
             return;
         }
 
-        //Damage damage = Damage.MAPPER.get(projEntity);
-        //if(damage == null) return;
+        DamageListener damageListener = DamageListener.MAPPER.get(hitEntity);
+        if (damageListener == null) {
+            hitEntity.add(new DamageListener(damage));
+        } else {
+            damageListener.addDamage(damage);
+        }
 
-        //int damageVal = (int) damage.getDmgAmount();
+        
 
-        //health.addHealth(-damageVal);
-
-       // Body body = Physic.MAPPER.get(hitEntity).getBody();
-
-
-        //System.out.println(health.getHealth());
+        System.out.println(health.getHealth());
         getEngine().removeEntity(projEntity);
     }
 }

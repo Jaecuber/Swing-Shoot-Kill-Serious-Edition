@@ -4,7 +4,9 @@ import com.badlogic.gdx.assets.AssetDescriptor;
 
 public enum JsonAsset implements Asset<String>{
     ENEMY_BAG("enemies.json"),
-    UPGRADE_BAG("upgrades.json");
+    UPGRADE_BAG("upgrades.json"),
+    BULLET_BAG("bulletTypes.json"),
+    STATUS_EFFECT_BAG("statusEffects.json");
 
     private final AssetDescriptor<String> descriptor;
 

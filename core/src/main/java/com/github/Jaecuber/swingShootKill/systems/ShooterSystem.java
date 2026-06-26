@@ -6,6 +6,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.ashley.systems.IteratingSystem;
+import com.github.Jaecuber.swingShootKill.component.SpecialBullets;
 import com.github.Jaecuber.swingShootKill.component.Controller;
 import com.github.Jaecuber.swingShootKill.component.Move;
 import com.github.Jaecuber.swingShootKill.component.Physics;
@@ -32,11 +33,18 @@ public class ShooterSystem extends IteratingSystem {
     protected void processEntity(Entity entity, float deltaTime) {
 
         Shooter shooter = Shooter.MAPPER.get(entity);
+
+        if(shooter.needToReload() && shooter.getShooterState() != ShooterState.RELOADING) {
+            shooter.setShooterState(ShooterState.RELOADING);
+        }
+
         switch(shooter.getShooterState()){
             case IDLE:
                 break;
             case SHOOTING:
                 spawnProjectileEntity(entity);
+                shooter.decreaseBullets();
+                shooter.setElapsedTime(0);
                 shooter.setShooterState(ShooterState.COOLDOWN);
                 break;
             case COOLDOWN:
@@ -47,6 +55,16 @@ public class ShooterSystem extends IteratingSystem {
                     shooter.setElapsedTime(0);
                 }
                 break;
+            case RELOADING:
+                shooter.setElapsedTime(shooter.getElapsedTime() + deltaTime);
+                
+                if(shooter.getElapsedTime() > shooter.getReloadTime()){
+                    shooter.setShooterState(ShooterState.IDLE);
+                    shooter.setCurrentBullets(shooter.getCapacity());
+                    shooter.setElapsedTime(0);
+                }
+                break;
+            
         }
 
         gunPivoting(entity);
@@ -56,6 +74,7 @@ public class ShooterSystem extends IteratingSystem {
     private void gunPivoting(Entity entity){
         Entity sourceEntity = Shooter.MAPPER.get(entity).getOwnerEntity();
 
+        
         Controller ownerController = Controller.MAPPER.get(sourceEntity);
 
         Transform ownerTransform = Transform.MAPPER.get(sourceEntity);
@@ -87,18 +106,16 @@ public class ShooterSystem extends IteratingSystem {
 
         shooterTransform.setRotationDeg(angleDeg);
         
-
-        
         float spawnOffset = 1.5f;
 
         float gunPosX = ownerCenter.x + (MathUtils.cos(angleRad) * spawnOffset) - (shooterTransform.getSize().x * 0.5f);
         float gunPosY = ownerCenter.y + (MathUtils.sin(angleRad) * spawnOffset) - (shooterTransform.getSize().y * 0.5f);
 
+
         shooterTransform.getPosition().set(gunPosX, gunPosY);
     }
 
     
-
     private void spawnProjectileEntity(Entity sourceEntity){
         Transform transform = Transform.MAPPER.get(sourceEntity);
         Vector2 position = transform.getPosition();
@@ -116,6 +133,13 @@ public class ShooterSystem extends IteratingSystem {
 
         Projectile projectile = Projectile.MAPPER.get(projEntity);
         projectile.setSourceEntity(sourceEntity);
+        projectile.setOwnerDamage(Shooter.MAPPER.get(sourceEntity).getDamage());
+
+        boolean isSpecial = Shooter.MAPPER.get(sourceEntity).timeToRoll();
+
+        if(isSpecial){
+            projEntity.add(new SpecialBullets(Shooter.MAPPER.get(sourceEntity).getRandomizedSpecials()));
+        }
 
 
         Move move = Move.MAPPER.get(projEntity);

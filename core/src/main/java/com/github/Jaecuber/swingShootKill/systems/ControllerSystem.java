@@ -82,7 +82,6 @@ public class ControllerSystem extends IteratingSystem{
             case GUN -> shootGun(currentWeapon);
             case SWORD -> spinSword(currentWeapon);
         }
-
     }
 
     private void shootGun(Entity currentWeapon){
@@ -90,7 +89,6 @@ public class ControllerSystem extends IteratingSystem{
 
         if(shooter.getShooterState() == ShooterState.IDLE){
             shooter.setShooterState(ShooterState.SHOOTING);
-            shooter.incrementTimesShot();
         }
 
         if(shooter.timeToRoll()){
@@ -103,7 +101,6 @@ public class ControllerSystem extends IteratingSystem{
 
         boolean swordSpinning = !melee.isSpinning();
         melee.setSpinning(swordSpinning);
-
     }
 
     private void moveEntity(Entity entity, float directionX, float directionY) {

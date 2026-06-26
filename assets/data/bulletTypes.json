@@ -1,0 +1,35 @@
+{
+  "bulletTypes": [
+    {
+      "name": "Poison Bullet",
+      "damageMultiplier": 1.0,
+      "onHitStatusEffect": "POISON"
+    },
+    {
+      "name": "Shocking Bullet",
+      "damageMultiplier": 0.8,
+      "onHitStatusEffect": "ELECTRIC"
+    },
+    {
+      "name": "Heavy Bullet",
+      "damageMultiplier": 2.0,
+      "onHitStatusEffect": null
+    },
+    {
+      "name": "Healing Bullet",
+      "damageMultiplier": 1,
+      "onHitStatusEffect": null
+    },
+    {
+      "name": "Burning Bullet",
+      "damageMultiplier": 1.2,
+      "onHitStatusEffect": "BURN"
+    },
+    {
+      "name": "Distraction Bullet",
+      "spriteRegion": "bullet_purple",
+      "damageMultiplier": 0.1,
+      "onHitStatusEffect": null
+    }
+  ]
+}

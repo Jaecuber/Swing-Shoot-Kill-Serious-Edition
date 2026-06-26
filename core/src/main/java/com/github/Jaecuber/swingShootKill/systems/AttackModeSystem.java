@@ -67,7 +67,8 @@ public class AttackModeSystem extends IteratingSystem{
 
         currentWeapon = entitySpawner.spawnEntity("playergun", weaponPosition);
 
-        Transform.MAPPER.get(originEntity).getPosition().set(weaponPosition);
+        
+
         AttackMode.MAPPER.get(originEntity).setCurrentWeaponEntity(currentWeapon);
         Shooter.MAPPER.get(currentWeapon).setOwnerEntity(originEntity);
         

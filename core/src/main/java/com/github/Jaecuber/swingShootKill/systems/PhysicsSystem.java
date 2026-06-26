@@ -13,7 +13,9 @@ import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.World;
 import com.github.Jaecuber.swingShootKill.component.Enemy;
+import com.github.Jaecuber.swingShootKill.component.Melee;
 import com.github.Jaecuber.swingShootKill.component.Physics;
+import com.github.Jaecuber.swingShootKill.component.Projectile;
 import com.github.Jaecuber.swingShootKill.component.Transform;
 
 public class PhysicsSystem extends IteratingSystem implements EntityListener, ContactListener{
@@ -93,6 +95,18 @@ public class PhysicsSystem extends IteratingSystem implements EntityListener, Co
         Fixture b = contact.getFixtureB();
         enemyDetection(a,b,true);
         enemyDetection(b,a,true);
+
+        if("bullet_sensor".equals(a.getUserData())){
+            processBulletHit(a, b);
+        } else if ("bullet_sensor".equals(b.getUserData())){
+            processBulletHit(b, a);
+        }
+
+        if("melee_sensor".equals(a.getUserData())){
+            processMeleeHit(a, b);
+        } else if ("melee_sensor".equals(b.getUserData())){
+            processMeleeHit(b, a);
+        }
     }
 
     @Override
@@ -101,6 +115,8 @@ public class PhysicsSystem extends IteratingSystem implements EntityListener, Co
         Fixture b = contact.getFixtureB();
         enemyDetection(a,b,false);
         enemyDetection(b,a,false);
+
+        
     }
 
     private void enemyDetection(Fixture sensor, Fixture object, boolean entering){
@@ -131,6 +147,28 @@ public class PhysicsSystem extends IteratingSystem implements EntityListener, Co
             //if(dodge == null) return;
 
             enemy.setPlayerEntity(entering ? playerEntity : null);
+        }
+    }
+
+    private void processBulletHit(Fixture projFixture, Fixture targetFixture){
+        if (!(projFixture.getBody().getUserData() instanceof Entity projEntity)) return;
+        if (!(targetFixture.getBody().getUserData() instanceof Entity targetEntity)) return;
+        
+        if("attackHitbox".equals(targetFixture.getUserData())){
+            Projectile proj = Projectile.MAPPER.get(projEntity);
+            proj.setHitEntity(targetEntity);
+        }
+    }
+
+    private void processMeleeHit(Fixture meleeFixture, Fixture targetFixture){
+        
+        if (!(meleeFixture.getBody().getUserData() instanceof Entity meleeEntity)) return;
+        if (!(targetFixture.getBody().getUserData() instanceof Entity targetEntity)) return;
+       
+        if("attackHitbox".equals(targetFixture.getUserData())){
+             System.out.println("Process Melee Hit");
+            Melee melee = Melee.MAPPER.get(meleeEntity);
+            melee.setHitEntity(targetEntity);
         }
     }
 

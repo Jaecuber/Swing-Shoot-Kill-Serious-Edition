@@ -23,15 +23,27 @@
    <property name="maxSpinSpeed" type="float" value="1000"/>
    <property name="name" value="playersword"/>
    <property name="stamConsume" type="float" value="10"/>
+   <property name="stamRegen" type="float" value="5"/>
   </properties>
   <image source="Objects/playerSword.png" width="22" height="22"/>
+  <objectgroup draworder="index" id="2">
+   <object id="1" name="melee_sensor" x="7.63674" y="10.2727">
+    <properties>
+     <property name="sensor" type="bool" value="true"/>
+    </properties>
+    <polygon points="0,0 3.54508,3.78167 -10.7076,18.4545 -13.8186,14.7485"/>
+   </object>
+  </objectgroup>
  </tile>
  <tile id="4" type="Prop">
   <properties>
    <property name="atlasAsset" value="OBJECTS"/>
    <property name="canShoot" type="bool" value="true"/>
+   <property name="capacity" type="int" value="6"/>
    <property name="cooldown" type="float" value="0.5"/>
+   <property name="damage" type="float" value="1"/>
    <property name="name" value="playergun"/>
+   <property name="reloadTime" type="float" value="2"/>
    <property name="trackRotation" type="bool" value="true"/>
   </properties>
   <image source="Objects/playerRevolver.png" width="25" height="11"/>
@@ -39,7 +51,6 @@
  <tile id="5" type="GameObject">
   <properties>
    <property name="atlasAsset" value="OBJECTS"/>
-   <property name="damage" type="float" value="5"/>
    <property name="lifetime" type="float" value="1"/>
    <property name="name" value="revolver_Bullet"/>
    <property name="projectile" type="bool" value="true"/>
@@ -47,7 +58,7 @@
   </properties>
   <image source="Objects/bullet.png" width="4" height="4"/>
   <objectgroup draworder="index" id="3">
-   <object id="4" name="hitbox" x="0.765625" y="0.640625" width="2.60938" height="2.8125">
+   <object id="4" name="bullet_sensor" x="-1.12326" y="-1.22604" width="6.2316" height="6.32361">
     <properties>
      <property name="sensor" type="bool" value="true"/>
     </properties>
