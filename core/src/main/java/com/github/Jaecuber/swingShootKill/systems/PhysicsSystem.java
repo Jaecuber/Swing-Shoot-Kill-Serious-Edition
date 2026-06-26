@@ -170,7 +170,6 @@ public class PhysicsSystem extends IteratingSystem implements EntityListener, Co
         if (!(targetFixture.getBody().getUserData() instanceof Entity targetEntity)) return;
        
         if("attackHitbox".equals(targetFixture.getUserData())){
-             System.out.println("Process Melee Hit");
             Melee melee = Melee.MAPPER.get(meleeEntity);
             melee.setHitEntity(targetEntity);
         }

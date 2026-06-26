@@ -91,8 +91,6 @@ public class ProjectileSystem extends IteratingSystem{
     private void applyBulletEffects(Entity projEntity, Entity hitEntity){
         BulletEntry config = bulletBag.getBulletConfig(SpecialBullets.MAPPER.get(projEntity).getBulletType());
 
-        System.out.println("Got the " + config.getName() + " applied");
-
         if(config.getOnHitStatusEffect() != null){
             hitEntity.add(new StatusEffect(config.getOnHitStatusEffect()));
             return;
