@@ -277,7 +277,7 @@ public class GameView extends View<GameViewModel>{
         });
         horizontalGroup.addActor(rerollButton);
 
-        Label label = new Label("For 100", skin, "Title");
+        Label label = new Label("For 50", skin, "Title");
         horizontalGroup.addActor(label);
 
         Image image = new Image(skin, "coinsIcon");
