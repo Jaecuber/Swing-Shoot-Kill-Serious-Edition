@@ -10,6 +10,7 @@ import com.badlogic.gdx.utils.Queue;
 import com.github.Jaecuber.swingShootKill.Launcher;
 import com.github.Jaecuber.swingShootKill.asset.AssetService;
 import com.github.Jaecuber.swingShootKill.asset.JsonAsset;
+import com.github.Jaecuber.swingShootKill.asset.MusicAsset;
 import com.github.Jaecuber.swingShootKill.audio.AudioService;
 import com.github.Jaecuber.swingShootKill.component.Enemy;
 import com.github.Jaecuber.swingShootKill.data.EnemyBag;
@@ -31,6 +32,7 @@ public class LevelRunner {
     private float difficulty;
     private int wave;
     private int prevEnemyAmt;
+    private int rand;
 
     public LevelRunner(TiledService tiledService, EntitySpawner entitySpawner, Engine engine, AssetService assetService, GameViewModel viewModel, AudioService audioService){
         this.tiledService = tiledService;
@@ -40,6 +42,7 @@ public class LevelRunner {
         this.engine = engine;
         this.wave = 0;
         this.prevEnemyAmt = engine.getEntitiesFor(Family.all(Enemy.class).get()).size();
+        this.rand = MathUtils.random(1,2);
 
         String raw = assetService.get(JsonAsset.ENEMY_BAG);
         Json json = new Json();
@@ -52,6 +55,19 @@ public class LevelRunner {
         this.difficulty = calcDifficulty();
         viewModel.updateWave(wave);
         spawnWave(difficulty);
+
+        
+        if(rand == 1){
+            switch (wave) {
+                case 1 -> audioService.playMusic(MusicAsset.AMBIENCE1);
+                case 8 -> audioService.playMusic(MusicAsset.AMBIENCE2);
+            }
+        }else{
+            switch (wave) {
+                case 1 -> audioService.playMusic(MusicAsset.AMBIENCE2);
+                case 8 -> audioService.playMusic(MusicAsset.AMBIENCE1);
+            }
+        }
     }
 
     private void spawnWave(float difficulty) {
@@ -60,14 +76,14 @@ public class LevelRunner {
         while(enemyQueue.notEmpty()){
             String enemy = enemyQueue.removeFirst();
             Vector2 randomSpawn = spawns.random();
-            entitySpawner.spawnEntity(enemy, randomSpawn.scl(Launcher.UNIT_SCALE));
+            entitySpawner.spawnEntity(enemy, randomSpawn);
         }
     }
 
     private Queue<String> createQueue(float difficulty) {
         Queue<String> queue = new Queue<>();
         Array<String> validEnemies = getValidEnemies(difficulty);
-        int numEnemies = MathUtils.round((3.0f + 1.50f) * (float) Math.pow(difficulty, 0.80f));
+        int numEnemies = MathUtils.round((1.0f + 1.50f) * (float) Math.pow(difficulty, 0.80f));
         for(int i = 0; i < numEnemies; i++){
             queue.addFirst(validEnemies.random());
         }

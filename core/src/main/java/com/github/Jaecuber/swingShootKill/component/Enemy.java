@@ -27,8 +27,9 @@ public class Enemy implements Component{
     private float cooldownTimer;
     private float attackCooldown;
     private float damage;
+    private int value;
 
-    public Enemy(EnemyAIState state, float speed, float cooldown, float damage){
+    public Enemy(EnemyAIState state, float speed, float cooldown, float damage, int value){
         this.state = state;
         this.speed = speed;
         this.attackCooldown = cooldown;
@@ -36,6 +37,7 @@ public class Enemy implements Component{
         this.isAggro = false;
         this.isIdle = true;
         this.dead = false;
+        this.value = value;
     }
 
     public void applyKnockback(float duration){
@@ -196,6 +198,14 @@ public class Enemy implements Component{
 
     public void setPlayerEntity(Entity playerEntity) {
         this.playerEntity = playerEntity;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
     }
 
     public enum EnemyAIState{

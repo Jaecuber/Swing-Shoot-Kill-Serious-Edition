@@ -7,6 +7,8 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Body;
+import com.github.Jaecuber.swingShootKill.asset.SoundAsset;
+import com.github.Jaecuber.swingShootKill.audio.AudioService;
 import com.github.Jaecuber.swingShootKill.component.DamageListener;
 import com.github.Jaecuber.swingShootKill.component.Enemy;
 import com.github.Jaecuber.swingShootKill.component.Health;
@@ -18,11 +20,12 @@ import com.github.Jaecuber.swingShootKill.component.Transform;
 import com.github.Jaecuber.swingShootKill.helpers.Helpers;
 
 public class MeleeSystem extends IteratingSystem{
+    private AudioService audioService;
+    private boolean crossedAngle;
 
-    
-
-    public MeleeSystem(){
+    public MeleeSystem(AudioService audioService){
         super(Family.all(Melee.class, Transform.class).get());   
+        this.audioService = audioService;
     }
 
     @Override
@@ -56,6 +59,14 @@ public class MeleeSystem extends IteratingSystem{
         meleeTransform.getPosition().set(spriteBottomLeftX, spriteBottomLeftY);
 
         meleeBody.setTransform(swordCenterX, swordCenterY, angleRad - (MathUtils.PI / 4));
+
+        if(isSpinning && ((meleeTransform.getRotationDeg() % 360f) + 360f) % 360f > 90 && !crossedAngle){
+            crossedAngle = true;
+            audioService.playSound(SoundAsset.SWORD_SPIN);
+        }
+        if(((meleeTransform.getRotationDeg() % 360f) + 360f) % 360f < 90 && crossedAngle){
+            crossedAngle = false;
+        }
 
         if(isSpinning && stamina.getCurrentStamina() - melee.getStamConsume() > 0f){
             melee.setCurrSpinSpeed(melee.getCurrSpinSpeed() + melee.getAcceleration());
@@ -106,7 +117,4 @@ public class MeleeSystem extends IteratingSystem{
 
         Melee.MAPPER.get(swordEntity).setHitEntity(null);
     }
-
-   
-
 }

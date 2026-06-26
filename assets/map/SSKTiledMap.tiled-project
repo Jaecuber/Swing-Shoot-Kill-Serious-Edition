@@ -69,6 +69,11 @@
                     "name": "type",
                     "type": "string",
                     "value": ""
+                },
+                {
+                    "name": "value",
+                    "type": "int",
+                    "value": 0
                 }
             ],
             "name": "Enemy",

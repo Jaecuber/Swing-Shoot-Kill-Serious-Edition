@@ -27,6 +27,7 @@ import com.github.Jaecuber.swingShootKill.input.IdleControllerState;
 import com.github.Jaecuber.swingShootKill.input.KeyboardController;
 import com.github.Jaecuber.swingShootKill.screens.GameScreen;
 import com.github.Jaecuber.swingShootKill.systems.CameraSystem;
+import com.github.Jaecuber.swingShootKill.systems.CoinsSystem;
 import com.github.Jaecuber.swingShootKill.systems.ControllerSystem;
 import com.github.Jaecuber.swingShootKill.systems.EnemyAiSystem;
 import com.github.Jaecuber.swingShootKill.systems.PhysicsDebugRenderSystem;
@@ -118,6 +119,9 @@ public class GameViewModel extends ViewModel{
 
     //upgrade shop functionality
     public void openShop(){
+        if(!shopOpen){
+            playSound(SoundAsset.SHOP_OPEN);
+        }
         this.propertyChangeSupport.firePropertyChange(OPEN_SHOP, shopOpen, !shopOpen);
         this.shopOpen = !this.shopOpen;
     }
@@ -150,11 +154,14 @@ public class GameViewModel extends ViewModel{
         if(this.wave != wave){
             this.propertyChangeSupport.firePropertyChange(WAVE, this.wave, wave);
         }
+        playSound(SoundAsset.WAVE_BWAAM);
+        playSound(SoundAsset.WAVE_DRUM);
         this.wave = wave;
     }
 
     public void updateTimer(int time){
         if(this.time != time){
+            playSound(SoundAsset.TIMER_TICK);
             this.propertyChangeSupport.firePropertyChange(TIMER, this.time, time);
         }
         this.time = time;
@@ -175,7 +182,7 @@ public class GameViewModel extends ViewModel{
 
     public void pauseGame(){
         for(EntitySystem system : engine.getSystems()){
-            if(system instanceof UpgradeSystem || system instanceof RenderSystem || system instanceof CameraSystem || system instanceof ControllerSystem){
+            if(system instanceof UpgradeSystem || system instanceof RenderSystem || system instanceof CameraSystem || system instanceof ControllerSystem || system instanceof CoinsSystem){
                 continue;
             }
             system.setProcessing(false);

@@ -10,6 +10,7 @@
    <property name="speed" type="float" value="3"/>
    <property name="state" value="IDLE"/>
    <property name="type" value="basic"/>
+   <property name="value" type="int" value="5"/>
   </properties>
   <image source="objects/redCube.png" width="20" height="20"/>
   <objectgroup draworder="index" id="2">
@@ -54,6 +55,7 @@
    <property name="speed" type="float" value="1.5"/>
    <property name="state" value="IDLE"/>
    <property name="type" value="basic"/>
+   <property name="value" type="int" value="10"/>
   </properties>
   <image source="objects/orangeCircle.png" width="20" height="20"/>
   <objectgroup draworder="index" id="3">
@@ -95,9 +97,10 @@
    <property name="damage" type="float" value="1"/>
    <property name="health" type="float" value="1"/>
    <property name="name" value="yellow_triangle"/>
-   <property name="speed" type="float" value="6.7"/>
+   <property name="speed" type="float" value="5"/>
    <property name="state" value="IDLE"/>
    <property name="type" value="basic"/>
+   <property name="value" type="int" value="10"/>
   </properties>
   <image source="objects/yellowTriangle.png" width="20" height="20"/>
   <objectgroup draworder="index" id="2">
