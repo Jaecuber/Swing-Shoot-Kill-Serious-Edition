@@ -90,10 +90,6 @@ public class ControllerSystem extends IteratingSystem{
         if(shooter.getShooterState() == ShooterState.IDLE){
             shooter.setShooterState(ShooterState.SHOOTING);
         }
-
-        if(shooter.timeToRoll()){
-            System.out.print("Rolling");
-        }
     }
 
     private void spinSword(Entity currentWeapon){

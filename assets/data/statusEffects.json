@@ -2,7 +2,7 @@
   "statusEffects": [
     {
       "name": "Poisoned",
-      "duration": 2.0,
+      "duration": 6,
       "tickInterval": 1.0,
       "damagePerTick": 0.3
     },
@@ -14,7 +14,7 @@
     },
     {
       "name": "Burned",
-      "duration": 0.5,
+      "duration": 2,
       "tickInterval": 0.5,
       "damagePerTick": 0.12
     }
