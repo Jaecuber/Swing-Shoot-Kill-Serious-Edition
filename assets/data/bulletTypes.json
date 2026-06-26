@@ -27,8 +27,12 @@
     },
     {
       "name": "Distraction Bullet",
-      "spriteRegion": "bullet_purple",
       "damageMultiplier": 0.1,
+      "onHitStatusEffect": null
+    },
+    {
+      "name": "Exploding Bullet",
+      "damageMultiplier": 0.45,
       "onHitStatusEffect": null
     }
   ]

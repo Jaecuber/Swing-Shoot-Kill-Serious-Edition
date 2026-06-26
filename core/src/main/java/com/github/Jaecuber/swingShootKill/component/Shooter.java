@@ -47,9 +47,9 @@ public class Shooter implements Component {
     }
 
     private void populateBasicBullets(Array<String> ownedSpecialBullets){
-        ownedSpecialBullets.add("poison");
-        ownedSpecialBullets.add("electric");
-        ownedSpecialBullets.add("exploding");
+        ownedSpecialBullets.add("Poison Bullet");
+        ownedSpecialBullets.add("Electric Bullet");
+        ownedSpecialBullets.add("Exploding Bullet");
     }
 
     public void setOwnerEntity(Entity ownerEntity) {

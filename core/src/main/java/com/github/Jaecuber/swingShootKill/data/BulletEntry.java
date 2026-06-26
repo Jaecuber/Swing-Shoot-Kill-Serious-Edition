@@ -2,14 +2,14 @@ package com.github.Jaecuber.swingShootKill.data;
 
 public class BulletEntry {
     private String name;
-    private float dmgMultipler;
-    private String onHitEffect;
+    private float damageMultiplier;
+    private String onHitStatusEffect;
 
     public BulletEntry(){};
-    public BulletEntry(String name, float dmgMultipler, String onHitEffect) {
+    public BulletEntry(String name, float damageMultiplier, String onHitStatusEffect) {
         this.name = name;
-        this.dmgMultipler = dmgMultipler;
-        this.onHitEffect = onHitEffect;
+        this.damageMultiplier = damageMultiplier;
+        this.onHitStatusEffect = onHitStatusEffect;
     }
 
     public String getName() {
@@ -20,12 +20,12 @@ public class BulletEntry {
         this.name = name;
     }
 
-    public float getDmgMultipler() {
-        return dmgMultipler;
+    public float getDamageMultiplier() {
+        return damageMultiplier;
     }
 
-    public String getOnHitEffect() {
-        return onHitEffect;
+    public String getOnHitStatusEffect() {
+        return onHitStatusEffect;
     }
     
 }
