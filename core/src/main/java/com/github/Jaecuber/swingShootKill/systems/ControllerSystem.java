@@ -95,10 +95,6 @@ public class ControllerSystem extends IteratingSystem{
             audioService.playSound(SoundAsset.GUNSHOT);
             shooter.setShooterState(ShooterState.SHOOTING);
         }
-
-        if(shooter.timeToRoll()){
-            System.out.print("Rolling");
-        }
     }
 
     private void spinSword(Entity currentWeapon){

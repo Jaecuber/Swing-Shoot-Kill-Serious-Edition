@@ -152,7 +152,11 @@ public class PhysicsSystem extends IteratingSystem implements EntityListener, Co
 
     private void processBulletHit(Fixture projFixture, Fixture targetFixture){
         if (!(projFixture.getBody().getUserData() instanceof Entity projEntity)) return;
-        if (!(targetFixture.getBody().getUserData() instanceof Entity targetEntity)) return;
+        
+        if (!(targetFixture.getBody().getUserData() instanceof Entity targetEntity)){
+            getEngine().removeEntity(projEntity);
+            return;
+        } 
         
         if("attackHitbox".equals(targetFixture.getUserData())){
             Projectile proj = Projectile.MAPPER.get(projEntity);
@@ -166,7 +170,6 @@ public class PhysicsSystem extends IteratingSystem implements EntityListener, Co
         if (!(targetFixture.getBody().getUserData() instanceof Entity targetEntity)) return;
        
         if("attackHitbox".equals(targetFixture.getUserData())){
-             System.out.println("Process Melee Hit");
             Melee melee = Melee.MAPPER.get(meleeEntity);
             melee.setHitEntity(targetEntity);
         }

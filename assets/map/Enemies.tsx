@@ -5,7 +5,7 @@
   <properties>
    <property name="cooldown" type="float" value="1"/>
    <property name="damage" type="float" value="1"/>
-   <property name="health" type="float" value="1"/>
+   <property name="health" type="float" value="10000"/>
    <property name="name" value="red_cube"/>
    <property name="speed" type="float" value="3"/>
    <property name="state" value="IDLE"/>

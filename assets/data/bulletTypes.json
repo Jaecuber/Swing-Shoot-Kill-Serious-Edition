@@ -3,12 +3,12 @@
     {
       "name": "Poison Bullet",
       "damageMultiplier": 1.0,
-      "onHitStatusEffect": "poisoned"
+      "onHitStatusEffect": "Poisoned"
     },
     {
       "name": "Shocking Bullet",
       "damageMultiplier": 0.8,
-      "onHitStatusEffect": "shocked"
+      "onHitStatusEffect": "Shocked"
     },
     {
       "name": "Heavy Bullet",
@@ -23,7 +23,7 @@
     {
       "name": "Burning Bullet",
       "damageMultiplier": 1.2,
-      "onHitStatusEffect": "burned"
+      "onHitStatusEffect": "Burned"
     },
     {
       "name": "Distraction Bullet",
