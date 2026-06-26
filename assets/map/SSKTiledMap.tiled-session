@@ -92,7 +92,7 @@
         },
         "DungeonDecorations.tsx": {
             "dynamicWrapping": false,
-            "scaleInDock": 1
+            "scaleInDock": 0.75
         },
         "Enemies.tsx": {
             "dynamicWrapping": true,
