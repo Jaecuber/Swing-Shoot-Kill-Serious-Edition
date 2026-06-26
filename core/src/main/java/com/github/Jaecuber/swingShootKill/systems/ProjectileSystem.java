@@ -13,6 +13,9 @@ import com.github.Jaecuber.swingShootKill.data.BulletBag;
 import com.github.Jaecuber.swingShootKill.data.BulletEntry;
 
 import com.github.Jaecuber.ui.model.GameViewModel;
+
+import java.io.ObjectInputFilter.Status;
+
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
@@ -65,11 +68,8 @@ public class ProjectileSystem extends IteratingSystem{
         float damage = projectile.getOwnerDamage();
 
         if(SpecialBullets.MAPPER.get(projEntity) != null){
-            System.out.println("Proj has Special Bullet Component");
             applyBulletEffects(projEntity, hitEntity);
             damage *= bulletBag.getBulletConfig(SpecialBullets.MAPPER.get(projEntity).getBulletType()).getDamageMultiplier();
-        } else {
-            System.out.println("Proj doesnt have Special Bullet Component");
         }
 
         if(health == null){
@@ -94,7 +94,7 @@ public class ProjectileSystem extends IteratingSystem{
         System.out.println("Got the " + config.getName() + " applied");
 
         if(config.getOnHitStatusEffect() != null){
-            hitEntity.add(new StatusEffect(config.getName()));
+            hitEntity.add(new StatusEffect(config.getOnHitStatusEffect()));
             return;
         }
 
