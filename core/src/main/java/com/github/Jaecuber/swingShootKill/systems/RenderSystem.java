@@ -22,6 +22,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import com.github.Jaecuber.swingShootKill.Launcher;
 import com.github.Jaecuber.swingShootKill.component.Graphic;
 import com.github.Jaecuber.swingShootKill.component.Transform;
+import com.github.Jaecuber.swingShootKill.component.Visible;
 
 public class RenderSystem extends SortedIteratingSystem implements Disposable{
     private final OrthogonalTiledMapRenderer mapRenderer;
@@ -34,7 +35,7 @@ public class RenderSystem extends SortedIteratingSystem implements Disposable{
 
     public RenderSystem(Batch batch, Viewport viewport, OrthographicCamera camera){
         super(
-            Family.all(Transform.class, Graphic.class).get(), 
+            Family.all(Transform.class, Graphic.class, Visible.class).get(), 
             Comparator.comparing(Transform.MAPPER::get)
         );
         this.batch = batch;
