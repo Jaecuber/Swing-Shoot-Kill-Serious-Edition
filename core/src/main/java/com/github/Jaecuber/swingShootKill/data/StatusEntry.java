@@ -1,16 +1,22 @@
 package com.github.Jaecuber.swingShootKill.data;
 
 public class StatusEntry {
-    private String name;
-    private float dmgMultipler;
-    private String onHitEffect;
 
-    public StatusEntry(){};
-    public StatusEntry(String name, float dmgMultipler, String onHitEffect) {
+    private String name;
+    private float duration;
+    private float damagePerTick;
+    private float tickInterval;
+
+
+    public StatusEntry(String name, float duration, float damagePerTick, float tickInterval) {
         this.name = name;
-        this.dmgMultipler = dmgMultipler;
-        this.onHitEffect = onHitEffect;
+        this.duration = duration;
+        this.damagePerTick = damagePerTick;
+        this.tickInterval = tickInterval;
     }
+    public StatusEntry(){};
+    
+    
 
     public String getName() {
         return name;
@@ -20,12 +26,16 @@ public class StatusEntry {
         this.name = name;
     }
 
-    public float getDmgMultipler() {
-        return dmgMultipler;
+    public float getDuration() {
+        return duration;
+    }
+    public float getDamagePerTick() {
+        return damagePerTick;
+    }
+    public float getTickInterval() {
+        return tickInterval;
     }
 
-    public String getOnHitEffect() {
-        return onHitEffect;
-    }
+    
 
 }

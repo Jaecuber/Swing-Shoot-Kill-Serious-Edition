@@ -50,7 +50,6 @@ public class MeleeSystem extends IteratingSystem{
             
             if(melee.getAccumulator() >= 1f){
                 stamina.updateStamina(-melee.getStamConsume());
-                System.out.println(stamina.getCurrentStamina());
                 melee.setAccumulator(0);
             }
 

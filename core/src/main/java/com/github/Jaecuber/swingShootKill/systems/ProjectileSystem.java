@@ -7,6 +7,7 @@ import com.github.Jaecuber.swingShootKill.component.Health;
 import com.github.Jaecuber.swingShootKill.component.Move;
 import com.github.Jaecuber.swingShootKill.component.Projectile;
 import com.github.Jaecuber.swingShootKill.component.SpecialBullets;
+import com.github.Jaecuber.swingShootKill.component.StatusEffect;
 import com.github.Jaecuber.swingShootKill.component.Transform;
 import com.github.Jaecuber.swingShootKill.data.BulletBag;
 import com.github.Jaecuber.swingShootKill.data.BulletEntry;
@@ -42,9 +43,11 @@ public class ProjectileSystem extends IteratingSystem{
     @Override
     protected void processEntity(Entity entity, float deltaTime) {
        Projectile projectile = Projectile.MAPPER.get(entity);
+
+        
       
         if(projectile.getHitEntity() != null){
-            collisionLogic(projectile.getHitEntity(), entity);
+            collisionLogic(entity, projectile.getHitEntity());
         }
 
        projectile.setLifetime(deltaTime);
@@ -62,8 +65,11 @@ public class ProjectileSystem extends IteratingSystem{
         float damage = projectile.getOwnerDamage();
 
         if(SpecialBullets.MAPPER.get(projEntity) != null){
+            System.out.println("Proj has Special Bullet Component");
             applyBulletEffects(projEntity, hitEntity);
-            damage *= bulletBag.getBulletConfig(SpecialBullets.MAPPER.get(projEntity).getBulletType()).getDmgMultipler();
+            damage *= bulletBag.getBulletConfig(SpecialBullets.MAPPER.get(projEntity).getBulletType()).getDamageMultiplier();
+        } else {
+            System.out.println("Proj doesnt have Special Bullet Component");
         }
 
         if(health == null){
@@ -79,15 +85,19 @@ public class ProjectileSystem extends IteratingSystem{
         }
 
         
-        System.out.println(health.getHealth());
         getEngine().removeEntity(projEntity);
     }
 
     private void applyBulletEffects(Entity projEntity, Entity hitEntity){
         BulletEntry config = bulletBag.getBulletConfig(SpecialBullets.MAPPER.get(projEntity).getBulletType());
 
+        System.out.println("Got the " + config.getName() + " applied");
+
+        if(config.getOnHitStatusEffect() != null){
+            hitEntity.add(new StatusEffect(config.getName()));
+            return;
+        }
 
 
-       // float duration = 
     }
 }
