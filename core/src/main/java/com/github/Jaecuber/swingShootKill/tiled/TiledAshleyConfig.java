@@ -116,28 +116,23 @@ public class TiledAshleyConfig {
         TextureRegion textureRegion = getTextureRegion(tile);
         int z = tile.getProperties().get("z", 1, Integer.class);
 
-
         Boolean isTracking = tile.getProperties().get("trackRotation", false, Boolean.class);
         entity.add(new Graphic(textureRegion, Color.WHITE.cpy()));
         addEntityTransform(x, y, z, 
             textureRegion.getRegionWidth(), textureRegion.getRegionHeight(),
             1f, 1f, entity, isTracking);
-
-
         addEntityMove(tile, entity);
-        
         BodyDef.BodyType bodyType = getObjectBodyType(tile);
         addEntityPhysics(tile.getObjects(), bodyType, Vector2.Zero, entity);
         addEntityFacing(tile, entity);
+        addEntityEnemy(tile, entity);
+        addEntityHealth(tile, entity);
         
-
         entity.add(new MapEntity());
-
 
         addEntityMelee(tile, entity);
         addEntityShooter(tile, entity);
         addEntityProjectile(tile, entity);
-       
 
         this.engine.addEntity(entity);
         return entity;

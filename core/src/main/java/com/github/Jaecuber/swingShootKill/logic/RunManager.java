@@ -90,6 +90,7 @@ public class RunManager {
             case STARTING_WAVE -> {}
             case PLAYING -> {}
         }
+        this.runState = runState;
     }
 
     public RunState getState(){
