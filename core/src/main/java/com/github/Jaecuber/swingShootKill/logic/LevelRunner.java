@@ -49,7 +49,7 @@ public class LevelRunner {
     public void runWave(){
         this.wave++;
         this.difficulty = calcDifficulty();
-        //update info for view model
+        viewModel.updateWave(wave);
         spawnWave(difficulty);
     }
 

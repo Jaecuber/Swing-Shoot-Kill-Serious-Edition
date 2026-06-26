@@ -69,7 +69,7 @@ public class RunManager {
 
     private void tickIntermissionTime(float deltaTime) {
         intermissionTimer -= deltaTime;
-        //viewModel.updateTimer(MathUtils.round(intermissionTimer));
+        viewModel.updateTimer(MathUtils.round(intermissionTimer));
     }
 
     public boolean intermissionTimerOver(){
@@ -99,6 +99,4 @@ public class RunManager {
     public enum RunState{
         LEVEL_INTERMISSION, STARTING_WAVE, PLAYING
     }
-
-    
 }
