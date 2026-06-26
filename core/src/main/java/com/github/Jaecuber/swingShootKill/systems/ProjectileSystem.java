@@ -68,6 +68,7 @@ public class ProjectileSystem extends IteratingSystem{
         float damage = projectile.getOwnerDamage();
 
         if(SpecialBullets.MAPPER.get(projEntity) != null){
+            System.out.println(SpecialBullets.MAPPER.get(projEntity).getBulletType());
             applyBulletEffects(projEntity, hitEntity);
             damage *= bulletBag.getBulletConfig(SpecialBullets.MAPPER.get(projEntity).getBulletType()).getDamageMultiplier();
         }

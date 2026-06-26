@@ -8,6 +8,7 @@
    <property name="hasFacing" type="bool" value="true"/>
    <property name="health" type="float" value="5"/>
    <property name="speed" type="float" value="5"/>
+   <property name="stamRegen" type="float" value="5"/>
    <property name="stamina" type="float" value="100"/>
   </properties>
   <image source="objects/player.png" width="22" height="22"/>

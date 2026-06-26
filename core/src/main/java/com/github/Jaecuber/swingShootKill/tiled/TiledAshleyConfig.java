@@ -46,6 +46,7 @@ import com.github.Jaecuber.swingShootKill.component.Shooter;
 import com.github.Jaecuber.swingShootKill.component.Stamina;
 import com.github.Jaecuber.swingShootKill.component.Transform;
 import com.github.Jaecuber.swingShootKill.component.UpgradeTags;
+import com.github.Jaecuber.swingShootKill.component.Visible;
 import com.github.Jaecuber.swingShootKill.component.AttackMode.ATTACK_MODE;
 import com.github.Jaecuber.swingShootKill.component.Facing.FacingDirection;
 import com.github.Jaecuber.swingShootKill.component.Fsm;
@@ -364,6 +365,7 @@ public class TiledAshleyConfig {
         position.scl(Launcher.UNIT_SCALE);
         size.scl(Launcher.UNIT_SCALE);
 
+        entity.add(new Visible());
         entity.add(new Transform(position, z, size, scaling, 0f, isTracking));
     }
 

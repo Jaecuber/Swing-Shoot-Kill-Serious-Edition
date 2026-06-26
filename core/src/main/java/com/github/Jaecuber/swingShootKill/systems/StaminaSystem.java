@@ -22,22 +22,26 @@ public class StaminaSystem extends IteratingSystem implements EntityListener{
     @Override
     protected void processEntity(Entity entity, float deltaTime) {
         Stamina stamina = Stamina.MAPPER.get(entity);
-        if(stamina.getCurrentStamina() == stamina.getMaxStamina()) return;
+        if (stamina.getCurrentStamina() == stamina.getMaxStamina()) return;
 
         AttackMode mode = AttackMode.MAPPER.get(entity);
-        Entity weaponEntity = mode.getCurrentWeaponEntity();
+        if (mode == null) return; 
 
-        
-
-        if(mode.getAttackMode() == ATTACK_MODE.GUN){
+        if (mode.getAttackMode() == ATTACK_MODE.GUN) {
             stamina.updateStamina(stamina.getStamRegen() * deltaTime);
-        } else{
-            Melee melee = Melee.MAPPER.get(weaponEntity);
-            if(melee != null && !melee.isSpinning()){
+        } else {
+            Entity swordEntity = mode.getSwordEntity();
+            if (swordEntity != null) {
+                Melee melee = Melee.MAPPER.get(swordEntity);
+                if (melee != null && !melee.isSpinning()) {
+                    stamina.updateStamina(stamina.getStamRegen() * deltaTime);
+                }
+            } else {
                 stamina.updateStamina(stamina.getStamRegen() * deltaTime);
             }
         }
         
+        System.out.println(stamina.getCurrentStamina());
         
     }
 

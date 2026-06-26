@@ -131,7 +131,7 @@
         "DungeonBuildingTileSet.tsx"
     ],
     "project": "SSKTiledMap.tiled-project",
-    "property.type": "int",
+    "property.type": "float",
     "recentFiles": [
         "player.tsx",
         "DungeonBuildingTileSet.tsx",

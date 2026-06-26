@@ -112,6 +112,10 @@ public class Shooter implements Component {
         this.currentBullets = currentBullets;
     }
 
+    public void addSpecialBullet(String newBullet){
+        ownedSpecialBullets.add(newBullet);
+    }
+
     public int getCapacity() {
         return capacity;
     }
