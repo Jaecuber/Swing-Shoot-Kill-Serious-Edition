@@ -43,6 +43,8 @@ public class Enemy implements Component{
         this.knockbackTimer = duration;
     }
 
+    
+
     public void applyAttack(){
         this.attacking = true;
         this.hasDamaged = false;

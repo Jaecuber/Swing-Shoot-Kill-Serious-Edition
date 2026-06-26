@@ -9,8 +9,8 @@
     {
       "name": "Shocked",
       "duration": 1.5,
-      "tickInterval": null,
-      "damagePerTick": null
+      "tickInterval": 0.0,
+      "damagePerTick": 0.0
     },
     {
       "name": "Burned",
