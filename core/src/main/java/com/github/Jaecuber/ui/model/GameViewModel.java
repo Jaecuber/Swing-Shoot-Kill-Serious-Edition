@@ -6,7 +6,6 @@ import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.EntitySystem;
 import com.badlogic.ashley.core.Family;
-import com.badlogic.ashley.systems.IteratingSystem;
 import com.badlogic.ashley.utils.ImmutableArray;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
@@ -16,20 +15,16 @@ import com.badlogic.gdx.utils.Json;
 import com.github.Jaecuber.swingShootKill.Launcher;
 import com.github.Jaecuber.swingShootKill.asset.JsonAsset;
 import com.github.Jaecuber.swingShootKill.asset.MapAsset;
-import com.github.Jaecuber.swingShootKill.asset.MusicAsset;
 import com.github.Jaecuber.swingShootKill.asset.SoundAsset;
 import com.github.Jaecuber.swingShootKill.component.Player;
 import com.github.Jaecuber.swingShootKill.component.UpgradeTags;
 import com.github.Jaecuber.swingShootKill.data.UpgradeBag;
 import com.github.Jaecuber.swingShootKill.data.UpgradeClass;
-import com.github.Jaecuber.swingShootKill.input.GameControllerState;
-import com.github.Jaecuber.swingShootKill.input.IdleControllerState;
 import com.github.Jaecuber.swingShootKill.input.KeyboardController;
 import com.github.Jaecuber.swingShootKill.screens.GameScreen;
 import com.github.Jaecuber.swingShootKill.systems.CameraSystem;
 import com.github.Jaecuber.swingShootKill.systems.CoinsSystem;
 import com.github.Jaecuber.swingShootKill.systems.ControllerSystem;
-import com.github.Jaecuber.swingShootKill.systems.EnemyAiSystem;
 import com.github.Jaecuber.swingShootKill.systems.PhysicsDebugRenderSystem;
 import com.github.Jaecuber.swingShootKill.systems.RenderSystem;
 import com.github.Jaecuber.swingShootKill.systems.UpgradeSystem;
@@ -84,14 +79,14 @@ public class GameViewModel extends ViewModel{
 
      public void setMaxHP(int maxHP) {
         if (this.maxHealth != maxHP) {
-            this.propertyChangeSupport.firePropertyChange(MAX_HEALTH, this.maxHealth, maxHP);
+            firePropertyChange(MAX_HEALTH, this.maxHealth, maxHP);
         }
         this.maxHealth = maxHP;
     }
     
     public void setHP(int HP){
         if(this.health != HP){
-            this.propertyChangeSupport.firePropertyChange(HEALTH, this.health, HP);
+            firePropertyChange(HEALTH, this.health, HP);
         }
         this.health = HP;
     }
@@ -101,7 +96,7 @@ public class GameViewModel extends ViewModel{
     }
 
     public void displayDamage(){
-        this.propertyChangeSupport.firePropertyChange(DAMAGED, false, true);
+        firePropertyChange(DAMAGED, false, true);
     }
 
     //Stamina functionality
@@ -112,14 +107,14 @@ public class GameViewModel extends ViewModel{
 
     private void setStamina(int stamina) {
         if(this.stamina != stamina){
-            this.propertyChangeSupport.firePropertyChange(STAMINA, this.stamina, stamina);
+            firePropertyChange(STAMINA, this.stamina, stamina);
         }
         this.stamina = stamina;
     }
 
     private void setMaxStamina(int maxStamina) {
         if(this.maxStamina != maxStamina){
-            this.propertyChangeSupport.firePropertyChange(MAX_STAMINA, this.maxStamina, maxStamina);
+            firePropertyChange(MAX_STAMINA, this.maxStamina, maxStamina);
         }
         this.maxStamina = maxStamina;
     }
@@ -127,7 +122,7 @@ public class GameViewModel extends ViewModel{
     //Game over functionality
     public void showGameOver(){
         //this.launcher.getAudioService().playMusic(MusicAsset.MENU);//change to game over music later
-        this.propertyChangeSupport.firePropertyChange(GAME_OVER, false, true);
+        firePropertyChange(GAME_OVER, false, true);
     }
 
     public void continueGame(){
@@ -143,7 +138,7 @@ public class GameViewModel extends ViewModel{
     public void showWinScreen(){
         this.launcher.getAudioService().stopCurrentMusic();
         playSound(SoundAsset.CLICK);
-        this.propertyChangeSupport.firePropertyChange(GAME_COMPLETE, false, true);
+        firePropertyChange(GAME_COMPLETE, false, true);
     }
 
     //player damage functionality
@@ -152,7 +147,7 @@ public class GameViewModel extends ViewModel{
         float randomNumY = MathUtils.random(0.0f, 2.0f);
         Vector2 position = new Vector2(x + randomNumX,y + randomNumY);
         this.playerDamage = Map.entry(position, amount);
-        this.propertyChangeSupport.firePropertyChange(PLAYER_DAMAGE, null, this.playerDamage);
+        firePropertyChange(PLAYER_DAMAGE, null, this.playerDamage);
     }
 
     //upgrade shop functionality
@@ -160,7 +155,7 @@ public class GameViewModel extends ViewModel{
         if(!shopOpen){
             playSound(SoundAsset.SHOP_OPEN);
         }
-        this.propertyChangeSupport.firePropertyChange(OPEN_SHOP, shopOpen, !shopOpen);
+        firePropertyChange(OPEN_SHOP, shopOpen, !shopOpen);
         this.shopOpen = !this.shopOpen;
     }
 
@@ -183,14 +178,14 @@ public class GameViewModel extends ViewModel{
     //info HUD functionality
     public void updateCoins(int coins){
         if(this.coins != coins){
-            this.propertyChangeSupport.firePropertyChange(COINS, this.coins, coins);
+            firePropertyChange(COINS, this.coins, coins);
         }
         this.coins = coins;
     }
 
     public void updateWave(int wave){
         if(this.wave != wave){
-            this.propertyChangeSupport.firePropertyChange(WAVE, this.wave, wave);
+            firePropertyChange(WAVE, this.wave, wave);
         }
         playSound(SoundAsset.WAVE_BWAAM);
         playSound(SoundAsset.WAVE_DRUM);
@@ -200,14 +195,14 @@ public class GameViewModel extends ViewModel{
     public void updateTimer(int time){
         if(this.time != time){
             playSound(SoundAsset.TIMER_TICK);
-            this.propertyChangeSupport.firePropertyChange(TIMER, this.time, time);
+            firePropertyChange(TIMER, this.time, time);
         }
         this.time = time;
     }
 
     //Revolver functionality
     public void displaySpin(String bulletName){
-        this.propertyChangeSupport.firePropertyChange(SPIN_BULLETS, "a", bulletName);
+        firePropertyChange(SPIN_BULLETS, "a", bulletName);
     }
 
     //misc
