@@ -1,36 +1,32 @@
 {
     "upgrades" : {
         "basicUpgrades" : [
-            {"name" : "Reslience", "rarity" : "Basic", "description" : "Spinning your sword drains 10% less stamina", "price" : 75},
+            {"name" : "Resilience", "rarity" : "Basic", "description" : "Spinning your sword drains 10% less stamina", "price" : 75},
             {"name" : "Steady Hand", "rarity" : "Basic", "description" : "Reduce your shooting cooldown by 10%", "price" : 125},
             {"name" : "Haste", "rarity" : "Basic", "description" : "Increased movement speed by 15%", "price" : 100},
             {"name" : "Greed", "rarity" : "Basic", "description" : "Gold earnings increased by 20%", "price" : 150},
-            {"name" : "Piercing bullet", "rarity" : "Basic", "description" : "Gain a special bullet that does 1.5x damage", "price" : 110}
+            {"name" : "Heavy bullet", "rarity" : "Basic", "description" : "Gain a special bullet that does 1.5x damage", "price" : 110}
         ],
         "rareUpgrades" : [
-            {"name" : "Biological Enhancements", "rarity" : "Rare", "description" : "Poisonous bullets slow enemies down", "price" : 350},
             {"name" : "From Rags to Riches", "rarity" : "Rare", "description" : "Gold earnings increased by 50%", "price" : 400},
             {"name" : "Expert Handling", "rarity" : "Rare", "description" : "Reduce your shooting cooldown by 25%", "price" : 375},
-            {"name" : "Biological Enhancements", "rarity" : "Rare", "description" : "Poisonous bullets slow enemies down", "price" : 350},
             {"name" : "Dexterity", "rarity" : "Rare", "description" : "Increase movement speed by 35%", "price" : 300},
-            {"name" : "Tenacity", "rarity" : "Rare", "description" : "Spinning your sword drains 35% less stamina", "price" : 350}
+            {"name" : "Tenacity", "rarity" : "Rare", "description" : "Spinning your sword drains 35% less stamina", "price" : 350},
+            {"name" : "Confusing Firepower?", "rarity" : "Rare", "description" : "Gain a special bullet that confuses enemies causing them to run away from you", "price" : 425}
         ],
         "legendaryUpgrades" : [
             {"name" : "Midas Touch", "rarity" : "Legendary", "description" : "Gain double the amount of gold for killing enemies.", "price" : 650},
-            {"name" : "Vitality", "rarity" : "Legendary", "description" : "One extra chance to live. Gain an extra heart.", "price" : 600},
             {"name" : "Lifesteal", "rarity" : "Legendary", "description" : "For every 20 enemies you kill, you heal one heart.", "price" : 750},
-            {"name" : "Burning Explosions", "rarity" : "Legendary", "description" : "Explosive bullets now deal burn damage.", "price" : 700},
-            {"name" : "The Power of Zeus", "rarity" : "Legendary", "description" : "Electric bullets now chain their effects to nearby enemies", "price" : 750},
-            {"name" : "Toxic Warfare", "rarity" : "Legendary", "description" : "Firing poisonous bullets creates a pool of toxic waste that effects other enemeis", "price" : 650},
+            {"name" : "Overclocked Revolver", "rarity" : "Legendary", "description" : "Reduce your shooting cooldown by 45%", "price" : 650},
             {"name" : "Bullet of Life", "rarity" : "Legendary", "description" : "Gain a special bullet that heals you if you kill an enemy with it.", "price" : 800},
-            {"name" : "Confusing Firepower?", "rarity" : "Legendary", "description" : "Gain a special bullet that confuses enemies causing them to run away from you", "price" : 750}
-
+            {"name" : "Endless Spin", "rarity" : "Legendary", "description" : "Spinning your sword drains 70% less stamina.", "price" : 750},
+            {"name" : "Vitality", "rarity" : "Legendary", "description" : "Gain two hearts of health every wave.", "price" : 800}
         ],
         "corruptUpgrades" : [
-            {"name" : "Cursed Revolver", "rarity" : "Corrupt", "description" : "Increase your firerate by 100% but only fire special bullets every 12 shots.", "price" : 444},
+            {"name" : "Cursed Revolver", "rarity" : "Corrupt", "description" : "Increase your firerate by 90% but only fire special bullets every 24 shots.", "price" : 444},
             {"name" : "Mutual Destruction", "rarity" : "Corrupt", "description" : "You one shot all enemies, but all enemies one shot you.", "price" : 444},
-            {"name" : "Last Resort", "rarity" : "Corrupt", "description" : "You do double damage but only at 20% health", "price" : 444},
-            {"name" : "Chained Greatsword", "rarity" : "Corrupt", "description" : "Your sword stuns and applies heavy knockback to enemies, but spinning it drains 90% more stamina.", "price" : 444}
+            {"name" : "Chained Greatsword", "rarity" : "Corrupt", "description" : "Your sword stuns and applies heavy knockback to enemies, but spinning it drains 90% more stamina.", "price" : 444},
+            {"name" : "Accelerator", "rarity" : "Corrupt", "description" : "You can move twice as fast but so do the enemies.", "price" : 444}
         ]
     }  
 }

@@ -65,6 +65,16 @@ com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
 		font: infoTitle
 	}
 }
+com.badlogic.gdx.scenes.scene2d.ui.ProgressBar$ProgressBarStyle: {
+	default-horizontal: {
+		background: progressBarBkg
+		knobBefore: progressBarKnob
+	}
+	default-vertical: {
+		background: progressBarBkg
+		knobBefore: progressBarKnob
+	}
+}
 com.badlogic.gdx.scenes.scene2d.ui.TextTooltip$TextTooltipStyle: {
 	default: {
 		label: default

@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.Vector3;
 import com.badlogic.ashley.systems.IteratingSystem;
 import com.github.Jaecuber.swingShootKill.component.SpecialBullets;
 import com.github.Jaecuber.swingShootKill.component.Controller;
+import com.github.Jaecuber.swingShootKill.component.Health;
 import com.github.Jaecuber.swingShootKill.component.Move;
 import com.github.Jaecuber.swingShootKill.component.Physics;
 import com.github.Jaecuber.swingShootKill.component.Projectile;
@@ -16,25 +17,31 @@ import com.github.Jaecuber.swingShootKill.component.Shooter.ShooterState;
 import com.github.Jaecuber.swingShootKill.helpers.Helpers;
 import com.github.Jaecuber.swingShootKill.component.Transform;
 import com.github.Jaecuber.swingShootKill.tiled.EntitySpawner;
+import com.github.Jaecuber.ui.model.GameViewModel;
 
 public class ShooterSystem extends IteratingSystem {
 
     private final EntitySpawner projEntitySpawner;
+    private GameViewModel viewModel;
+    private SpecialBullets specialBullets;
+    private String specialString;
     
-    
-    public ShooterSystem(EntitySpawner projEntitySpawner){
+    public ShooterSystem(EntitySpawner projEntitySpawner, GameViewModel viewModel){
         super(Family.all(Shooter.class).get());
         this.projEntitySpawner = projEntitySpawner;
-        
+        this.viewModel = viewModel;
     }
 
-    
     @Override
     protected void processEntity(Entity entity, float deltaTime) {
 
         Shooter shooter = Shooter.MAPPER.get(entity);
 
         if(shooter.needToReload() && shooter.getShooterState() != ShooterState.RELOADING) {
+            specialBullets = new SpecialBullets(Shooter.MAPPER.get(entity).getRandomizedSpecials());
+            specialString = specialBullets.getBulletType();
+            viewModel.displaySpin(specialString);
+
             shooter.setShooterState(ShooterState.RELOADING);
         }
 
@@ -57,14 +64,13 @@ public class ShooterSystem extends IteratingSystem {
                 break;
             case RELOADING:
                 shooter.setElapsedTime(shooter.getElapsedTime() + deltaTime);
-                
-                if(shooter.getElapsedTime() > shooter.getReloadTime()){
+                if(shooter.getElapsedTime() > shooter.getReloadTime()){ 
+                    shooter.setNextSpecial(true);
                     shooter.setShooterState(ShooterState.IDLE);
                     shooter.setCurrentBullets(shooter.getCapacity());
                     shooter.setElapsedTime(0);
                 }
                 break;
-            
         }
 
         gunPivoting(entity);
@@ -74,7 +80,6 @@ public class ShooterSystem extends IteratingSystem {
     private void gunPivoting(Entity entity){
         Entity sourceEntity = Shooter.MAPPER.get(entity).getOwnerEntity();
 
-        
         Controller ownerController = Controller.MAPPER.get(sourceEntity);
 
         Transform ownerTransform = Transform.MAPPER.get(sourceEntity);
@@ -135,10 +140,16 @@ public class ShooterSystem extends IteratingSystem {
         projectile.setSourceEntity(sourceEntity);
         projectile.setOwnerDamage(Shooter.MAPPER.get(sourceEntity).getDamage());
 
-        boolean isSpecial = Shooter.MAPPER.get(sourceEntity).timeToRoll();
+        boolean isSpecial = Shooter.MAPPER.get(sourceEntity).isNextSpecial();
 
         if(isSpecial){
-            projEntity.add(new SpecialBullets(Shooter.MAPPER.get(sourceEntity).getRandomizedSpecials()));
+            Shooter.MAPPER.get(sourceEntity).setNextSpecial(false);
+            projEntity.add(specialBullets);
+
+            if(specialString.equals("Healing Bullet")){
+                Health health = Health.MAPPER.get(Shooter.MAPPER.get(sourceEntity).getOwnerEntity());
+                health.addHealth(1.0f);
+            }
         }
 
 

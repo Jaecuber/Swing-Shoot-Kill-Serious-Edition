@@ -40,16 +40,22 @@ public class GameViewModel extends ViewModel{
     public static final String PLAYER_DAMAGE = "playerDamage";
     public static final String HEALTH = "health";
     public static final String MAX_HEALTH = "maxHealth";
+    public static final String STAMINA = "stamina";
+    public static final String MAX_STAMINA = "maxStamina";
     public static final String GAME_OVER = "gameOver";
     public static final String OPEN_SHOP = "openShop";
     public static final String COINS = "coins";
     public static final String WAVE = "wave";
     public static final String TIMER = "timer";
     public static final String DAMAGED = "damaged";
+    public static final String SPIN_BULLETS = "spinBullets";
+    public static final String GAME_COMPLETE = "gameComplete";
 
     private Map.Entry<Vector2, Integer> playerDamage;
     private int health;
     private int maxHealth;
+    private int stamina;
+    private int maxStamina;
     private int wave;
     private int time;
     private int coins;
@@ -98,6 +104,26 @@ public class GameViewModel extends ViewModel{
         this.propertyChangeSupport.firePropertyChange(DAMAGED, false, true);
     }
 
+    //Stamina functionality
+    public void updateStaminaInfo(float maxStamina, float stamina){
+        setMaxStamina((int) maxStamina);
+        setStamina((int) stamina);
+    }
+
+    private void setStamina(int stamina) {
+        if(this.stamina != stamina){
+            this.propertyChangeSupport.firePropertyChange(STAMINA, this.stamina, stamina);
+        }
+        this.stamina = stamina;
+    }
+
+    private void setMaxStamina(int maxStamina) {
+        if(this.maxStamina != maxStamina){
+            this.propertyChangeSupport.firePropertyChange(MAX_STAMINA, this.maxStamina, maxStamina);
+        }
+        this.maxStamina = maxStamina;
+    }
+
     //Game over functionality
     public void showGameOver(){
         //this.launcher.getAudioService().playMusic(MusicAsset.MENU);//change to game over music later
@@ -111,6 +137,13 @@ public class GameViewModel extends ViewModel{
 
     public void quitGame(){
         Gdx.app.exit();
+    }
+
+    //Game Complete functionality
+    public void showWinScreen(){
+        this.launcher.getAudioService().stopCurrentMusic();
+        playSound(SoundAsset.CLICK);
+        this.propertyChangeSupport.firePropertyChange(GAME_COMPLETE, false, true);
     }
 
     //player damage functionality
@@ -170,6 +203,11 @@ public class GameViewModel extends ViewModel{
             this.propertyChangeSupport.firePropertyChange(TIMER, this.time, time);
         }
         this.time = time;
+    }
+
+    //Revolver functionality
+    public void displaySpin(String bulletName){
+        this.propertyChangeSupport.firePropertyChange(SPIN_BULLETS, "a", bulletName);
     }
 
     //misc

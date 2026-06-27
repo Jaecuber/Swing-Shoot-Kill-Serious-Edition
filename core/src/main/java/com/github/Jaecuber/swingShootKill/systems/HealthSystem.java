@@ -15,18 +15,18 @@ public class HealthSystem extends IteratingSystem implements EntityListener{
     private final GameViewModel viewModel;
     private final KeyboardController keyboardController;
 
+    private float prevHealth;
+
     public HealthSystem(GameViewModel viewModel, KeyboardController keyboardController){
         super(Family.all(Health.class).get());
         this.viewModel = viewModel;
         this.keyboardController = keyboardController;
+        prevHealth = 0.0f;
     }
 
     @Override
     protected void processEntity(Entity entity, float deltaTime) {
         Health health = Health.MAPPER.get(entity);
-        if(health.getHealth() == health.getMaxHealth()) return;
-
-        health.addHealth(health.getRegen() * deltaTime);
         if(health.died() && Player.MAPPER.get(entity) != null){
             die(entity);
         }

@@ -17,6 +17,12 @@
       "duration": 2,
       "tickInterval": 0.5,
       "damagePerTick": 0.12
+    },
+    {
+      "name": "Confused",
+      "duration": 2,
+      "tickInterval": 0.0,
+      "damagePerTick": 0.0
     }
   ]
 }

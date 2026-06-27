@@ -7,6 +7,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Body;
+import com.badlogic.gdx.utils.ObjectMap;
 import com.github.Jaecuber.swingShootKill.asset.SoundAsset;
 import com.github.Jaecuber.swingShootKill.audio.AudioService;
 import com.github.Jaecuber.swingShootKill.component.DamageListener;
@@ -17,6 +18,7 @@ import com.github.Jaecuber.swingShootKill.component.Physics;
 import com.github.Jaecuber.swingShootKill.component.Shooter;
 import com.github.Jaecuber.swingShootKill.component.Stamina;
 import com.github.Jaecuber.swingShootKill.component.Transform;
+import com.github.Jaecuber.swingShootKill.component.UpgradeTags;
 import com.github.Jaecuber.swingShootKill.helpers.Helpers;
 
 public class MeleeSystem extends IteratingSystem{
@@ -96,12 +98,23 @@ public class MeleeSystem extends IteratingSystem{
         Body hitBody = Physics.MAPPER.get(hitEntity).getBody();
         Body playerBody = Physics.MAPPER.get(playerEntity).getBody();
 
+        UpgradeTags upgradeTags = UpgradeTags.MAPPER.get(playerEntity);
+        ObjectMap<String, Integer> upgradesOwned = upgradeTags.getTags();
+
+        float knockbackDuration = 0.3f;
+        float knockbackPower = 20.0f;
+
+        if(upgradesOwned.containsKey("Chained Greatsword")){
+            knockbackDuration = 1.5f;
+            knockbackPower = 50.0f;
+        }
+
         if(!enemy.isDead() && !health.died()){
-            enemy.applyKnockback(0.3f);
+            enemy.applyKnockback(knockbackDuration);
             Vector2 knockbackDirection = new Vector2(
                 hitBody.getPosition().x - playerBody.getPosition().x,
                 hitBody.getPosition().y - playerBody.getPosition().y
-            ).nor().scl(20f);
+            ).nor().scl(knockbackPower);
             hitBody.setLinearVelocity(new Vector2(0,0));
             hitBody.applyLinearImpulse(knockbackDirection, hitBody.getWorldCenter(), true);
         }

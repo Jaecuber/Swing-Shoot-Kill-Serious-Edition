@@ -192,7 +192,6 @@ public class TiledAshleyConfig {
 
         float lightDistance = tile.getProperties().get("lightDistance", 0.0f, Float.class);
 
-        System.out.println("addingLight");
         PointLight pointLight = new PointLight(rayHandler, 128, color, lightDistance, 0.0f, 0.0f);
         pointLight.setSoft(true);
         pointLight.setXray(true); 

@@ -10,13 +10,14 @@ import com.github.Jaecuber.swingShootKill.component.Melee;
 import com.github.Jaecuber.swingShootKill.component.Player;
 import com.github.Jaecuber.swingShootKill.component.Stamina;
 import com.github.Jaecuber.swingShootKill.component.AttackMode.ATTACK_MODE;
+import com.github.Jaecuber.ui.model.GameViewModel;
 
 public class StaminaSystem extends IteratingSystem implements EntityListener{
-    
+    private GameViewModel viewModel;
 
-    public StaminaSystem(){
+    public StaminaSystem(GameViewModel viewModel){
         super(Family.all(Stamina.class).get());
-       
+       this.viewModel = viewModel;
     }
 
     @Override
@@ -40,8 +41,10 @@ public class StaminaSystem extends IteratingSystem implements EntityListener{
                 stamina.updateStamina(stamina.getStamRegen() * deltaTime);
             }
         }
-        
-        System.out.println(stamina.getCurrentStamina());
+
+        if (Player.MAPPER.get(entity) != null) {
+            viewModel.updateStaminaInfo(stamina.getMaxStamina(), stamina.getCurrentStamina());
+        }
         
     }
 
