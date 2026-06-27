@@ -35,7 +35,6 @@ public class StatusEffectSystem extends IteratingSystem {
 
         statusEffect.setDuration(config.getDuration());
         
-
         float tickInterval = config.getTickInterval();
         float damagePerTick = config.getDamagePerTick();
 
@@ -67,10 +66,6 @@ public class StatusEffectSystem extends IteratingSystem {
             
             statusEffect.setTickTimer(statusEffect.getTickTimer() - tickInterval); 
             }   
-
         }
-
-        
     }
-
 }

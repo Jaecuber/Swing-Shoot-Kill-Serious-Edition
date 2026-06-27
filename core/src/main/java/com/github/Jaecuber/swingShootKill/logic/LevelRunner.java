@@ -1,11 +1,13 @@
 package com.github.Jaecuber.swingShootKill.logic;
 
 import com.badlogic.ashley.core.Engine;
+import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Json;
+import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.Queue;
 import com.github.Jaecuber.swingShootKill.Launcher;
 import com.github.Jaecuber.swingShootKill.asset.AssetService;
@@ -13,6 +15,9 @@ import com.github.Jaecuber.swingShootKill.asset.JsonAsset;
 import com.github.Jaecuber.swingShootKill.asset.MusicAsset;
 import com.github.Jaecuber.swingShootKill.audio.AudioService;
 import com.github.Jaecuber.swingShootKill.component.Enemy;
+import com.github.Jaecuber.swingShootKill.component.Health;
+import com.github.Jaecuber.swingShootKill.component.Player;
+import com.github.Jaecuber.swingShootKill.component.UpgradeTags;
 import com.github.Jaecuber.swingShootKill.data.EnemyBag;
 import com.github.Jaecuber.swingShootKill.data.EnemyEntry;
 import com.github.Jaecuber.swingShootKill.logic.RunManager.RunState;
@@ -51,11 +56,23 @@ public class LevelRunner {
     }
 
     public void runWave(){
+        if(gameComplete()) return;
         this.wave++;
         this.difficulty = calcDifficulty();
         viewModel.updateWave(wave);
         spawnWave(difficulty);
 
+        Entity playerEntity = engine.getEntitiesFor(Family.all(Player.class).get()).first();
+        UpgradeTags upgradeTags = UpgradeTags.MAPPER.get(playerEntity);
+        ObjectMap<String, Integer> upgradesOwned = upgradeTags.getTags();
+
+        Health health = Health.MAPPER.get(playerEntity);
+        
+        if(upgradesOwned.containsKey("Vitality")){
+            health.addHealth(2.0f);
+        }else{
+            health.addHealth(1.0f);
+        }
         
         if(rand == 1){
             switch (wave) {
@@ -83,7 +100,7 @@ public class LevelRunner {
     private Queue<String> createQueue(float difficulty) {
         Queue<String> queue = new Queue<>();
         Array<String> validEnemies = getValidEnemies(difficulty);
-        int numEnemies = MathUtils.round((1.0f + 1.50f) * (float) Math.pow(difficulty, 0.80f));
+        int numEnemies = MathUtils.round((2.0f + 0.90f) * (float) Math.pow(difficulty, 0.80f));
         for(int i = 0; i < numEnemies; i++){
             queue.addFirst(validEnemies.random());
         }
@@ -108,5 +125,9 @@ public class LevelRunner {
 
     public boolean waveComplete(){
         return engine.getEntitiesFor(Family.all(Enemy.class).get()).size() == 0;
+    }
+
+    public boolean gameComplete(){
+        return wave > 15;
     }
 }

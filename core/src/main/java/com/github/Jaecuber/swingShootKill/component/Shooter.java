@@ -8,9 +8,9 @@ import com.badlogic.gdx.utils.Array;
 
 public class Shooter implements Component {
     public static final ComponentMapper<Shooter> MAPPER = ComponentMapper.getFor(Shooter.class);
-
     
     private float cooldown;
+    private float defaultCooldown;
     private float elapsedTime;
     private ShooterState shooterState;
 
@@ -22,23 +22,24 @@ public class Shooter implements Component {
     private float reloadTime;
     private int capacity;
 
+    private boolean nextSpecial;
+
     private Array<String> ownedSpecialBullets;
 
-
     public enum ShooterState {IDLE, SHOOTING, COOLDOWN, RELOADING};
-    
-
 
     public Shooter(float cooldown, float damage, float reloadTime, int capacity){
         this.shooterState = ShooterState.IDLE;
         this.cooldown = cooldown;
+        this.defaultCooldown = cooldown;
         this.elapsedTime = 0;
         this.ownerEntity = null;
         
-
         this.reloadTime = reloadTime;
         this.capacity = capacity;
         this.currentBullets = capacity;
+
+        this.nextSpecial = false;
 
         this.damage = damage;
 
@@ -113,11 +114,33 @@ public class Shooter implements Component {
     }
 
     public void addSpecialBullet(String newBullet){
-        ownedSpecialBullets.add(newBullet);
+        if(!ownedSpecialBullets.contains(newBullet, false)){
+            ownedSpecialBullets.add(newBullet);
+        }
     }
 
     public int getCapacity() {
         return capacity;
+    }
+
+    public float getDefaultCooldown() {
+        return defaultCooldown;
+    }
+
+    public boolean isNextSpecial() {
+        return nextSpecial;
+    }
+
+    public void setNextSpecial(boolean nextSpecial) {
+        this.nextSpecial = nextSpecial;
+    }
+
+    public void setCapacity(int capacity){
+        this.capacity = capacity;
+    }
+
+    public void setDamage(float damage){
+        this.damage = damage;
     }
 
 }

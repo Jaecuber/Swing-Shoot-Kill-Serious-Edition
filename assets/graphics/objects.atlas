@@ -1,40 +1,131 @@
 
 objects.png
-size: 512, 32
+size: 512, 64
 format: RGBA8888
 filter: Nearest, Nearest
 repeat: none
+blueRhombus/blueRhombus_down
+  rotate: false
+  xy: 54, 4
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+blueRhombus/blueRhombus_left
+  rotate: false
+  xy: 198, 40
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+blueRhombus/blueRhombus_right
+  rotate: false
+  xy: 78, 4
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+blueRhombus/blueRhombus_up
+  rotate: false
+  xy: 222, 40
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+bullet
+  rotate: false
+  xy: 150, 6
+  size: 4, 4
+  orig: 4, 4
+  offset: 0, 0
+  index: -1
 charIcon
   rotate: false
-  xy: 394, 8
+  xy: 318, 20
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
+giantRedCube/giantRedCube_down
+  rotate: false
+  xy: 2, 28
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+giantRedCube/giantRedCube_left
+  rotate: false
+  xy: 38, 28
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+giantRedCube/giantRedCube_right
+  rotate: false
+  xy: 74, 28
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+giantRedCube/giantRedCube_up
+  rotate: false
+  xy: 110, 28
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+greenTrapezoid/greenTrapezoid_down
+  rotate: false
+  xy: 102, 4
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+greenTrapezoid/greenTrapezoid_left
+  rotate: false
+  xy: 246, 40
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+greenTrapezoid/greenTrapezoid_right
+  rotate: false
+  xy: 270, 40
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+greenTrapezoid/greenTrapezoid_up
+  rotate: false
+  xy: 294, 40
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
 orangeCircle/orangeCircle_down
   rotate: false
-  xy: 106, 4
+  xy: 318, 40
   size: 20, 20
   orig: 20, 20
   offset: 0, 0
   index: -1
 orangeCircle/orangeCircle_left
   rotate: false
-  xy: 130, 4
+  xy: 342, 40
   size: 20, 20
   orig: 20, 20
   offset: 0, 0
   index: -1
 orangeCircle/orangeCircle_right
   rotate: false
-  xy: 154, 4
+  xy: 366, 40
   size: 20, 20
   orig: 20, 20
   offset: 0, 0
   index: -1
 orangeCircle/orangeCircle_up
   rotate: false
-  xy: 178, 4
+  xy: 390, 40
   size: 20, 20
   orig: 20, 20
   offset: 0, 0
@@ -48,77 +139,105 @@ player/player_down
   index: -1
 player/player_left
   rotate: false
-  xy: 28, 2
+  xy: 146, 38
   size: 22, 22
   orig: 22, 22
   offset: 0, 0
   index: -1
 player/player_right
   rotate: false
-  xy: 54, 2
+  xy: 28, 2
   size: 22, 22
   orig: 22, 22
   offset: 0, 0
   index: -1
 player/player_up
   rotate: false
-  xy: 80, 2
+  xy: 172, 38
   size: 22, 22
   orig: 22, 22
   offset: 0, 0
   index: -1
+purpleHexagon/purpleHexagon_down
+  rotate: false
+  xy: 414, 40
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+purpleHexagon/purpleHexagon_left
+  rotate: false
+  xy: 438, 40
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+purpleHexagon/purpleHexagon_right
+  rotate: false
+  xy: 462, 40
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+purpleHexagon/purpleHexagon_up
+  rotate: false
+  xy: 486, 40
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
 redCube/redCube_down
   rotate: false
-  xy: 202, 4
+  xy: 126, 4
   size: 20, 20
   orig: 20, 20
   offset: 0, 0
   index: -1
 redCube/redCube_left
   rotate: false
-  xy: 226, 4
+  xy: 150, 14
   size: 20, 20
   orig: 20, 20
   offset: 0, 0
   index: -1
 redCube/redCube_right
   rotate: false
-  xy: 250, 4
+  xy: 174, 14
   size: 20, 20
   orig: 20, 20
   offset: 0, 0
   index: -1
 redCube/redCube_up
   rotate: false
-  xy: 274, 4
+  xy: 198, 16
   size: 20, 20
   orig: 20, 20
   offset: 0, 0
   index: -1
 yellowTriangle/yellowTriangle_down
   rotate: false
-  xy: 298, 4
+  xy: 222, 16
   size: 20, 20
   orig: 20, 20
   offset: 0, 0
   index: -1
 yellowTriangle/yellowTriangle_left
   rotate: false
-  xy: 322, 4
+  xy: 246, 16
   size: 20, 20
   orig: 20, 20
   offset: 0, 0
   index: -1
 yellowTriangle/yellowTriangle_right
   rotate: false
-  xy: 346, 4
+  xy: 270, 16
   size: 20, 20
   orig: 20, 20
   offset: 0, 0
   index: -1
 yellowTriangle/yellowTriangle_up
   rotate: false
-  xy: 370, 4
+  xy: 294, 16
   size: 20, 20
   orig: 20, 20
   offset: 0, 0

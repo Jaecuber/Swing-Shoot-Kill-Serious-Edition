@@ -43,6 +43,9 @@ public class RunManager {
 
     public void update(float deltaTime){
         gameFsm.update();
+        if(levelRunner.gameComplete()){
+            viewModel.showWinScreen();
+        }
         switch (getState()) {
             case LEVEL_INTERMISSION -> intermission(deltaTime);
             case STARTING_WAVE -> startWave();

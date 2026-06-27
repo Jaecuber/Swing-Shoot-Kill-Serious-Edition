@@ -15,6 +15,7 @@ public class Melee implements Component {
     private float acceleration;
 
     private float stamConsume;
+    private float defaultStamConsume;
     private float damage;
     
     private float accumulator;
@@ -35,6 +36,7 @@ public class Melee implements Component {
         this.currSpinSpeed = 0;
         this.acceleration = acceleration;
         this.stamConsume = stamConsume;
+        this.defaultStamConsume = stamConsume;
 
         accumulator = 0f;
     }
@@ -94,11 +96,16 @@ public class Melee implements Component {
     public Entity getHitEntity() {
         return hitEntity;
     }
+    
+    public float getDefaultStamConsume(){
+        return this.defaultStamConsume;
+    }
 
-    
-    
+    public void setStamConsume(float stamConsume){
+        this.stamConsume = stamConsume;
+    }
 
-    
-
-    
+    public void setDamage(float damage){
+        this.damage = damage;
+    }
 }

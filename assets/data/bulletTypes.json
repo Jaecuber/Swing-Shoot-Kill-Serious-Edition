@@ -28,7 +28,7 @@
     {
       "name": "Distraction Bullet",
       "damageMultiplier": 0.1,
-      "onHitStatusEffect": null
+      "onHitStatusEffect": "Confused"
     },
     {
       "name": "Exploding Bullet",

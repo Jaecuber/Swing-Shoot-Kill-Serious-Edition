@@ -17,6 +17,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.ProgressBar;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
@@ -40,6 +41,9 @@ public class GameView extends View<GameViewModel>{
     private Label waveLabel;
     private Label timerLabel;
     private Label coinsLabel;
+
+    //Corner Info
+    private Table controlTable;
 
     //health
     private Table hpTable;
@@ -107,6 +111,10 @@ public class GameView extends View<GameViewModel>{
     //Damage display
     private Table damageTable;
 
+    //Stamina Bar
+    private Table staminaTable;
+    private ProgressBar staminaBar;
+
     public GameView(Stage stage, Skin skin, GameViewModel viewModel, Engine engine) {
         super(stage, skin, viewModel);
         while (this.upgradeClasses == null) {
@@ -126,6 +134,7 @@ public class GameView extends View<GameViewModel>{
         setupUpgradeShop();
         setupSpinDisplay();
         setupDamageDisplay();
+        setupStaminaBar();
     }
 
     private void setupHealthInfo(){
@@ -187,6 +196,15 @@ public class GameView extends View<GameViewModel>{
         horizontalGroup.addActor(image);
         coinsTable.add(horizontalGroup);
         stage.addActor(coinsTable);
+
+        controlTable = new Table();
+        controlTable.padLeft(25.0f);
+        controlTable.padBottom(25.0f);
+        controlTable.align(Align.bottomLeft);
+
+        Label infoLabel = new Label("WASD - Move\n\nE - Switch Weapons\n\nEsc - Open shop\n\nM1 - Spin sword/Shoot", skin, "default");
+        controlTable.addActor(infoLabel);
+        stage.addActor(controlTable);
     }
 
     private void setupGameOver(){
@@ -324,7 +342,7 @@ public class GameView extends View<GameViewModel>{
         });
         horizontalGroup.addActor(rerollButton);
 
-        Label label = new Label("For 50", skin, "Title");
+        Label label = new Label("For 35", skin, "Title");
         horizontalGroup.addActor(label);
 
         Image image = new Image(skin, "coinsIcon");
@@ -526,8 +544,10 @@ public class GameView extends View<GameViewModel>{
         revolverCylinderTable.setFillParent(true);
         revolverCylinderTable.getColor().a = 0.0f;
         revolverCylinderTable.setTouchable(Touchable.disabled);
+        revolverCylinderTable.setTransform(true);
 
         revolverCylinderImage = new Image(skin, "revolverCylinder");
+        revolverCylinderImage.setOrigin(revolverCylinderImage.getWidth()/2, revolverCylinderImage.getHeight()/2);
         revolverCylinderTable.add(revolverCylinderImage);
         stage.addActor(revolverCylinderTable);
 
@@ -535,8 +555,10 @@ public class GameView extends View<GameViewModel>{
         spinEffectTable.setFillParent(true);
         spinEffectTable.getColor().a = 0.0f;
         spinEffectTable.setTouchable(Touchable.disabled);
+        spinEffectTable.setTransform(true);
 
         spinEffectImage = new Image(skin, "spinEffect");
+        spinEffectImage.setOrigin(spinEffectImage.getWidth()/2, spinEffectImage.getHeight()/2);
         spinEffectTable.add(spinEffectImage);
         stage.addActor(spinEffectTable);
 
@@ -544,10 +566,23 @@ public class GameView extends View<GameViewModel>{
         bulletTable.setFillParent(true);
         bulletTable.getColor().a = 0.0f;
         bulletTable.setTouchable(Touchable.disabled);
+        bulletTable.setTransform(true);
 
         bulletLabel = new Label("+ Poison Bullet", skin, "InfoTitle");
         bulletTable.add(bulletLabel);
         stage.addActor(bulletTable);
+    }
+
+    private void setupStaminaBar(){
+        staminaTable = new Table();
+        staminaTable.align(Align.bottom);
+        staminaTable.setFillParent(true);
+
+        staminaBar = new ProgressBar(0.0f, 100.0f, 1.0f, false, skin);
+        staminaBar.setAnimateInterpolation(Interpolation.smoother);
+        staminaBar.setVisualInterpolation(Interpolation.smoother);
+        staminaTable.add(staminaBar).growX();
+        stage.addActor(staminaTable);
     }
 
     private void setupDamageDisplay(){
@@ -563,12 +598,16 @@ public class GameView extends View<GameViewModel>{
     @Override
     protected void setupPropertyChanges() {
         viewModel.onPropertyChange(GameViewModel.HEALTH, Integer.class, this::updateHealth);
+        viewModel.onPropertyChange(GameViewModel.STAMINA, Integer.class, this::updateStamina);
+        viewModel.onPropertyChange(GameViewModel.MAX_STAMINA, Integer.class, this::updateMaxStamina);
         viewModel.onPropertyChange(GameViewModel.GAME_OVER, Boolean.class, this::gameOverScreen);
         viewModel.onPropertyChange(GameViewModel.OPEN_SHOP, Boolean.class, this::openShop);
         viewModel.onPropertyChange(GameViewModel.COINS, Integer.class, this::updateCoins);
         viewModel.onPropertyChange(GameViewModel.WAVE, Integer.class, this::updateWave);
         viewModel.onPropertyChange(GameViewModel.TIMER, Integer.class, this::updateTimer);
         viewModel.onPropertyChange(GameViewModel.DAMAGED, Boolean.class, this::displayDamage);
+        viewModel.onPropertyChange(GameViewModel.SPIN_BULLETS, String.class, this::spinBullets);
+        viewModel.onPropertyChange(GameViewModel.GAME_COMPLETE, Boolean.class, this::winScreen);
     }
 
     private void rerollUpgrades(){
@@ -579,11 +618,11 @@ public class GameView extends View<GameViewModel>{
 
         Entity coinEntity = this.engine.getEntitiesFor(Family.all(Coins.class).get()).first();
         
-        if(Coins.MAPPER.get(coinEntity).getCoinBalance() < 50){
+        if(Coins.MAPPER.get(coinEntity).getCoinBalance() < 35){
             rerollButton.setColor(Color.GRAY);
             viewModel.playSound(SoundAsset.ERROR);
         }else{
-            Coins.MAPPER.get(coinEntity).addCoins(-50);
+            Coins.MAPPER.get(coinEntity).addCoins(-35);
             this.rolling = true;
             rerollButton.setColor(Color.GRAY);
             for(int i = 0; i < randRollAmt; i++){
@@ -862,7 +901,7 @@ public class GameView extends View<GameViewModel>{
         if(open){
             viewModel.pauseGame();
             Entity coinEntity = this.engine.getEntitiesFor(Family.all(Coins.class).get()).first();
-            if(Coins.MAPPER.get(coinEntity).getCoinBalance() < 50){
+            if(Coins.MAPPER.get(coinEntity).getCoinBalance() < 35){
                 rerollButton.setColor(Color.GRAY);
             }else{
                 rerollButton.setColor(Color.WHITE);
@@ -904,6 +943,41 @@ public class GameView extends View<GameViewModel>{
         }
     }
 
+    private void spinBullets(String bulletName){
+        viewModel.playSound(SoundAsset.WOOSH);
+        bulletLabel.setText(bulletName);
+        revolverCylinderTable.addAction(Actions.sequence(
+            Actions.parallel(
+                Actions.fadeIn(0.2f),
+                Actions.run(() ->{
+                    viewModel.playSound(SoundAsset.REVOLVER_SPIN);
+                    revolverCylinderImage.addAction(
+                        Actions.rotateBy(1000.0f, 2.0f, Interpolation.exp5Out)
+                    );
+                })
+            ),
+            Actions.delay(2.0f),
+            Actions.fadeOut(0.5f)
+        ));
+        spinEffectTable.addAction(Actions.sequence(
+            Actions.parallel(
+                Actions.fadeIn(0.2f),
+                Actions.run(() ->{
+                    spinEffectImage.addAction(
+                        Actions.rotateBy(100.0f, 0.5f, Interpolation.sine)
+                    );
+                })
+            ),
+            Actions.fadeOut(0.2f)
+        ));
+        bulletTable.addAction(Actions.sequence(
+            Actions.delay(1.5f),
+            Actions.fadeIn(0.2f),
+            Actions.delay(0.75f),
+            Actions.fadeOut(0.2f)
+        ));
+    }
+
     private void updateHealth(int health){
         Image hpImg = hpTable.findActor("hp1");
         int count = 1;
@@ -916,6 +990,14 @@ public class GameView extends View<GameViewModel>{
             Image hp = hpTable.findActor("hp" + i);
             hp.setVisible(true);
         }
+    }
+
+    private void updateStamina(int stamina){
+        staminaBar.setValue(stamina);
+    }
+
+    private void updateMaxStamina(int maxStamina){
+        staminaBar.setRange(0.0f, maxStamina);
     }
 
     private void updateWave(int wave){
@@ -947,6 +1029,17 @@ public class GameView extends View<GameViewModel>{
     private void gameOverScreen(boolean bool){
         viewModel.pauseGame();
         gameOverTable.setVisible(bool);
+        gameOverTable.setTouchable(Touchable.enabled);
+        gameOverTable.addAction(Actions.sequence(
+            Actions.delay(1.0f),
+            Actions.fadeIn(1.0f)
+        ));
+    }
+
+    private void winScreen(boolean bool){
+        viewModel.pauseGame();
+        gameOverTable.setVisible(bool);
+        gameOverTable.setBackground(skin.getDrawable("youWinBkg"));
         gameOverTable.setTouchable(Touchable.enabled);
         gameOverTable.addAction(Actions.sequence(
             Actions.delay(1.0f),

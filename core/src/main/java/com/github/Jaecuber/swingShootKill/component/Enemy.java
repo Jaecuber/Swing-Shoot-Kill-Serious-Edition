@@ -20,7 +20,9 @@ public class Enemy implements Component{
     private boolean attacking;
     private boolean canAttack;
     private boolean hasDamaged;
+    private boolean lifesteal;
     private float speed;
+    private float defaultSpeed;
     private float stateTimer;
     private float wanderTimer;
     private float knockbackTimer;
@@ -32,11 +34,13 @@ public class Enemy implements Component{
     public Enemy(EnemyAIState state, float speed, float cooldown, float damage, int value){
         this.state = state;
         this.speed = speed;
+        this.defaultSpeed = speed;
         this.attackCooldown = cooldown;
         this.damage = damage;
         this.isAggro = false;
         this.isIdle = true;
         this.dead = false;
+        this.lifesteal = false;
         this.value = value;
     }
 
@@ -207,6 +211,18 @@ public class Enemy implements Component{
 
     public void setValue(int value) {
         this.value = value;
+    }
+
+    public void setLifesteal(boolean bool){
+        this.lifesteal = bool;
+    }
+
+    public boolean lifestealApplied(){
+        return this.lifesteal;
+    }
+
+    public float getDefaultSpeed() {
+        return defaultSpeed;
     }
 
     public enum EnemyAIState{

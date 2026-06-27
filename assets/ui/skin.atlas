@@ -56,13 +56,6 @@ size: 2048, 2048
 format: RGBA8888
 filter: Linear, Linear
 repeat: none
-awesomeCavePixelArt
-  rotate: false
-  xy: 1, 117
-  size: 1280, 720
-  orig: 1280, 720
-  offset: 0, 0
-  index: -1
 playerDmgEffect
   rotate: false
   xy: 1, 839
@@ -72,6 +65,26 @@ playerDmgEffect
   index: -1
 
 skin6.png
+size: 2048, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+awesomeCavePixelArt
+  rotate: false
+  xy: 1, 117
+  size: 1280, 720
+  orig: 1280, 720
+  offset: 0, 0
+  index: -1
+youWinBkg
+  rotate: false
+  xy: 1, 839
+  size: 1920, 1080
+  orig: 1920, 1080
+  offset: 0, 0
+  index: -1
+
+skin7.png
 size: 2048, 2048
 format: RGBA8888
 filter: Linear, Linear
@@ -217,7 +230,7 @@ ScrambleStormPixel_2
   offset: 0, 0
   index: -1
 
-skin7.png
+skin8.png
 size: 2048, 2048
 format: RGBA8888
 filter: Linear, Linear
@@ -349,7 +362,7 @@ ScrambleStormPixel(2)_9
   offset: 0, 0
   index: -1
 
-skin8.png
+skin9.png
 size: 2048, 2048
 format: RGBA8888
 filter: Linear, Linear
@@ -534,6 +547,22 @@ ari-w9500(5)
   xy: 1029, 1352
   size: 505, 420
   orig: 505, 420
+  offset: 0, 0
+  index: -1
+progressBarBkg
+  rotate: false
+  xy: 483, 385
+  size: 16, 4
+  split: 0, 0, 0, 0
+  orig: 16, 4
+  offset: 0, 0
+  index: -1
+progressBarKnob
+  rotate: false
+  xy: 1875, 2018
+  size: 16, 4
+  split: 0, 0, 0, 0
+  orig: 16, 4
   offset: 0, 0
   index: -1
 revolverCylinder
